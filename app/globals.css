@@ -1,26 +1,235 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors - Default Dark Theme */
+  --color-background: #0B1326;
+  --color-surface: #0B1326;
+  --color-surface-container: #1E293B;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container-lowest: #060e20;
+  
+  --color-primary: #FF5733;
+  --color-primary-container: #FF5733;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffffff;
+  
+  --color-secondary: #BCC7DE;
+  --color-secondary-container: #1E293B;
+  --color-on-secondary: #000000;
+  
+  --color-tertiary: #F39600;
+  --color-tertiary-container: #F39600;
+  --color-on-tertiary: #ffffff;
+  
+  --color-on-surface: #DAE2FD;
+  --color-on-background: #DAE2FD;
+  
+  --color-outline: #ab8982;
+  --color-outline-variant: #5b403a;
+  
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-headline-lg: var(--font-inter);
+  --font-label-sm: var(--font-space-grotesk);
+  --font-headline-xl: var(--font-inter);
+  --font-body-md: var(--font-inter);
+  --font-body-lg: var(--font-inter);
+  --font-headline-md: var(--font-space-grotesk);
+  --font-cursive: var(--font-great-vibes);
+
+  /* Font Sizes */
+  --font-size-headline-xl: 64px;
+  --font-size-headline-lg: 32px;
+  --font-size-headline-md: 18px;
+  --font-size-label-sm: 14px;
+  --font-size-body-lg: 18px;
+  --font-size-body-md: 16px;
+
+  /* Spacing */
+  --spacing-md: 1.5rem;
+  --spacing-unit: 4px;
+  --spacing-gutter: 24px;
+  --spacing-lg: 3rem;
+  --spacing-sm: 1rem;
+  --spacing-xs: 0.5rem;
+  --spacing-xl: 5rem;
+  --spacing-container-max: 1200px;
+
+  /* Border Radius */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+.light {
+  --color-background: #f8fafc;
+  --color-surface: #f8fafc;
+  --color-surface-container: #e2e8f0;
+  --color-surface-container-high: #cbd5e1;
+  --color-surface-container-highest: #94a3b8;
+  --color-surface-container-low: #ffffff;
+  --color-surface-container-lowest: #fdfdfd;
+  
+  --color-primary: #FF5733;
+  --color-primary-container: #FF5733;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffffff;
+  
+  --color-secondary: #475569;
+  --color-secondary-container: #e2e8f0;
+  --color-on-secondary: #ffffff;
+  
+  --color-tertiary: #F39600;
+  --color-tertiary-container: #F39600;
+  --color-on-tertiary: #ffffff;
+  
+  --color-on-surface: #0f172a;
+  --color-on-background: #0f172a;
+  
+  --color-outline: #cbd5e1;
+  --color-outline-variant: #94a3b8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-container: var(--color-surface-container);
+  --color-surface-container-high: var(--color-surface-container-high);
+  --color-surface-container-highest: var(--color-surface-container-highest);
+  --color-surface-container-low: var(--color-surface-container-low);
+  --color-surface-container-lowest: var(--color-surface-container-lowest);
+  
+  --color-primary: var(--color-primary);
+  --color-primary-container: var(--color-primary-container);
+  --color-on-primary: var(--color-on-primary);
+  --color-on-primary-container: var(--color-on-primary-container);
+  
+  --color-secondary: var(--color-secondary);
+  --color-secondary-container: var(--color-secondary-container);
+  --color-on-secondary: var(--color-on-secondary);
+  
+  --color-tertiary: var(--color-tertiary);
+  --color-tertiary-container: var(--color-tertiary-container);
+  --color-on-tertiary: var(--color-on-tertiary);
+  
+  --color-on-surface: var(--color-on-surface);
+  --color-on-background: var(--color-on-background);
+  
+  --color-outline: var(--color-outline);
+  --color-outline-variant: var(--color-outline-variant);
+  
+  --color-error: var(--color-error);
+  --color-on-error: var(--color-on-error);
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-headline-lg: var(--font-inter);
+  --font-label-sm: var(--font-space-grotesk);
+  --font-headline-xl: var(--font-inter);
+  --font-body-md: var(--font-inter);
+  --font-body-lg: var(--font-inter);
+  --font-headline-md: var(--font-space-grotesk);
+  --font-cursive: var(--font-great-vibes);
+
+  /* Font Sizes */
+  --font-size-headline-xl: 64px;
+  --font-size-headline-lg: 32px;
+  --font-size-headline-md: 18px;
+  --font-size-label-sm: 14px;
+  --font-size-body-lg: 18px;
+  --font-size-body-md: 16px;
+
+  /* Spacing */
+  --spacing-md: 1.5rem;
+  --spacing-unit: 4px;
+  --spacing-gutter: 24px;
+  --spacing-lg: 3rem;
+  --spacing-sm: 1rem;
+  --spacing-xs: 0.5rem;
+  --spacing-xl: 5rem;
+  --spacing-container-max: 1200px;
+
+  /* Border Radius */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-on-surface antialiased transition-colors duration-300;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.stars-overlay {
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.glow-text {
+  text-shadow: 0 0 15px rgba(255, 87, 51, 0.5);
+}
+
+.halo-ring {
+  box-shadow: 0 0 40px rgba(255, 87, 51, 0.3), inset 0 0 20px rgba(255, 87, 51, 0.2);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+}
+
+.font-cursive {
+  font-family: var(--font-great-vibes);
+}
+
+/* Contact Section Utilities */
+.bg-gradient-obsidian {
+  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface-container-lowest) 100%);
+}
+
+.faded-text-bg {
+  font-family: var(--font-headline-xl);
+  color: var(--color-on-surface);
+  z-index: 0;
+}
+
+.glass-card {
+  background: var(--color-surface-container);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  @apply dark:bg-slate-900/40 light:bg-white/40;
+}
+
+.form-input-focus:focus {
+  border-bottom-color: var(--color-primary) !important;
+  outline: none;
+  box-shadow: 0 4px 12px -4px rgba(255, 87, 51, 0.2);
+}
+
+.orange-halo {
+  box-shadow: 0 0 30px rgba(255, 87, 51, 0.15);
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.1; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s infinite ease-in-out;
 }
