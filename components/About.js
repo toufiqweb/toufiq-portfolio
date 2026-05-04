@@ -44,7 +44,7 @@ export default function About() {
           whileInView={{ opacity: 0.03, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
-          className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-white uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+          className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
         >
           ABOUT ME
         </motion.h2>
@@ -94,7 +94,7 @@ export default function About() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: -1, ease: 'easeInOut' }}
-              className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-surface-container-high border border-white/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-xl backdrop-blur-md z-20"
+              className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-surface-container-high border border-on-surface/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-xl backdrop-blur-md z-20"
             >
               <span className="font-label-sm text-[10px] sm:text-xs text-on-surface flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>code</span>
@@ -104,7 +104,7 @@ export default function About() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 5, repeat: -1, ease: 'easeInOut', delay: 0.5 }}
-              className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-surface-container-high border border-white/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-xl backdrop-blur-md z-20"
+              className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-surface-container-high border border-on-surface/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-xl backdrop-blur-md z-20"
             >
               <span className="font-label-sm text-[10px] sm:text-xs text-on-surface flex items-center gap-2">
                 <span className="material-symbols-outlined text-tertiary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>school</span>
@@ -151,7 +151,7 @@ export default function About() {
               className="font-headline-md text-xs md:text-headline-md text-on-surface uppercase tracking-widest flex items-center justify-center lg:justify-start gap-3"
             >
               What I Do
-              <span className="h-px w-12 bg-white/10"></span>
+              <span className="h-px w-12 bg-on-surface/10"></span>
             </motion.h4>
             <motion.div
               variants={revealVariants}
@@ -161,7 +161,7 @@ export default function About() {
               {skills.map((skill) => (
                 <div
                   key={skill.name}
-                  className="bg-surface-container border border-white/5 px-4 py-2 sm:px-5 sm:py-3 rounded-full flex items-center gap-3 hover:border-primary/50 transition-colors group cursor-default"
+                  className="bg-surface-container border border-on-surface/5 px-4 py-2 sm:px-5 sm:py-3 rounded-full flex items-center gap-3 hover:border-primary/50 transition-colors group cursor-default"
                 >
                   <span className="material-symbols-outlined text-primary text-sm sm:text-base group-hover:scale-110 transition-transform">{skill.icon}</span>
                   <span className="font-label-sm text-[10px] sm:text-xs uppercase tracking-wider">{skill.name}</span>
@@ -179,7 +179,7 @@ export default function About() {
                   <Magnetic key={i} strength={0.4}>
                     <a
                       href={link.href}
-                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/5 hover:border-primary/50 hover:bg-primary/5 transition-all group"
+                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-surface-container flex items-center justify-center border border-on-surface/5 hover:border-primary/50 hover:bg-primary/5 transition-all group"
                     >
                       <span className="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-xl sm:text-2xl">{link.icon}</span>
                     </a>

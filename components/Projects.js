@@ -67,7 +67,7 @@ const ProjectCard = ({ project, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group bg-surface-container/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6 glow-border hover:border-primary-container/30 transition-all duration-500 flex flex-col h-full"
+      className="group bg-surface-container/40 backdrop-blur-xl border border-on-surface/10 rounded-2xl p-6 glow-border hover:border-primary-container/30 transition-all duration-500 flex flex-col h-full"
     >
       {/* Project Image */}
       <div className="relative rounded-xl overflow-hidden mb-6 aspect-video">
@@ -79,13 +79,13 @@ const ProjectCard = ({ project, index }) => {
           unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-          <span className="text-white font-headline-md text-xs tracking-widest uppercase glow-text">View Project Details</span>
+          <span className="text-on-surface font-headline-md text-xs tracking-widest uppercase glow-text">View Project Details</span>
         </div>
       </div>
 
       {/* Project Info */}
       <div className="flex justify-between items-start mb-3">
-        <h3 className="font-headline-lg text-xl md:text-2xl text-white tracking-tight group-hover:text-primary-container transition-colors duration-300">
+        <h3 className="font-headline-lg text-xl md:text-2xl text-on-surface tracking-tight group-hover:text-primary-container transition-colors duration-300">
           {project.title}
         </h3>
         <div className="flex gap-4 text-slate-400">
@@ -114,7 +114,7 @@ const ProjectCard = ({ project, index }) => {
         {project.description}
       </p>
 
-      <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+      <div className="mt-auto pt-4 border-t border-on-surface/5 flex items-center justify-between">
         <div className="flex -space-x-2">
           {/* Mock avatars or status dots could go here */}
           <div className="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_var(--color-primary-container)]" />
@@ -149,7 +149,7 @@ export default function Projects() {
             whileInView={{ opacity: 0.03, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
-            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-white uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
           >
             PROJECTS
           </motion.h2>
@@ -197,9 +197,9 @@ export default function Projects() {
       >
         <a
           href="#"
-          className="group relative flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-all duration-300"
+          className="group relative flex items-center gap-3 px-8 py-4 bg-on-surface/5 border border-on-surface/10 rounded-full hover:bg-on-surface/10 transition-all duration-300"
         >
-          <span className="text-white font-headline-md text-sm uppercase tracking-widest">View All Projects</span>
+          <span className="text-on-surface font-headline-md text-sm uppercase tracking-widest">View All Projects</span>
           <span className="material-symbols-outlined text-primary-container group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </a>
       </motion.div>

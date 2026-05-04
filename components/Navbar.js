@@ -2,17 +2,12 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
+import ThemeToggle from './ThemeToggle';
 import Magnetic from './Magnetic';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // Avoid hydration mismatch
-  useEffect(() => setMounted(true), []);
 
   const navLinks = [
     { name: 'Home', href: '#home', icon: 'home' },
@@ -66,9 +61,7 @@ export default function Navbar() {
     setIsOpen(false);
   };
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
+
 
   return (
     <>
@@ -83,7 +76,7 @@ export default function Navbar() {
           <div className="flex items-center gap-6">
             <Magnetic strength={0.2}>
               <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center">
-                <span className="text-4xl font-cursive text-white dark:text-white light:text-primary leading-none select-none">T</span>
+                <span className="text-4xl font-cursive text-white dark:text-on-surface light:text-primary leading-none select-none">T</span>
               </a>
             </Magnetic>
 
@@ -91,7 +84,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Nav (Pill) */}
-          <div className="hidden lg:flex bg-slate-950/40 dark:bg-slate-950/40 light:bg-white/80 backdrop-blur-md border border-white/10 dark:border-white/10 light:border-slate-200 rounded-full px-2 py-2 items-center gap-1 shadow-2xl">
+          <div className="hidden lg:flex bg-slate-950/40 dark:bg-slate-950/40 light:bg-white/10 backdrop-blur-md border border-on-surface/10 dark:border-on-surface/10 light:border-slate-200 rounded-full px-2 py-2 items-center gap-1 shadow-2xl">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
@@ -99,13 +92,13 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`relative flex items-center gap-2 px-5 py-2 rounded-full font-medium text-xs transition-all group ${isActive ? 'text-white dark:text-white light:text-primary' : 'text-slate-400 hover:text-white dark:hover:text-white light:hover:text-primary'
+                  className={`relative flex items-center gap-2 px-5 py-2 rounded-full font-medium text-xs transition-all group ${isActive ? 'text-white dark:text-on-surface light:text-primary' : 'text-slate-400 hover:text-white dark:hover:text-on-surface light:hover:text-primary'
                     }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="nav-pill"
-                      className="absolute inset-0 bg-white/10 dark:bg-white/10 light:bg-primary/10 rounded-full"
+                      className="absolute inset-0 bg-on-surface/10 dark:bg-on-surface/10 light:bg-primary/10 rounded-full"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -119,22 +112,11 @@ export default function Navbar() {
           {/* Right Side Actions & Mobile Toggle */}
           <div className="flex items-center gap-4">
             {/* Theme Toggle */}
-            {mounted && (
-              <Magnetic strength={0.3}>
-                <button
-                  onClick={toggleTheme}
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 dark:bg-white/5 light:bg-slate-100 border border-white/10 dark:border-white/10 light:border-slate-200 text-slate-400 hover:text-primary transition-all"
-                >
-                  <span className="material-symbols-outlined text-xl">
-                    {theme === 'dark' ? 'light_mode' : 'dark_mode'}
-                  </span>
-                </button>
-              </Magnetic>
-            )}
+            <ThemeToggle />
 
             <div className="hidden md:flex items-center gap-4">
               <Magnetic strength={0.3}>
-                <button className="material-symbols-outlined text-slate-400 hover:text-primary transition-all duration-300 p-2 hover:bg-white/5 rounded-lg">
+                <button className="material-symbols-outlined text-slate-400 hover:text-primary transition-all duration-300 p-2 hover:bg-on-surface/5 rounded-lg">
                   terminal
                 </button>
               </Magnetic>
@@ -144,7 +126,7 @@ export default function Navbar() {
                 <a
                   href="/resume.pdf"
                   download
-                  className="bg-white/5 dark:bg-white/5 light:bg-slate-200 border border-white/10 dark:border-white/10 light:border-slate-300 px-4 py-2 rounded-lg text-white dark:text-white light:text-slate-900 text-sm hover:border-primary-container/50 hover:bg-white/10 transition-all active:scale-95 flex items-center gap-2 shadow-lg"
+                  className="bg-on-surface/5 dark:bg-on-surface/5 light:bg-slate-200 border border-on-surface/10 dark:border-on-surface/10 light:border-slate-300 px-4 py-2 rounded-lg text-white dark:text-on-surface light:text-slate-900 text-sm hover:border-primary-container/50 hover:bg-on-surface/10 transition-all active:scale-95 flex items-center gap-2 shadow-lg"
                 >
                   <span className="material-symbols-outlined text-sm">download</span>
                   Resume
@@ -155,7 +137,7 @@ export default function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden w-12 h-12 flex flex-col items-center justify-center gap-1.5 bg-white/5 dark:bg-white/5 light:bg-white border border-white/10 dark:border-white/10 light:border-slate-200 text-white dark:text-white light:text-slate-900 z-[110]"
+              className="lg:hidden w-12 h-12 flex flex-col items-center justify-center gap-1.5 bg-on-surface/5 dark:bg-on-surface/5 light:bg-white border border-on-surface/10 dark:border-on-surface/10 light:border-slate-200 text-white dark:text-on-surface light:text-slate-900 z-[110]"
             >
               <motion.span
                 animate={isOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
@@ -182,7 +164,7 @@ export default function Navbar() {
             animate={{ opacity: 1, clipPath: 'circle(150% at 90% 5%)' }}
             exit={{ opacity: 0, clipPath: 'circle(0% at 90% 5%)' }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 bg-slate-950/95 dark:bg-slate-950/95 light:bg-white/95 backdrop-blur-xl z-[90] flex flex-col items-center justify-center lg:hidden"
+            className="fixed inset-0 bg-slate-950/95 dark:bg-slate-950/95 light:bg-on-surface/95 backdrop-blur-xl z-[90] flex flex-col items-center justify-center lg:hidden"
           >
             <div className="flex flex-col items-center gap-8">
               {navLinks.map((link, i) => (

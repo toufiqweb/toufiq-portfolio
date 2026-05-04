@@ -17,13 +17,13 @@ export default function Footer() {
         <path d="M0,50 C240,100 480,0 720,50 C960,100 1200,0 1440,50 L1440,100 L0,100 Z"></path>
       </svg>
       
-      <footer className="bg-slate-950 border-t border-white/5 py-12 relative z-10">
+      <footer className="bg-slate-950 border-t border-on-surface/5 py-12 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center px-8 w-full max-w-7xl mx-auto gap-y-8 md:gap-md">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-sm font-bold text-white uppercase tracking-tighter text-center md:text-left"
+            className="text-sm font-bold text-on-surface uppercase tracking-tighter text-center md:text-left"
           >
             TOUFIQ — FRONTEND ENGINEER
           </motion.div>
@@ -33,7 +33,7 @@ export default function Footer() {
               <Magnetic key={link.name} strength={0.3}>
                 <a 
                   href={link.href} 
-                  className="text-slate-500 hover:text-white transition-colors relative group py-2"
+                  className="text-slate-500 hover:text-on-surface transition-colors relative group py-2"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary-container transition-all duration-300 group-hover:w-full" />

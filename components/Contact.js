@@ -46,7 +46,7 @@ export default function Contact() {
               whileInView={{ opacity: 0.03, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: 'easeOut' }}
-              className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-white uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+              className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
             >
               CONTACT
             </motion.h2>
@@ -80,7 +80,7 @@ export default function Contact() {
               variants={revealVariants}
               className="space-y-6"
             >
-              <h2 className="font-headline-lg text-3xl md:text-headline-lg text-white max-w-2xl">
+              <h2 className="font-headline-lg text-3xl md:text-headline-lg text-on-surface max-w-2xl">
                 Let's work together
               </h2>
               <p className="font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
@@ -101,7 +101,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-label-sm text-neutral-500 uppercase">Email me at</p>
-                <p className="font-headline-md text-xl text-white">hello@rb-frontend.dev</p>
+                <p className="font-headline-md text-xl text-on-surface">hello@rb-frontend.dev</p>
               </div>
             </motion.div>
 
@@ -112,30 +112,13 @@ export default function Contact() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={revealVariants}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-surface-container border border-white/5 orange-halo"
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-surface-container border border-on-surface/5 orange-halo"
             >
               <span className="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
               <span className="font-label-sm text-tertiary uppercase">Available for new projects</span>
             </motion.div>
 
-            {/* Abstract Image Decor */}
-            <motion.div
-              custom={3}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={revealVariants}
-              className="relative pt-8"
-            >
-              <Image
-                src="https://lh3.googleusercontent.com/aida/ADBb0uhljSneqrj_5BU5kvuB9cOWnaXl3Nbng958us854E84DTj1zMnXCxBvAHTxGaf8J3lQdjmnbmvgB3Fq-jdX1BWTihBZlt4jynIf5pl7dv6N0tHN_4OkdshMd4x09RTHnVKiyKnpDDrMcDdCgG7A7FsWnxXwzaCSeTPPe1Cx4hZnijwNsZ48teSmryX28viCQcO0wh6fVFjiZ4ORFLiZ2famOFmZy16GGdCb-YzE5vlwAOWuxYGA3l5raK-IiC8BVCcNV5XavG0Z4bA"
-                alt="Technical workspace"
-                width={500}
-                height={300}
-                className="rounded-xl border border-white/10 opacity-60 grayscale hover:grayscale-0 transition-all duration-700 w-full max-w-md object-cover aspect-video"
-                unoptimized
-              />
-            </motion.div>
+
           </div>
 
           {/* Right Column: Form */}
@@ -146,15 +129,14 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="glass-card p-10 rounded-2xl relative"
           >
-            {/* Subtle glow behind card */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 blur-[80px] rounded-full"></div>
+
 
             <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative">
                   <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Full Name</label>
                   <input
-                    className="w-full bg-transparent border-b border-white/10 py-3 text-white font-body-md form-input-focus transition-all placeholder:text-neutral-700"
+                    className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface font-body-md form-input-focus transition-all placeholder:text-on-surface/50"
                     placeholder="John Doe"
                     type="text"
                     required
@@ -163,7 +145,7 @@ export default function Contact() {
                 <div className="relative">
                   <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Email Address</label>
                   <input
-                    className="w-full bg-transparent border-b border-white/10 py-3 text-white font-body-md form-input-focus transition-all placeholder:text-neutral-700"
+                    className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface font-body-md form-input-focus transition-all placeholder:text-on-surface/50"
                     placeholder="john@example.com"
                     type="email"
                     required
@@ -173,7 +155,7 @@ export default function Contact() {
               <div className="relative">
                 <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Subject</label>
                 <input
-                  className="w-full bg-transparent border-b border-white/10 py-3 text-white font-body-md form-input-focus transition-all placeholder:text-neutral-700"
+                  className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface font-body-md form-input-focus transition-all placeholder:text-on-surface/50"
                   placeholder="Project Inquiry"
                   type="text"
                   required
@@ -182,7 +164,7 @@ export default function Contact() {
               <div className="relative">
                 <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Message</label>
                 <textarea
-                  className="w-full bg-transparent border-b border-white/10 py-3 text-white font-body-md form-input-focus transition-all resize-none placeholder:text-neutral-700"
+                  className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface font-body-md form-input-focus transition-all resize-none placeholder:text-on-surface/50"
                   placeholder="Tell me about your project..."
                   rows="4"
                   required

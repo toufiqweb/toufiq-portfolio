@@ -16,10 +16,10 @@ const TimelineItem = ({ year, title, description, image, icon, align = 'left', d
         transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
         className={`w-full md:w-[45%] ${isLeft ? 'md:text-right md:pr-12 order-2 md:order-1' : 'md:text-left md:pl-12 order-2'}`}
       >
-        <div className={`inline-flex items-center justify-center p-3 rounded-xl bg-surface-container-high border border-white/5 mb-4 group-hover:border-primary-container/30 transition-all shadow-lg`}>
+        <div className={`inline-flex items-center justify-center p-3 rounded-xl bg-surface-container-high border border-on-surface/5 mb-4 group-hover:border-primary-container/30 transition-all shadow-lg`}>
           <span className="material-symbols-outlined text-primary-container" style={{ fontVariationSettings: "'FILL' 1" }}>{icon}</span>
         </div>
-        <h3 className="font-headline-lg text-2xl md:text-headline-lg text-white mb-3 tracking-tight">{title}</h3>
+        <h3 className="font-headline-lg text-2xl md:text-headline-lg text-on-surface mb-3 tracking-tight">{title}</h3>
         <p className="text-slate-400 font-body-md text-sm md:text-base leading-relaxed opacity-80">
           {description}
         </p>
@@ -44,7 +44,7 @@ const TimelineItem = ({ year, title, description, image, icon, align = 'left', d
         transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
         className={`w-full md:w-[45%] ${isLeft ? 'order-3 md:pl-12' : 'order-3 md:order-1 md:pr-12'}`}
       >
-        <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl group-hover:scale-[1.02] transition-transform duration-500">
+        <div className="relative aspect-video rounded-2xl overflow-hidden border border-on-surface/10 shadow-2xl group-hover:scale-[1.02] transition-transform duration-500">
           <Image
             src={image}
             alt={title}
@@ -124,7 +124,7 @@ export default function Journey() {
             whileInView={{ opacity: 0.03, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
-            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-white uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
           >
             MY JOURNEY
           </motion.h2>
@@ -171,10 +171,10 @@ export default function Journey() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="mt-8 flex items-center gap-3 px-6 py-2 rounded-full bg-white/5 border border-white/10 shadow-lg animate-pulse"
+            className="mt-8 flex items-center gap-3 px-6 py-2 rounded-full bg-on-surface/5 border border-on-surface/10 shadow-lg animate-pulse"
           >
             <div className="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_var(--color-primary-container)]" />
-            <span className="text-white text-[10px] md:text-xs font-bold uppercase tracking-widest">To Be Continued</span>
+            <span className="text-on-surface text-[10px] md:text-xs font-bold uppercase tracking-widest">To Be Continued</span>
           </motion.div>
         </div>
       </div>

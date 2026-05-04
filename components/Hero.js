@@ -1,26 +1,74 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import gsap from 'gsap';
 import Magnetic from './Magnetic';
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+
+const roles = ["WEB DEVELOPER", "FRONTEND DEVELOPER", "REACT DEVELOPER"];
 
 export default function Hero() {
-  const containerRef = useRef(null);
+  const sectionRef = useRef(null);
+  const imageRef = useRef(null);
+  const [index, setIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to('.profile-ring', {
+      // Rotating rings
+      gsap.to('.ring-rotate', {
         rotate: 360,
-        duration: 20,
+        duration: 40,
         repeat: -1,
-        ease: 'none',
+        ease: 'linear',
       });
-    }, containerRef);
+
+      gsap.to('.ring-rotate-reverse', {
+        rotate: -360,
+        duration: 50,
+        repeat: -1,
+        ease: 'linear',
+      });
+
+      // ✅ Float ONLY image container
+      gsap.to(imageRef.current, {
+        y: 20,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut',
+      });
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
+
+
+
+  useEffect(() => {
+    const current = roles[index];
+    let timeout;
+
+    if (!isDeleting && text.length < current.length) {
+      timeout = setTimeout(() => {
+        setText(current.slice(0, text.length + 1));
+      }, 100);
+    } else if (!isDeleting && text.length === current.length) {
+      timeout = setTimeout(() => setIsDeleting(true), 1200);
+    } else if (isDeleting && text.length > 0) {
+      timeout = setTimeout(() => {
+        setText(current.slice(0, text.length - 1));
+      }, 50);
+    } else if (isDeleting && text.length === 0) {
+      setIsDeleting(false);
+      setIndex((prev) => (prev + 1) % roles.length);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, index]);
 
   const revealVariants = {
     hidden: { y: 50, opacity: 0 },
@@ -36,21 +84,29 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" ref={containerRef} className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-gutter items-center w-full py-12 md:py-24 relative min-h-[80vh]">
-      {/* Left Side: Content */}
+    <section
+      id="home"
+      ref={sectionRef}
+      className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-gutter items-center w-full py-12 md:py-24 relative min-h-[80vh]"
+    >
+      {/* Left Side */}
       <div className="lg:col-span-7 flex flex-col items-center lg:items-start space-y-8 text-center lg:text-left">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex items-center gap-xs px-3 py-1.5 rounded-full bg-surface-container border border-outline/10"
         >
-          <span className="material-symbols-outlined text-primary text-sm">location_on</span>
-          <span className="text-label-sm font-label-sm text-on-surface/60 uppercase">Chuadanga, Bangladesh</span>
+          <span className="material-symbols-outlined text-primary text-sm">
+            location_on
+          </span>
+          <span className="text-label-sm font-label-sm text-on-surface/60 uppercase">
+            Chuadanga, Bangladesh
+          </span>
         </motion.div>
-        
+
         <div className="space-y-4">
-          <motion.h1 
+          <motion.h1
             custom={0}
             initial="hidden"
             animate="visible"
@@ -59,33 +115,47 @@ export default function Hero() {
           >
             Hey, I'm <span className="text-primary glow-text">Toufiq</span>
           </motion.h1>
-          
-          <motion.div 
+
+          <motion.div
             custom={1}
             initial="hidden"
             animate="visible"
-            variants={revealVariants}
             className="flex items-center justify-center lg:justify-start gap-sm"
           >
-            <h2 className="font-headline-md text-sm md:text-base lg:text-headline-md text-on-surface/50 uppercase tracking-[0.2em]">
-              FRONTEND WEB-DEVELOPER <span className="text-primary cursor-blink">|</span>
+            <h2 className="font-headline-md text-sm md:text-base lg:text-headline-md text-on-surface/50 uppercase tracking-[0.2em] flex items-center gap-2">
+
+              <AnimatePresence mode="wait">
+                <motion.span
+
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {text}
+                </motion.span>
+              </AnimatePresence>
+
+              <span className="text-primary cursor-blink">|</span>
             </h2>
           </motion.div>
-          
-          <motion.p 
+
+          <motion.p
             custom={2}
             initial="hidden"
             animate="visible"
             variants={revealVariants}
             className="text-body-md md:text-body-lg text-on-surface/70 max-w-2xl leading-relaxed"
           >
-            Crafting immersive digital experiences through precision engineering and high-performance frontend architectures. Specializing in React, Tailwind, and Design Systems.
+            I build fast, responsive, and immersive web experiences with a focus
+            on clean UI, performance, and scalability. Specializing in React,
+            Next.js, Tailwind CSS, and modern design systems.
           </motion.p>
         </div>
-        
+
         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-md pt-4">
           <Magnetic strength={0.2}>
-            <motion.button 
+            <motion.button
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 1.2 }}
@@ -95,99 +165,117 @@ export default function Hero() {
               Resume
             </motion.button>
           </Magnetic>
-          
+
           <div className="flex items-center gap-sm">
+            {/* GitHub */}
             <Magnetic strength={0.4}>
-              <motion.a 
+              <motion.a
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.4 }}
-                href="#" 
+                href="https://github.com/toufiqweb"
+                target="_blank"
                 className="w-12 h-12 flex items-center justify-center rounded-lg border border-outline/10 bg-surface-container text-on-surface/50 hover:text-primary hover:border-primary/30 transition-all"
               >
-                <span className="material-symbols-outlined" data-weight="fill">code</span>
+                <FaGithub size={20} />
               </motion.a>
             </Magnetic>
+
+            {/* LinkedIn */}
             <Magnetic strength={0.4}>
-              <motion.a 
+              <motion.a
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.5 }}
-                href="#" 
+                href="https://www.linkedin.com/in/toufiq-alahe-dev"
+                target="_blank"
                 className="w-12 h-12 flex items-center justify-center rounded-lg border border-outline/10 bg-surface-container text-on-surface/50 hover:text-primary hover:border-primary/30 transition-all"
               >
-                <span className="material-symbols-outlined">alternate_email</span>
+                <FaLinkedin size={20} />
+              </motion.a>
+            </Magnetic>
+            {/* Gmail / Email */}
+            <Magnetic strength={0.4}>
+              <motion.a
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.6 }}
+                href="mailto:toufiqalahe.dev@gmail.com"
+                className="w-12 h-12 flex items-center justify-center rounded-lg border border-outline/10 bg-surface-container text-on-surface/50 hover:text-primary hover:border-primary/30 transition-all"
+              >
+                <FaEnvelope size={20} />
               </motion.a>
             </Magnetic>
           </div>
         </div>
       </div>
 
-      {/* Right Side: Profile */}
+      {/* Right Side */}
       <div className="lg:col-span-5 flex flex-col items-center justify-center relative mt-lg md:mt-0">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
+        <motion.div
+          ref={imageRef}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
           className="relative w-72 h-72 md:w-[450px] md:h-[450px]"
         >
-          {/* Rotating Rings */}
-          <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary-container/20 profile-ring"></div>
-          <div className="absolute inset-4 rounded-full border border-tertiary/10 profile-ring [animation-direction:reverse] [animation-duration:30s]"></div>
-          
-          {/* Static Rings */}
-          <div className="absolute inset-0 rounded-full border-2 border-primary-container/40 halo-ring"></div>
-          <div className="absolute inset-8 rounded-full border border-white/5"></div>
-          
-          {/* Decorative Particles */}
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-primary-container rounded-full"
-              animate={{
-                y: [0, -40, 0],
-                x: [0, Math.random() * 20 - 10, 0],
-                opacity: [0, 1, 0],
-                scale: [0, 1.5, 0],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 3,
-                repeat: -1,
-                delay: Math.random() * 5,
-              }}
-              style={{
-                top: `${10 + Math.random() * 80}%`,
-                left: `${10 + Math.random() * 80}%`,
-              }}
-            />
-          ))}
-          
-          {/* Profile Image Wrapper */}
-          <div className="absolute inset-12 rounded-full overflow-hidden border border-white/10 bg-surface-container-low shadow-2xl z-10">
-            <Image 
+          <div className="ring-rotate absolute inset-0 rounded-full border-2 border-dashed border-primary-container/20" />
+          <div className="ring-rotate-reverse absolute inset-4 rounded-full border border-tertiary/30" />
+
+          <motion.div
+            className="absolute inset-0 rounded-full border-2 border-primary-container/40"
+            animate={{
+              scale: [1, 1.15, 1],
+              opacity: [0.6, 0.2, 0.6],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          />
+
+          <motion.div
+            className="absolute inset-8 rounded-full border border-tertiary/30 blur-[1px]"
+            animate={{
+              scale: [1, 1.1, 1],
+              opacity: [0.5, 0.1, 0.5],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              delay: 0.5,
+            }}
+          />
+
+
+
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="absolute inset-12 rounded-full overflow-hidden border border-on-surface/10 bg-surface-container-low shadow-2xl z-10"
+          >
+            <Image
               src="https://i.ibb.co.com/gMVjdhp0/Whats-App-Image-2026-04-18-at-1-47-29-PM.jpg"
-              alt="Toufiq Profile"
+              alt="Profile"
               fill
-              className="object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700 hover:scale-105"
-              sizes="(max-width: 768px) 288px, 450px"
-              priority
-              unoptimized
+              className="object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
             />
-          </div>
+          </motion.div>
         </motion.div>
 
-        {/* Availability Badge */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.5 }}
+          transition={{ delay: 1.2 }}
           className="mt-12 flex items-center gap-xs px-4 py-2 rounded-full bg-tertiary-container/10 border border-tertiary/20 backdrop-blur-sm shadow-lg shadow-tertiary/5"
         >
           <span className="relative flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-tertiary shadow-[0_0_10px_var(--color-tertiary)]"></span>
           </span>
-          <span className="text-label-sm font-label-sm text-tertiary uppercase tracking-widest">Available for hire</span>
+          <span className="text-label-sm text-tertiary uppercase tracking-widest">
+            Available for hire
+          </span>
         </motion.div>
       </div>
     </section>

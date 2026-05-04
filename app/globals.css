@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant light (.light &);
 
 :root {
   /* Colors - Default Dark Theme */

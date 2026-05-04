@@ -11,7 +11,7 @@ const SkillItem = ({ name, level, icon, color }) => (
       </div>
       <span className="text-primary-container font-bold text-xs">{level}%</span>
     </div>
-    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+    <div className="h-1.5 w-full bg-on-surface/5 rounded-full overflow-hidden">
       <motion.div
         initial={{ width: 0 }}
         whileInView={{ width: `${level}%` }}
@@ -33,13 +33,13 @@ const SkillCard = ({ title, icon, iconColor, skills, delay }) => (
     viewport={{ once: true }}
     transition={{ duration: 0.8, delay }}
     whileHover={{ y: -5, borderColor: 'rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.03)' }}
-    className="bg-surface-container rounded-2xl border border-white/5 p-6 md:p-8 transition-all duration-300 group"
+    className="bg-surface-container rounded-2xl border border-on-surface/5 p-6 md:p-8 transition-all duration-300 group"
   >
     <div className="flex items-center gap-3 mb-8">
       <span className="material-symbols-outlined text-2xl" style={{ color: iconColor, fontVariationSettings: "'FILL' 1" }}>
         {icon}
       </span>
-      <h2 className="font-headline-md text-sm md:text-headline-md text-white uppercase tracking-[0.2em]">{title}</h2>
+      <h2 className="font-headline-md text-sm md:text-headline-md text-on-surface uppercase tracking-[0.2em]">{title}</h2>
     </div>
     <div className="space-y-6">
       {skills.map((skill) => (
@@ -100,7 +100,7 @@ export default function Skills() {
             whileInView={{ opacity: 0.03, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
-            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-white uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
           >
             SKILLS & EXPERTISE
           </motion.h2>
