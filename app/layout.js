@@ -23,8 +23,8 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata = {
-  title: "TOUFIQ — Frontend Web-Developer Portfolio",
-  description: "Portfolio of Toufiq, a Frontend Web-Developer specializing in React and Design Systems.",
+  title: "Toufiq Alahe - MERN Stack Developer | Building Modern Web Experiences ",
+  description: "Full Stack Web Developer skilled in MERN stack, focused on building modern, responsive web applications.",
 };
 
 export default function RootLayout({ children }) {

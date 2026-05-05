@@ -80,6 +80,7 @@ const TechCard = ({ tech, index }) => {
       <span className="text-[10px] sm:text-[11px] md:text-[13px] font-medium text-on-surface/70 group-hover:text-on-surface transition-colors duration-300 text-center">
         {tech.name}
       </span>
+
     </motion.div>
   );
 };
@@ -91,31 +92,43 @@ export default function TechStack() {
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-6">
         {/* Section Title Shell */}
-        <div className="relative flex flex-col items-center justify-center mb-6 md:mb-10 px-6 overflow-hidden">
-          <motion.h2
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 0.03, scale: 1 }}
+        <div className="text-center mb-16 space-y-6">
+          {/* Section Title Shell */}
+          <div className="relative flex flex-col items-center justify-center mb-6 md:mb-10 px-6 overflow-hidden">
+            <motion.h2
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 0.03, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: 'easeOut' }}
+              className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+            >
+              TECHNOLOGIES
+            </motion.h2>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-headline-lg text-3xl md:text-headline-lg text-on-surface relative z-10 tracking-tight"
+            >
+              TECHNO<span className="text-primary-container">LOGIES</span>
+            </motion.h1>
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: '4rem' }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="h-1 bg-primary-container mt-4 rounded-full relative z-10 shadow-[0_0_10px_var(--color-primary-container)]"
+            />
+          </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: 'easeOut' }}
-            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+            transition={{ delay: 0.3 }}
+            className="font-body-md md:text-body-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
           >
-            TECHNOLOGIES
-          </motion.h2>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-headline-lg text-3xl md:text-headline-lg text-on-surface relative z-10 tracking-tight"
-          >
-            TECHNO<span className="text-primary-container">LOGIES</span>
-          </motion.h1>
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: '4rem' }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-1 bg-primary-container mt-4 rounded-full relative z-10 shadow-[0_0_10px_var(--color-primary-container)]"
-          />
+            Technologies I use to build fast, scalable, and user-friendly web applications.
+          </motion.p>
         </div>
 
         <div className="flex flex-col items-center gap-8 md:gap-10">

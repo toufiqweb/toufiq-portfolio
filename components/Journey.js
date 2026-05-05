@@ -152,6 +152,15 @@ export default function Journey() {
             className="h-1 bg-primary mt-4 rounded-full relative z-10"
           />
         </div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="text-slate-400 font-body-lg text-base md:text-lg max-w-2xl mx-auto opacity-80 mt-6"
+        >
+          My growth as a developer, from the beginning to now—highlighting the challenges I’ve overcome, the skills I’ve gained, and the consistency that keeps me moving forward.
+        </motion.p>
       </div>
 
       {/* Timeline Section */}

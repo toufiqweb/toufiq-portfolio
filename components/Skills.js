@@ -32,8 +32,8 @@ const SkillCard = ({ title, icon, iconColor, skills, delay }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8, delay }}
-    whileHover={{ y: -5, borderColor: 'rgba(255,255,255,0.1)', backgroundColor: 'rgba(255,255,255,0.03)' }}
-    className="bg-surface-container rounded-2xl border border-on-surface/5 p-6 md:p-8 transition-all duration-300 group"
+    whileHover={{ y: -5 }}
+    className="bg-surface-container rounded-2xl border border-on-surface/5 p-6 md:p-8 transition-all duration-300 hover:border-on-surface/10 hover:bg-on-surface/5 group"
   >
     <div className="flex items-center gap-3 mb-8">
       <span className="material-symbols-outlined text-2xl" style={{ color: iconColor, fontVariationSettings: "'FILL' 1" }}>
@@ -125,7 +125,7 @@ export default function Skills() {
           transition={{ delay: 0.3 }}
           className="font-body-md md:text-body-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
         >
-          A snapshot of my current skills and continuous learning journey across modern web development.
+          A snapshot of my technical skills and continuous growth as a developer. I focus on mastering modern technologies while improving problem-solving and writing clean, efficient code.
         </motion.p>
       </div>
 

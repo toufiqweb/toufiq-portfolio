@@ -32,13 +32,8 @@ const StatCard = ({ label, value, suffix = '', isText = false, index }) => {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-      whileHover={{
-        y: -10,
-        borderColor: 'var(--color-primary-container)',
-        backgroundColor: 'var(--color-surface-container-high)',
-        boxShadow: '0 10px 30px -10px var(--color-primary-container)'
-      }}
-      className="p-6 md:p-8 rounded-2xl bg-surface-container border border-outline/10 transition-all duration-300 flex flex-col items-center justify-center text-center h-full"
+      whileHover={{ y: -10 }}
+      className="p-6 md:p-8 rounded-2xl bg-surface-container border border-outline/10 transition-all duration-300 flex flex-col items-center justify-center text-center h-full hover:border-primary-container hover:bg-surface-container-high hover:shadow-[0_10px_30px_-10px_var(--color-primary-container)]"
     >
       <span className="text-on-surface/50 font-label-sm uppercase text-[10px] md:text-xs tracking-widest mb-2">{label}</span>
       <div className={`font-headline-lg text-on-surface flex items-baseline justify-center flex-wrap gap-1 ${isText ? 'text-lg md:text-xl lg:text-2xl' : 'text-3xl md:text-headline-lg'}`}>
@@ -56,9 +51,9 @@ const StatCard = ({ label, value, suffix = '', isText = false, index }) => {
 export default function Stats() {
   const stats = [
     { label: 'Journey Started', value: 'Dec 2025', isText: true },
-    { label: 'Projects Built', value: 10, suffix: '+' },
-    { label: 'Consistency', value: 100, suffix: ' Days' },
-    { label: 'Currently Learning', value: 'Next.js & Backend', isText: true },
+    { label: 'Projects Built', value: 12, suffix: '+' },
+    { label: 'Coding Streak', value: 110, suffix: '+ Days' },
+    { label: 'GitHub Activity', value: 850, suffix: '+ Commits' },
   ];
 
   return (

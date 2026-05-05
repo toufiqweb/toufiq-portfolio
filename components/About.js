@@ -42,32 +42,45 @@ export default function About() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tertiary/10 blur-[120px] -z-10 rounded-full"></div>
 
       {/* Section Title Shell */}
-      <div className="relative flex flex-col items-center justify-center mb-16 md:mb-24 px-6 overflow-hidden">
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 0.03, scale: 1 }}
+      <div className='text-center mb-16 space-y-6'>
+        <div className="relative flex flex-col items-center justify-center mb-6 md:mb-10 px-6 overflow-hidden">
+          <motion.h2
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 0.03, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+          >
+            ABOUT ME
+          </motion.h2>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-headline-lg text-3xl md:text-headline-lg text-on-surface relative z-10 tracking-tight"
+          >
+            About <span className="text-primary">Me</span>
+          </motion.h1>
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: '3rem' }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="h-1 bg-primary mt-4 rounded-full relative z-10"
+          />
+
+        </div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: 'easeOut' }}
-          className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+          transition={{ delay: 0.3 }}
+          className="font-body-md md:text-body-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
         >
-          ABOUT ME
-        </motion.h2>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-headline-lg text-3xl md:text-headline-lg text-on-surface relative z-10 tracking-tight"
-        >
-          About <span className="text-primary">Me</span>
-        </motion.h1>
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: '3rem' }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="h-1 bg-primary mt-4 rounded-full relative z-10"
-        />
+          A self-taught developer driven by curiosity and consistency, constantly learning and improving.
+        </motion.p>
       </div>
+
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left Column: Profile */}
