@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Magnetic from './Magnetic';
 import emailjs from '@emailjs/browser';
+import { FaDiscord, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 export default function Contact() {
   const revealVariants = {
@@ -48,6 +50,12 @@ export default function Contact() {
     }
 
   };
+
+  const socialLinks = [
+    { icon: FaGithub, href: 'https://github.com/toufiqweb' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/toufiq-alahe-dev' },
+    { icon: FaDiscord, href: 'https://discord.com/users/toufiq7367' },
+  ]
 
   return (
     <section id="contact" className="w-full py-32  relative overflow-hidden">
@@ -128,6 +136,28 @@ export default function Contact() {
                 <p className="font-label-sm text-neutral-500 uppercase">Email me at</p>
                 <p className="font-headline-md text-xl text-on-surface">toufiqalahe.dev@gmail.com</p>
               </div>
+
+            </motion.div>
+
+            <motion.div className="flex flex-col gap-4 items-center lg:items-start">
+              <div className="flex gap-4">
+                {socialLinks.map((link, i) => {
+                  const Icon = link.icon;
+
+                  return (
+                    <Magnetic key={i} strength={0.4}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-surface-container flex items-center justify-center border border-on-surface/5 hover:border-primary/50 hover:bg-primary/5 transition-all group hover:scale-110"
+                      >
+                        <Icon className="text-slate-400 group-hover:text-primary transition-colors text-xl sm:text-2xl" />
+                      </a>
+                    </Magnetic>
+                  );
+                })}
+              </div>
             </motion.div>
 
             {/* Availability Badge */}
@@ -164,8 +194,8 @@ export default function Contact() {
                   <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Full Name</label>
                   <input
                     name="from_name"
-                    className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface"
-                    placeholder="John Doe"
+                    className="w-full bg-transparent px-2 border-b border-on-surface/10 py-3 text-on-surface"
+                    placeholder="Your full name"
                     type="text"
                     required
                   />
@@ -175,8 +205,8 @@ export default function Contact() {
                   <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Email Address</label>
                   <input
                     name="from_email"
-                    className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface"
-                    placeholder="john@example.com"
+                    className="w-full bg-transparent px-2 border-b border-on-surface/10 py-3 text-on-surface"
+                    placeholder="Your email address"
                     type="email"
                     required
                   />
@@ -188,8 +218,8 @@ export default function Contact() {
                 <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Subject</label>
                 <input
                   name="subject"
-                  className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface"
-                  placeholder="Project Inquiry"
+                  className="w-full bg-transparent px-2 border-b border-on-surface/10 py-3 text-on-surface"
+                  placeholder="Subject of your message"
                   type="text"
                   required
                 />
@@ -199,8 +229,8 @@ export default function Contact() {
                 <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Message</label>
                 <textarea
                   name="message"
-                  className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface resize-none"
-                  placeholder="Tell me about your project..."
+                  className="w-full bg-transparent px-2 border-b border-on-surface/10 py-3 text-on-surface resize-none"
+                  placeholder="Describe your project or inquiry in detail..."
                   rows="4"
                   required
                 ></textarea>
