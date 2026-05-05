@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Magnetic from './Magnetic';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const revealVariants = {
@@ -18,10 +19,34 @@ export default function Contact() {
     }),
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted');
+
+    try {
+      // Send mail to you
+      await emailjs.sendForm(
+        'service_pf2azad',
+        'template_shrxd68',
+        e.target,
+        'FJcq7e9dZRGyj528M'
+      );
+
+      // Send auto reply to sender
+      await emailjs.sendForm(
+        'service_pf2azad',
+        'template_urm4vvu',
+        e.target,
+        'FJcq7e9dZRGyj528M'
+      );
+
+      alert('Message sent successfully!');
+      e.target.reset();
+
+    } catch (error) {
+      console.log(error);
+      alert('Failed to send message');
+    }
+
   };
 
   return (
@@ -101,7 +126,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-label-sm text-neutral-500 uppercase">Email me at</p>
-                <p className="font-headline-md text-xl text-on-surface">hello@rb-frontend.dev</p>
+                <p className="font-headline-md text-xl text-on-surface">toufiqalahe.dev@gmail.com</p>
               </div>
             </motion.div>
 
@@ -132,39 +157,49 @@ export default function Contact() {
 
 
             <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
                 <div className="relative">
                   <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Full Name</label>
                   <input
-                    className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface font-body-md form-input-focus transition-all placeholder:text-on-surface/50"
+                    name="from_name"
+                    className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface"
                     placeholder="John Doe"
                     type="text"
                     required
                   />
                 </div>
+
                 <div className="relative">
                   <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Email Address</label>
                   <input
-                    className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface font-body-md form-input-focus transition-all placeholder:text-on-surface/50"
+                    name="from_email"
+                    className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface"
                     placeholder="john@example.com"
                     type="email"
                     required
                   />
                 </div>
+
               </div>
+
               <div className="relative">
                 <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Subject</label>
                 <input
-                  className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface font-body-md form-input-focus transition-all placeholder:text-on-surface/50"
+                  name="subject"
+                  className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface"
                   placeholder="Project Inquiry"
                   type="text"
                   required
                 />
               </div>
+
               <div className="relative">
                 <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Message</label>
                 <textarea
-                  className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface font-body-md form-input-focus transition-all resize-none placeholder:text-on-surface/50"
+                  name="message"
+                  className="w-full bg-transparent border-b border-on-surface/10 py-3 text-on-surface resize-none"
                   placeholder="Tell me about your project..."
                   rows="4"
                   required
@@ -173,12 +208,13 @@ export default function Contact() {
 
               <Magnetic strength={0.1}>
                 <button
-                  className="w-full py-5 bg-gradient-to-r from-primary-container to-tertiary-container text-on-primary-container font-headline-md rounded-lg hover:shadow-[0_0_30px_rgba(255,87,51,0.4)] transition-all active:scale-[0.98] mt-4"
+                  className="w-full py-5 bg-gradient-to-r from-primary-container to-tertiary-container text-on-primary-container rounded-lg"
                   type="submit"
                 >
                   Send Message
                 </button>
               </Magnetic>
+
             </form>
           </motion.div>
         </div>
