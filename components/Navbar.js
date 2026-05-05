@@ -114,13 +114,7 @@ export default function Navbar() {
             {/* Theme Toggle */}
             <ThemeToggle />
 
-            <div className="hidden md:flex items-center gap-4">
-              <Magnetic strength={0.3}>
-                <button className="material-symbols-outlined text-slate-400 hover:text-primary transition-all duration-300 p-2 hover:bg-on-surface/5 rounded-lg">
-                  terminal
-                </button>
-              </Magnetic>
-            </div>
+
             <div className="hidden md:block">
               <Magnetic strength={0.2}>
                 <a

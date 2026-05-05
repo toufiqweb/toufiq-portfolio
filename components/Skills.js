@@ -56,12 +56,10 @@ export default function Skills() {
       icon: "code",
       iconColor: "var(--color-primary-container)",
       skills: [
-        { name: "HTML", level: 90, icon: "html" },
-        { name: "CSS", level: 85, icon: "css" },
-        { name: "Tailwind", level: 90, icon: "grid_view" },
-        { name: "JavaScript", level: 92, icon: "javascript" },
-        { name: "React", level: 95, icon: "deployed_code" },
-        { name: "MongoDB", level: 90, icon: "database" },
+        { name: "HTML", level: 80, icon: "html" },
+        { name: "CSS", level: 82, icon: "css" },
+        { name: "Tailwind", level: 85, icon: "grid_view" },
+        { name: "JavaScript", level: 80, icon: "javascript" },
       ]
     },
     {
@@ -69,11 +67,11 @@ export default function Skills() {
       icon: "auto_awesome",
       iconColor: "var(--color-tertiary)",
       skills: [
-        { name: "TypeScript", level: 88, icon: "conversion_path" },
-        { name: "Next.js", level: 90, icon: "dynamic_feed" },
-        { name: "Redux", level: 85, icon: "account_tree" },
-        { name: "Express JS", level: 85, icon: "api" },
-        { name: "Mongoose", level: 87, icon: "link" },
+        { name: "React", level: 85, icon: "deployed_code" },
+        { name: "Next.js", level: 80, icon: "dynamic_feed" },
+        { name: "MongoDB", level: 75, icon: "database" },
+        { name: "Express JS", level: 75, icon: "api" },
+
       ]
     },
     {
@@ -81,11 +79,11 @@ export default function Skills() {
       icon: "psychology",
       iconColor: "var(--color-secondary)",
       skills: [
-        { name: "Team Collaboration", level: 90, icon: "groups" },
-        { name: "Communication", level: 88, icon: "chat" },
-        { name: "Problem Solving", level: 85, icon: "construction" },
-        { name: "Time Management", level: 92, icon: "timer" },
-        { name: "Adaptability", level: 87, icon: "sync_alt" },
+        { name: "Team Collaboration", level: 82, icon: "groups" },
+        { name: "Communication", level: 85, icon: "chat" },
+        { name: "Problem Solving", level: 80, icon: "construction" },
+        { name: "Time Management", level: 80, icon: "timer" },
+        { name: "Adaptability", level: 82, icon: "sync_alt" },
       ]
     }
   ];
@@ -102,7 +100,7 @@ export default function Skills() {
             transition={{ duration: 1.5, ease: 'easeOut' }}
             className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
           >
-            SKILLS & EXPERTISE
+            SKILLS & PROGRESS
           </motion.h2>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -110,7 +108,7 @@ export default function Skills() {
             viewport={{ once: true }}
             className="font-headline-lg text-3xl md:text-headline-lg text-on-surface relative z-10 tracking-tight"
           >
-            Skills & <span className="text-primary-container">EXPERTISE</span>
+            SkillS & <span className="text-primary-container">PROGRESS</span>
           </motion.h1>
           <motion.div
             initial={{ width: 0 }}
@@ -127,7 +125,7 @@ export default function Skills() {
           transition={{ delay: 0.3 }}
           className="font-body-md md:text-body-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
         >
-          A comprehensive overview of my technical proficiency across the modern web stack, blending creative engineering with robust architectural solutions.
+          A snapshot of my current skills and continuous learning journey across modern web development.
         </motion.p>
       </div>
 

@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Magnetic from './Magnetic';
+import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function About() {
   const revealVariants = {
@@ -19,16 +21,18 @@ export default function About() {
   };
 
   const skills = [
-    { name: 'Frontend Development', icon: 'terminal' },
-    { name: 'Backend Development', icon: 'database' },
-    { name: 'Computer Science', icon: 'psychology' },
+    { name: 'Web Development', icon: 'code' },            // clean dev icon
+    { name: 'React & Next.js Apps', icon: 'hub' },             // component system
+    { name: 'Responsive UI Design', icon: 'devices' },         // multi-device view
+    { name: 'Problem Solving', icon: 'psychology' },           // thinking/logic
+    { name: 'Clean Code ', icon: 'task_alt' },        // correctness/quality
   ];
 
   const socialLinks = [
-    { icon: 'public', href: '#' },
-    { icon: 'hub', href: '#' },
-    { icon: 'chat', href: '#' },
-    { icon: 'mail', href: '#' },
+    { icon: FaGithub, href: 'https://github.com/toufiqweb' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/toufiq-alahe-dev' },
+    { icon: FaDiscord, href: 'https://discord.com/users/toufiq7367' },
+    { icon: MdEmail, href: 'toufiqalahe.dev@gmail.com' },
   ];
 
   return (
@@ -98,7 +102,7 @@ export default function About() {
             >
               <span className="font-label-sm text-[10px] sm:text-xs text-on-surface flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>code</span>
-                Developer
+                Web Developer
               </span>
             </motion.div>
             <motion.div
@@ -107,8 +111,8 @@ export default function About() {
               className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-surface-container-high border border-on-surface/10 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-xl backdrop-blur-md z-20"
             >
               <span className="font-label-sm text-[10px] sm:text-xs text-on-surface flex items-center gap-2">
-                <span className="material-symbols-outlined text-tertiary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>school</span>
-                CS Student
+                <span className="material-symbols-outlined text-tertiary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>auto_graph</span>
+                Self-Taught Developer
               </span>
             </motion.div>
           </motion.div>
@@ -134,7 +138,8 @@ export default function About() {
               custom={1}
               className="font-body-md md:text-body-lg text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
-              I’m Toufiq Alahe, a Web developer and Computer Science student with 3+ years of experience crafting high-performance digital experiences. I specialize in bridging the gap between technical architecture and intuitive user interfaces.
+              Self-taught Web Developer , quickly building strong skills in the MERN stack. A fast learner who turns challenges into growth and stays consistent through ongoing coding challenges on GitHub and LinkedIn. Focused on creating clean, responsive, and user-friendly web applications.
+
             </motion.p>
           </motion.div>
 
@@ -173,18 +178,27 @@ export default function About() {
           {/* Connect With Me Section */}
           <div className="flex flex-col sm:flex-row items-center lg:items-end gap-8 mt-4">
             <div className="flex flex-col gap-4 items-center lg:items-start">
-              <h4 className="font-label-sm text-[10px] md:text-xs text-slate-500 uppercase tracking-widest">Connect With Me</h4>
+              <h4 className="font-label-sm text-[10px] md:text-xs text-slate-500 uppercase tracking-widest">
+                Connect With Me
+              </h4>
+
               <div className="flex gap-4">
-                {socialLinks.map((link, i) => (
-                  <Magnetic key={i} strength={0.4}>
-                    <a
-                      href={link.href}
-                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-surface-container flex items-center justify-center border border-on-surface/5 hover:border-primary/50 hover:bg-primary/5 transition-all group"
-                    >
-                      <span className="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-xl sm:text-2xl">{link.icon}</span>
-                    </a>
-                  </Magnetic>
-                ))}
+                {socialLinks.map((link, i) => {
+                  const Icon = link.icon;
+
+                  return (
+                    <Magnetic key={i} strength={0.4}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-surface-container flex items-center justify-center border border-on-surface/5 hover:border-primary/50 hover:bg-primary/5 transition-all group hover:scale-110"
+                      >
+                        <Icon className="text-slate-400 group-hover:text-primary transition-colors text-xl sm:text-2xl" />
+                      </a>
+                    </Magnetic>
+                  );
+                })}
               </div>
             </div>
 

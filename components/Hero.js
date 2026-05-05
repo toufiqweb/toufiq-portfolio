@@ -7,7 +7,7 @@ import gsap from 'gsap';
 import Magnetic from './Magnetic';
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-const roles = ["WEB DEVELOPER", "FRONTEND DEVELOPER", "REACT DEVELOPER"];
+const roles = ["WEB DEVELOPER", "FRONTEND DEVELOPER", "MERN-STACK DEVELOPER"];
 
 export default function Hero() {
   const sectionRef = useRef(null);
