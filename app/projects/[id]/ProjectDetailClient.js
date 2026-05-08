@@ -24,7 +24,7 @@ export default function ProjectDetailClient({ id }) {
 
       {/* ── Back link ── */}
       <div style={{ position: 'fixed', top: '1.5rem', left: '1.5rem', zIndex: 200 }}>
-        <Link href="/#projects" style={{
+        <Link href="/" style={{
           display: 'flex', alignItems: 'center', gap: '0.5rem',
           padding: '0.5rem 1rem', borderRadius: '9999px',
           background: 'rgba(23,31,51,0.85)', backdropFilter: 'blur(12px)',

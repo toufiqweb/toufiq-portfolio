@@ -65,7 +65,7 @@ export default function Journey() {
 
       title: 'Curiosity to Commitment',
       icon: 'explore',
-      image: 'https://lh3.googleusercontent.com/aida/ADBb0ug55Ltlb0sVWuH62AcxZYh2PYZupLlJojC_2sPzwK56iuCWTvK1Jt7vFv0F51-ic94H-McXHk05zJ4ZJHZp60mTKJuCyILuJCl9ZrkJcID5YdexBL0xhuC43FL5axtcQDVYkleluG8yGLjtdyntxqvLBKrW1oV-jWNhD_oDSWMDHFOE_fweF1njxw2mdQuSan5QXN2XOKWnS72Mk2Y881Pwv52RA1FQDA6fwyrfjfP2ZQHJjXeFxsB_X1iwGbY3_xqcjtdNZS441Q',
+      image: 'https://i.ibb.co.com/chYrb0mX/file-00000000af00720894a50c454fc49a67.png',
       description: 'Everything started with curiosity. I began exploring what web development is and how websites actually work. While learning HTML & CSS, I realized it’s not just about writing code — it’s about turning ideas into real products. In the beginning, I struggled with basic structure, layout, and responsiveness. I got stuck many times, but gradually, the concepts became clearer.',
       align: 'left'
     },
@@ -73,7 +73,7 @@ export default function Journey() {
 
       title: 'Struggle & Discipline',
       icon: 'fitness_center',
-      image: 'https://lh3.googleusercontent.com/aida/ADBb0uje9cBBZZGO26sgNGw02lYB7GJClaPy0o1m4F5_qDc8Vhz-UQvHt68ackOX-RPffuOA5e3za3KBYmPX7RW-JzYKotf8JDnUR1lGxugra4z_eGRc73UYBtNTgK1_4Zdbj2EfDlrLgOpox-Kwk0yAJGovAFnsTe6iYvHC8VGSFDu2C7zmQceDY4vODESgcHjjjEGpVHgPeU1jcmx4qh5-xYlzz5P_4Y1sufnaoY6A5UhCkGgajMaS0vqfXOyEhfQiLmU2SJbRS5ftSpM',
+      image: 'https://i.ibb.co.com/xqxF3qHc/file-000000002ce47208b1e97bf1850bf5e2.png',
       description: 'This was the toughest phase. When I started JavaScript, everything felt confusing. Building logic, working with the DOM, and fixing bugs — I failed repeatedly. But this is where I made a decision: I wouldn’t quit, and I would code every single day. I started the 100 Days Coding Challenge on GitHub, which completely transformed my discipline.',
       align: 'right'
     },
@@ -81,7 +81,7 @@ export default function Journey() {
 
       title: 'Confidence Building',
       icon: 'trending_up',
-      image: 'https://lh3.googleusercontent.com/aida/ADBb0ugjzfwIDcGYU7mEXl4yR998tNBrc4-YORGfTAN5k0Y2KCxx26E8A_S9UOrmDsFZdeETocq6fevNlHwnP1wdmkgTOBZJyvnLE22p7kgj81PFgqLw7oA81nMo6mwyRIH3RrSuPn4o42CGGZaEvE5tSZSp-BwpTG2ZOyEnEpqCLFbKOFOM5v_0NFM14u3BvLbU9LS78FZXIYSApQvA-7GIg3UUGDCq7T3FRG2PG_FmhXjLwaqxHRAy-03ipKNvgQ_8lfclW4UBcq7CYw',
+      image: 'https://i.ibb.co.com/N03dj3t/file-00000000b8e471fabef8c703bb12abc6.png',
       description: 'Once I became more comfortable with JavaScript, my confidence started to grow.I began building small projects on my own — interactive UI and simple apps. That’s when the mindset shifted to: I can do this. I also started using Tailwind CSS to create more modern UI designs.',
       align: 'left'
     },
@@ -89,7 +89,7 @@ export default function Journey() {
 
       title: 'Entering the React Ecosystem',
       icon: 'hub',
-      image: 'https://lh3.googleusercontent.com/aida/ADBb0uhaGoZicpE4VTY3DS6e3L-m8t3U_OE7WDcyQ4Hk9izde2p7vPEQ8Ak21FNBcqL0t65BFJJmHHrxPPk3H2nImM7NUMAHA1RviI7DR30EqeFk7N5cjNmE4G8ClBrsUiC1TzXCl2WS_n-QdAYwPgtaXeBrtkFb8aXQ_avpfC7Wp7pyOi6rfwwEqd8siNojO3zIoIkQyj0d6fZNR_ClU4xUpBVAPJ2TFStnNuOTok9XdUYuBqW9na06KD24KFISbiTQ-HJv-a3ulxHXGQ',
+      image: 'https://i.ibb.co.com/HpYnDC8z/file-00000000eb7471fabe9b3313d8e98a4b.png',
       description: "In this phase, I took my frontend skills to the next level. Learning React introduced a completely new way of thinking — component-based architecture. Understanding props, state, and reusable components took time, but once it clicked, everything changed. I also started learning Next.js and explored routing, performance, and SSR concepts. ",
       align: 'right'
     },
@@ -97,7 +97,7 @@ export default function Journey() {
 
       title: 'Full-Stack Exploration',
       icon: 'dns',
-      image: 'https://lh3.googleusercontent.com/aida/ADBb0uibDVh9xmLB9hFZeUEi8DpuQYCaUFiKkEvmCCQRltHBqNEttwU2Obk30GjxX4XvoMHyA85cqv3EuKqXiFlOlv05Q7nBjdvYtCUKblNDyj1z_iFI6eiNtcvCBlWmBq90Sh4yFsp1q49h9VP-Ras9dYHuXWxfsj1Hv1jNburXV5NT5koR-0vo8nJr3LUO3LzI5wxUX0bHMWHQP_nPYz9xgCtjFlB8cw9ds1xifYr6_hcUrj963-UDDKOwhq6gmGEY-jswBS4be4jwiRs',
+      image: 'https://i.ibb.co.com/wFQYYq8y/file-0000000084a0720988297a712f0423c9.png',
       description: 'I transitioned from frontend to backend development.I started building APIs using Node.js and Express.js, and handled databases with MongoDB.The biggest challenge here was connecting frontend with backend systems.',
       align: 'left'
     },
@@ -105,7 +105,7 @@ export default function Journey() {
 
       title: 'Growth, Consistency & Professional Mindset',
       icon: 'auto_graph',
-      image: 'https://lh3.googleusercontent.com/aida/ADBb0uhaGoZicpE4VTY3DS6e3L-m8t3U_OE7WDcyQ4Hk9izde2p7vPEQ8Ak21FNBcqL0t65BFJJmHHrxPPk3H2nImM7NUMAHA1RviI7DR30EqeFk7N5cjNmE4G8ClBrsUiC1TzXCl2WS_n-QdAYwPgtaXeBrtkFb8aXQ_avpfC7Wp7pyOi6rfwwEqd8siNojO3zIoIkQyj0d6fZNR_ClU4xUpBVAPJ2TFStnNuOTok9XdUYuBqW9na06KD24KFISbiTQ-HJv-a3ulxHXGQ',
+      image: 'https://i.ibb.co.com/Lhd2RMD0/file-00000000a72071fab287d1bc8999a653.png',
       description: "Now I’m not just “learning code” — I’m growing as a developer. I continue my 100 Days Coding Challenge on LinkedIn. My focus has shifted beyond just skills — towards clean code, user experience, and long-term consistency.",
       align: 'right'
     },
