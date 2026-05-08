@@ -97,7 +97,7 @@ export default function Journey() {
 
       title: 'Full-Stack Exploration',
       icon: 'dns',
-      image: 'https://i.ibb.co.com/wFQYYq8y/file-0000000084a0720988297a712f0423c9.png',
+      image: 'https://i.ibb.co.com/LXNd40FX/Picsart-26-05-08-15-13-45-157-jpg.jpg',
       description: 'I transitioned from frontend to backend development.I started building APIs using Node.js and Express.js, and handled databases with MongoDB.The biggest challenge here was connecting frontend with backend systems.',
       align: 'left'
     },
