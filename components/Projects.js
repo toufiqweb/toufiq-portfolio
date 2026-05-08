@@ -36,7 +36,7 @@ const ProjectCard = ({ project, index }) => {
       {/* Project Info */}
       <div className="flex justify-between items-start mb-3">
         <Link href={`/projects/${project.id}`}>
-          <h3 className="font-headline-lg text-xl md:text-2xl text-on-surface tracking-tight group-hover:text-primary-container transition-colors duration-300">
+          <h3 className="font-headline-lg line-clamp-1 text-xl md:text-2xl text-on-surface tracking-tight group-hover:text-primary-container transition-colors duration-300">
             {project.title}
           </h3>
         </Link>

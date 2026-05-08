@@ -264,9 +264,36 @@ export default function ProjectDetailClient({ id }) {
                   The Problem
                 </h3>
 
-                <p className="text-sm text-[var(--color-on-surface-variant)] leading-relaxed">
-                  {project.problem}
-                </p>
+                <ul className="text-sm text-[var(--color-on-surface-variant)] leading-relaxed space-y-2">
+                  {project.problem.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="text-[var(--color-primary-container)] text-xs mt-[3px]">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+              </div>
+
+              {/* solution card */}
+              <div className="mt-6 p-6 rounded-xl border border-white/10 border-l-4 border-l-green-400 bg-white/5 backdrop-blur-md hover:bg-white/10 transition">
+
+                <h3 className="flex items-center gap-2 mb-3 font-semibold text-[var(--color-on-surface)]">
+                  <span className="material-symbols-outlined text-green-400 text-lg">
+                    task_alt
+                  </span>
+                  The Solution
+                </h3>
+
+                <ul className="text-sm text-[var(--color-on-surface-variant)] leading-relaxed space-y-2">
+                  {project.solution.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="text-green-400 text-xs mt-[3px]">✔</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
               </div>
 
             </motion.div>
@@ -284,22 +311,24 @@ export default function ProjectDetailClient({ id }) {
           aria-hidden
           className="absolute inset-0 text-[8vw] font-extrabold text-[var(--color-on-surface)] opacity-[0.025] rotate-[-4deg] whitespace-nowrap leading-none select-none pointer-events-none"
         >
-          ENGINE · ENGINE · ENGINE · ENGINE
+          TECHNICAL · TECHNICAL · TECHNICAL · TECHNICAL
         </p>
 
         <div className="relative z-10 max-w-7xl mx-auto flex flex-wrap gap-16">
 
           {/* sidebar */}
           <div className="flex-[0_1_280px] min-w-[260px]">
+
             <h2 className="text-2xl font-bold text-[var(--color-primary-container)] leading-tight mb-4">
-              TECHNICAL <br /> DEEP DIVE
+              TECH <br /> HIGHLIGHTS
             </h2>
 
             <p className="text-sm text-[var(--color-on-surface-variant)] leading-relaxed mb-6">
-              Key engineering decisions that set this project apart.
+              Key decisions behind this project.
             </p>
 
-            <ul className="flex flex-col gap-4">
+            {/* tech highlights */}
+            <ul className="flex flex-col gap-4 mb-8">
               {project.techHighlights.map((h, i) => (
                 <li key={i} className="flex gap-3 items-start">
                   <span className="material-symbols-outlined text-[var(--color-tertiary)] text-lg shrink-0">
@@ -311,12 +340,39 @@ export default function ProjectDetailClient({ id }) {
                 </li>
               ))}
             </ul>
-          </div>
 
+            {/* stats moved here */}
+            <div className="grid grid-cols-1 gap-4">
+              {project.stats.map((s, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="p-5 rounded-2xl border border-white/5 bg-[rgba(23,31,51,0.4)] backdrop-blur-md"
+                >
+                  <div
+                    className="text-2xl font-extrabold mb-1"
+                    style={{
+                      color: statColor[s.color] ?? "var(--color-primary-container)",
+                    }}
+                  >
+                    {s.value}
+                  </div>
+
+                  <p className="text-[10px] uppercase tracking-[0.12em] text-[var(--color-on-surface-variant)]">
+                    {s.label}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
+          </div>
           {/* right side */}
           <div className="flex-1 min-w-[300px]">
 
-            {/* code editor */}
+            {/* features card */}
             <div className="rounded-2xl border border-white/10 bg-[rgba(23,31,51,0.7)] backdrop-blur-xl shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
 
               {/* header */}
@@ -326,49 +382,64 @@ export default function ProjectDetailClient({ id }) {
                 <div className="w-3 h-3 rounded-full bg-[var(--color-primary-container)]" />
 
                 <span className="ml-auto text-[10px] uppercase text-[var(--color-on-surface-variant)] opacity-50 font-mono">
-                  initializer.js
+                  features.jsx
                 </span>
               </div>
 
-              {/* code */}
-              <pre className="m-0 p-6 text-xs md:text-sm font-mono leading-[1.8] text-[var(--color-on-surface-variant)] overflow-x-auto">
-                <span className="text-[var(--color-primary-container)]">const</span>{" "}
-                <span className="text-[var(--color-secondary)]">init</span> = async () =&gt; {"{"}
-                {"\n"}  <span className="text-[var(--color-outline)]">{'/* configure engine */'}</span>
-                {"\n"}  <span className="text-[var(--color-primary-container)]">const</span> config = {"{"}
-                {"\n"}    cache: <span className="text-[var(--color-tertiary)]">true</span>,
-                {"\n"}    workers: navigator.hardwareConcurrency,
-                {"\n"}  {"}"};
-                {"\n"}  <span className="text-[var(--color-primary-container)]">await</span> bootstrap(config);
-                {"\n"}  render();
-                {"\n"}{"}"};
-              </pre>
+              {/* features */}
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-[var(--color-primary-container)] mb-4">
+                  Features
+                </h3>
+
+                <ul className="space-y-3 text-sm text-[var(--color-on-surface-variant)]">
+                  {project.features.map((feature, i) => (
+                    <li key={i} className="flex gap-3 items-start group">
+                      <span className="mt-[3px] text-[var(--color-primary-container)] transition group-hover:scale-110">
+                        ✔
+                      </span>
+                      <span className="group-hover:text-[var(--color-on-surface)] transition">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            {/* stats */}
-            <div className="grid grid-cols-2 gap-6 mt-8">
-              {project.stats.map((s, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className={`p-8 rounded-2xl border border-white/5 bg-[rgba(23,31,51,0.4)] backdrop-blur-md ${i % 2 === 1 ? "mt-10" : ""
-                    }`}
-                >
-                  <div
-                    className="text-5xl font-extrabold leading-none mb-2"
-                    style={{ color: statColor[s.color] ?? "var(--color-primary-container)" }}
-                  >
-                    {s.value}
-                  </div>
+            {/* challenges */}
+            <div className="mt-8 p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md">
+              <h3 className="font-semibold mb-4 text-[var(--color-primary-container)]">
+                Key Challenges Solved
+              </h3>
 
-                  <p className="text-[10px] uppercase tracking-[0.12em] text-[var(--color-on-surface-variant)] font-[var(--font-space-grotesk)]">
-                    {s.label}
-                  </p>
-                </motion.div>
-              ))}
+              <ul className="space-y-2 text-sm text-[var(--color-on-surface-variant)]">
+                {project.challenges.map((c, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-[var(--color-primary-container)]">•</span>
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* packages (NEW) */}
+            <div className="mt-8 p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md">
+
+              <h3 className="text-lg font-semibold text-[var(--color-primary-container)] mb-4">
+                Packages Used
+              </h3>
+
+              <div className="flex flex-wrap gap-2">
+                {project.packages.map((pkg, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 text-xs rounded-full border border-white/10 bg-white/5 text-[var(--color-on-surface-variant)] hover:text-[var(--color-on-surface)] hover:bg-white/10 transition"
+                  >
+                    {pkg}
+                  </span>
+                ))}
+              </div>
+
             </div>
 
           </div>
