@@ -22,7 +22,7 @@ const ProjectCard = ({ project, index }) => {
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0 opacity-80 group-hover:opacity-100"
+            className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale-20 group-hover:grayscale-0 opacity-80 group-hover:opacity-100"
             unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
@@ -62,11 +62,11 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </div>
 
-      <div className="flex gap-2 py-2 uppercase mb-4">
+      <div className="flex gap-4 py-2 flex-wrap  uppercase mb-4">
         {project.tech.map((item, i) => (
           <div key={i}>
             <Magnetic strength={0.2}>
-              <span className="bg-on-surface/5 border border-on-surface/10 px-3 py-2 rounded-xl text-on-surface text-xs hover:border-primary-container/50 hover:bg-on-surface/10 transition-all active:scale-95 shadow-sm">
+              <span className="bg-on-surface/5 border border-on-surface/10 px-3  py-2 rounded-xl text-on-surface text-xs hover:border-primary-container/50 hover:bg-on-surface/10 transition-all active:scale-95 shadow-sm">
                 {item}
               </span>
             </Magnetic>

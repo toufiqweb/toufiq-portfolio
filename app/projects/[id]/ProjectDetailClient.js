@@ -78,9 +78,9 @@ export default function ProjectDetailClient({ id }) {
             >
               {/* badge */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 border border-[#ff5733]/30 bg-[#ff5733]/10">
-                <span className="w-2 h-2 rounded-full bg-[var(--color-tertiary)] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
                 <span className="text-[0.7rem] uppercase tracking-[0.15em] font-semibold text-[var(--color-primary-container)] font-[var(--font-space-grotesk)]">
-                  Case Study · 2024
+                  Project Overview · {new Date().getFullYear()}
                 </span>
               </div>
 
@@ -254,47 +254,7 @@ export default function ProjectDetailClient({ id }) {
                 </p>
               </div>
 
-              {/* problem card */}
-              <div className="mt-6 p-6 rounded-xl border border-white/10 border-l-4 border-l-[var(--color-primary-container)] bg-white/5 backdrop-blur-md hover:bg-white/10 transition">
 
-                <h3 className="flex items-center gap-2 mb-3 font-semibold text-[var(--color-on-surface)]">
-                  <span className="material-symbols-outlined text-[var(--color-primary-container)] text-lg">
-                    warning
-                  </span>
-                  The Problem
-                </h3>
-
-                <ul className="text-sm text-[var(--color-on-surface-variant)] leading-relaxed space-y-2">
-                  {project.problem.map((item, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="text-[var(--color-primary-container)] text-xs mt-[3px]">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
-              </div>
-
-              {/* solution card */}
-              <div className="mt-6 p-6 rounded-xl border border-white/10 border-l-4 border-l-green-400 bg-white/5 backdrop-blur-md hover:bg-white/10 transition">
-
-                <h3 className="flex items-center gap-2 mb-3 font-semibold text-[var(--color-on-surface)]">
-                  <span className="material-symbols-outlined text-green-400 text-lg">
-                    task_alt
-                  </span>
-                  The Solution
-                </h3>
-
-                <ul className="text-sm text-[var(--color-on-surface-variant)] leading-relaxed space-y-2">
-                  {project.solution.map((item, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <span className="text-green-400 text-xs mt-[3px]">✔</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-
-              </div>
 
             </motion.div>
 
@@ -415,6 +375,21 @@ export default function ProjectDetailClient({ id }) {
 
               <ul className="space-y-2 text-sm text-[var(--color-on-surface-variant)]">
                 {project.challenges.map((c, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-[var(--color-primary-container)]">•</span>
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* futureUpdates */}
+            <div className="mt-8 p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md">
+              <h3 className="font-semibold mb-4 text-[var(--color-primary-container)]">
+                Future Updates
+              </h3>
+
+              <ul className="space-y-2 text-sm text-[var(--color-on-surface-variant)]">
+                {project.futureUpdates.map((c, i) => (
                   <li key={i} className="flex gap-2">
                     <span className="text-[var(--color-primary-container)]">•</span>
                     {c}
