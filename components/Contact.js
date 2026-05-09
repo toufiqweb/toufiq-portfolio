@@ -138,6 +138,24 @@ export default function Contact() {
               </div>
 
             </motion.div>
+            <motion.div
+              custom={1}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={revealVariants}
+              className="flex items-center gap-4 group"
+            >
+              <div className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center bg-surface-container-high transition-transform group-hover:scale-110 group-hover:border-primary">
+                <span className="material-symbols-outlined text-primary">call</span>
+              </div>
+              <div>
+                <p className="font-label-sm text-neutral-500 uppercase">Call me at</p>
+                <p className="font-headline-md text-xl text-on-surface">+8801798800096</p>
+              </div>
+
+            </motion.div>
+
 
             <motion.div className="flex flex-col gap-4 items-center lg:items-start">
               <div className="flex gap-4">
