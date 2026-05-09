@@ -98,9 +98,7 @@ const ProjectCard = ({ project, index }) => {
 export default function Projects() {
   return (
     <section id="projects" className="relative w-full max-w-7xl mx-auto px-6 py-24 md:py-32 overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary-container/10 blur-[120px] -z-10 rounded-full" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-tertiary-container/10 blur-[120px] -z-10 rounded-full" />
+
 
       {/* Section Header */}
       <div className="text-center mb-20">

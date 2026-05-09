@@ -2,17 +2,13 @@
 
 import { motion } from 'framer-motion';
 import {
-  SiJavascript, SiTypescript, SiReact, SiNextdotjs,
-  SiNodedotjs, SiExpress, SiNestjs, SiMongodb,
-  SiPostgresql, SiPrisma, SiDocker, SiKubernetes,
+  SiJavascript, SiReact, SiNextdotjs,
+  SiNodedotjs, SiExpress, SiMongodb,
   SiTailwindcss, SiGit, SiHtml5, SiCss,
+  SiGithub, SiVercel, SiNetlify, SiFigma,
 
-
-  SiGithub,
-  SiVercel, SiNetlify, SiFigma,
-  SiPostman
 } from "react-icons/si";
-import { FaAws } from "react-icons/fa";
+import { VscVscode } from 'react-icons/vsc';
 
 const technologiesRow1 = [
   { name: 'HTML', icon: SiHtml5, color: '#E34F26' },
@@ -32,7 +28,7 @@ const technologiesRow2 = [
   { name: 'Vercel', icon: SiVercel, color: 'currentColor' },
   { name: 'Netlify', icon: SiNetlify, color: '#00C7B7' },
   { name: 'Figma', icon: SiFigma, color: '#F24E1E' },
-  { name: 'Postman', icon: SiPostman, color: '#FF6C37' },
+  { name: 'VS Code', icon: VscVscode, color: '#007ACC' },
 
 ];
 
