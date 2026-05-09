@@ -19,12 +19,7 @@ const expertiseData = [
     color: 'emerald',
     description:
       'Building secure, scalable, and efficient server-side applications and REST APIs.',
-    items: [
-      'Node.js',
-      'Express.js',
-      'MongoDB',
-      'Authentication ',
-    ],
+    items: ['Node.js', 'Express.js', 'MongoDB', 'Authentication'],
   },
   {
     title: 'UI / UX Design',
@@ -33,14 +28,8 @@ const expertiseData = [
     color: 'orange',
     description:
       'Creating smooth, responsive, and user-focused interfaces with reusable components and modern UI practices.',
-    items: [
-      'Responsive Design',
-      'Reusable Components',
-      'Animations',
-      'Accessibility',
-    ],
+    items: ['Responsive Design', 'Reusable Components', 'Animations', 'Accessibility'],
   },
-
   {
     title: 'Tools & Workflow',
     icon: 'settings',
@@ -103,14 +92,15 @@ export default function Skills() {
       {/* Header */}
       <div className="text-center mb-16 space-y-6">
         <div className="relative flex flex-col items-center justify-center overflow-hidden">
+
           <motion.h2
             initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 0.03, scale: 1 }}
+            whileInView={{ opacity: 0.04, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
-            className="absolute text-5xl md:text-7xl font-black uppercase tracking-[0.25em] text-white whitespace-nowrap pointer-events-none"
+            className="absolute text-5xl md:text-7xl font-black uppercase tracking-[0.25em] text-on-surface whitespace-nowrap pointer-events-none"
           >
-            MY Skills
+            Skills
           </motion.h2>
 
           <motion.h1
@@ -118,9 +108,9 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 text-3xl md:text-5xl font-bold text-white"
+            className="relative z-10 text-3xl md:text-5xl font-bold text-on-surface"
           >
-            My <span className="text-primary-container">Skills</span>
+            My <span className="text-primary">Skills</span>
           </motion.h1>
 
           <motion.div
@@ -128,7 +118,7 @@ export default function Skills() {
             whileInView={{ width: '80px' }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-1 rounded-full bg-primary-container mt-5 shadow-[0_0_12px_var(--color-primary-container)]"
+            className="h-1 rounded-full bg-primary mt-5 shadow-[0_0_20px_var(--color-primary)]"
           />
         </div>
 
@@ -137,15 +127,14 @@ export default function Skills() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="max-w-2xl mx-auto text-slate-400 leading-relaxed text-sm md:text-base"
+          className="max-w-2xl mx-auto text-on-surface/70 leading-relaxed text-sm md:text-base"
         >
-          I enjoy building modern web applications with clean UI,
-          responsive design, and scalable architecture while continuously
-          learning new technologies.
+          I enjoy building modern web applications with clean UI, responsive design,
+          and scalable architecture while continuously learning new technologies.
         </motion.p>
       </div>
 
-      {/* Bento Grid */}
+      {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {expertiseData.map((item, index) => {
           const styles = colorClasses[item.color];
@@ -158,29 +147,25 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.01 }}
-              className={`group relative overflow-hidden rounded-3xl border border-white/10 
-  bg-gradient-to-b from-white/[0.04] to-white/[0.01] 
-  backdrop-blur-xl p-8 transition-all duration-500
-  hover:border-white/20 hover:bg-white/[0.05]
-  ${styles.shadow}`}
+              className={`group relative overflow-hidden rounded-3xl border border-outline/20 
+              bg-surface-container/40 backdrop-blur-xl p-8 transition-all duration-500
+              hover:border-outline/40 hover:bg-surface-container/60
+              ${styles.shadow}`}
             >
-              {/* Animated Glow */}
+              {/* Glow */}
               <div
-                className={`absolute -top-16 -right-16 w-40 h-40 rounded-full blur-3xl opacity-40 group-hover:opacity-70 transition-all duration-500 ${styles.glow}`}
+                className={`absolute -top-16 -right-16 w-40 h-40 rounded-full blur-3xl opacity-30 group-hover:opacity-60 transition-all duration-500 ${styles.glow}`}
               />
-
-              {/* Grid Overlay */}
 
               {/* Top */}
               <div className="relative z-10 flex items-start justify-between mb-10">
+
                 {/* Icon */}
                 <div
-                  className={`relative flex justify-center p-2 items-center rounded-2xl border backdrop-blur-md transition-all duration-300 group-hover:scale-110 ${styles.iconBg}`}
+                  className={`p-3 flex justify-center items-center rounded-2xl border border-outline/20 backdrop-blur-md transition-all duration-300 group-hover:scale-110 ${styles.iconBg}`}
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-white/5 " />
-
                   <span
-                    className={`relative material-symbols-outlined text-3xl ${styles.iconText}`}
+                    className={`material-symbols-outlined text-3xl ${styles.iconText}`}
                     style={{ fontVariationSettings: "'FILL' 1" }}
                   >
                     {item.icon}
@@ -189,7 +174,7 @@ export default function Skills() {
 
                 {/* Tag */}
                 <span
-                  className={`text-[10px] md:text-[11px] px-3 py-1.5 rounded-full border uppercase tracking-[0.2em] font-medium backdrop-blur-md ${styles.tag}`}
+                  className={`text-[10px] px-3 py-1.5 rounded-full border uppercase tracking-[0.2em] font-medium backdrop-blur-md ${styles.tag}`}
                 >
                   {item.tag}
                 </span>
@@ -197,35 +182,34 @@ export default function Skills() {
 
               {/* Content */}
               <div className="relative z-10">
-                <h3 className="text-2xl line-clamp-1 group-hover:line-clamp-none font-semibold text-white mb-4 tracking-tight group-hover:translate-x-1 transition-transform duration-300">
+                <h3 className="text-xl line-clamp-1 group-hover:line-clamp-none font-semibold text-on-surface mb-3">
                   {item.title}
                 </h3>
 
-                <p className="text-sm line-clamp-3 group-hover:line-clamp-none leading-relaxed text-slate-400 mb-8">
+                <p className="text-sm line-clamp-3 group-hover:line-clamp-none text-on-surface/60 mb-6 leading-relaxed">
                   {item.description}
                 </p>
 
                 {/* Divider */}
-                <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/5 to-transparent mb-6" />
+                <div className="w-full h-px bg-outline/10 mb-6" />
 
                 {/* Skills */}
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   {item.items.map((skill) => (
                     <li
                       key={skill}
-                      className="group/item flex items-center justify-between text-sm text-slate-300"
+                      className="flex items-center justify-between text-sm text-on-surface/70 group/item"
                     >
                       <div className="flex items-center gap-3">
                         <span
                           className={`w-2 h-2 rounded-full shadow-[0_0_10px] ${styles.dot}`}
                         />
-
-                        <span className="group-hover/item:text-white transition-colors duration-300">
+                        <span className="group-hover/item:text-on-surface transition-colors">
                           {skill}
                         </span>
                       </div>
 
-                      <span className="opacity-0 translate-x-3 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300 text-xs text-slate-500">
+                      <span className="opacity-0 translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all text-primary">
                         →
                       </span>
                     </li>
@@ -233,8 +217,8 @@ export default function Skills() {
                 </ul>
               </div>
 
-              {/* Bottom Blur */}
-              <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/[0.03] to-transparent pointer-events-none" />
+              {/* Bottom Fade */}
+              <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
             </motion.div>
           );
         })}
