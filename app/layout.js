@@ -26,8 +26,8 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata = {
-  title: "Toufiq Alahe - MERN Stack Developer | Building Modern Web Experiences ",
-  description: "Full Stack Web Developer skilled in MERN stack, focused on building modern, responsive web applications.",
+  title: "Toufiq Alahe - Frontend Developer | Building Modern Web Experiences",
+  description: "Frontend Developer skilled in React, Next.js, and modern UI development, focused on building fast, responsive, and user-friendly web applications."
 };
 
 export default function RootLayout({ children }) {

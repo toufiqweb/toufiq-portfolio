@@ -20,7 +20,7 @@ export default function AllProjectsPage() {
           </div>
           <span className="text-on-surface font-headline-md text-sm uppercase tracking-widest hidden sm:block">Back to Home</span>
         </Link>
-        <div className="text-4xl font-cursive text-white select-none">T</div>
+        <div className="text-4xl font-cursive dark:text-on-surface light:text-primary select-none">T</div>
         <div className="w-10 sm:w-32" /> {/* Spacer */}
       </nav>
 
