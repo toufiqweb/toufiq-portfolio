@@ -20,12 +20,12 @@ export default function Background() {
       
       <motion.div 
         style={{ y: y1 }}
-        className="absolute -top-24 -left-24 w-96 h-96 bg-primary-container/10 dark:bg-primary-container/10 light:bg-primary/5 blur-[120px] rounded-full will-change-transform gpu"
+        className="absolute -top-24 -left-24 w-[clamp(250px,50vw,400px)] h-[clamp(250px,50vw,400px)] bg-primary-container/10 dark:bg-primary-container/10 light:bg-primary/5 blur-[120px] rounded-full will-change-transform gpu"
       />
       
       <motion.div 
         style={{ y: y2 }}
-        className="absolute top-1/2 -right-48 w-[500px] h-[500px] bg-tertiary/5 dark:bg-tertiary/5 light:bg-tertiary/5 blur-[150px] rounded-full will-change-transform gpu"
+        className="absolute top-1/2 -right-48 w-[clamp(300px,60vw,500px)] h-[clamp(300px,60vw,500px)] bg-tertiary/5 dark:bg-tertiary/5 light:bg-tertiary/5 blur-[150px] rounded-full will-change-transform gpu"
       />
 
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background dark:via-background/50 pointer-events-none" />

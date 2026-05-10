@@ -92,11 +92,11 @@ export default function TechStack() {
           {/* Section Title Shell */}
           <div className="relative flex flex-col items-center justify-center mb-6 md:mb-10 px-6 overflow-hidden">
             <motion.h2
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 0.03, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: 'easeOut' }}
-              className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+              className="font-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em] w-full text-center"
             >
               TECHNOLOGIES
             </motion.h2>
@@ -104,7 +104,7 @@ export default function TechStack() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-headline-lg text-3xl md:text-headline-lg text-on-surface relative z-10 tracking-tight"
+              className="font-headline-lg text-on-surface relative z-10 tracking-tight"
             >
               TECHNO<span className="text-primary-container">LOGIES</span>
             </motion.h1>

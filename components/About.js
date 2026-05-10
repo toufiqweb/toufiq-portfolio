@@ -8,7 +8,7 @@ import { MdEmail } from "react-icons/md";
 
 export default function About() {
   const revealVariants = {
-    hidden: { y: 50, opacity: 0 },
+    hidden: { y: 20, opacity: 0 },
     visible: (i) => ({
       y: 0,
       opacity: 1,
@@ -45,11 +45,11 @@ export default function About() {
       <div className='text-center mb-16 space-y-6'>
         <div className="relative flex flex-col items-center justify-center mb-6 md:mb-10 px-6 overflow-hidden">
           <motion.h2
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 0.03, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
-            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+            className="font-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em] w-full text-center"
           >
             ABOUT ME
           </motion.h2>
@@ -86,11 +86,11 @@ export default function About() {
         {/* Left Column: Profile */}
         <div className="lg:col-span-5 relative flex justify-center order-2 lg:order-1">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96"
+            className="relative w-[clamp(240px,70vw,380px)] h-[clamp(240px,70vw,380px)]"
           >
             {/* Glowing Halo */}
             <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-pulse-slow halo-ring"></div>
@@ -142,7 +142,7 @@ export default function About() {
             <motion.h3
               variants={revealVariants}
               custom={0}
-              className="font-headline-lg text-3xl md:text-headline-lg"
+              className="font-headline-lg"
             >
               Hey! I'm <span className="text-primary font-extrabold uppercase tracking-tight glow-text">TOUFIQ</span>
             </motion.h3>

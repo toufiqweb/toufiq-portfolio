@@ -10,9 +10,9 @@ const TimelineItem = ({ year, title, description, image, icon, align = 'left', d
     <div className="relative flex flex-col md:flex-row items-center justify-between group gap-8 md:gap-0">
       {/* Content Side */}
       <motion.div
-        initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+        initial={{ opacity: 0, x: isLeft ? -20 : 20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
         className={`w-full md:w-[45%] ${isLeft ? 'md:text-right md:pr-12 order-2 md:order-1' : 'md:text-left md:pl-12 order-2'}`}
       >
@@ -38,9 +38,9 @@ const TimelineItem = ({ year, title, description, image, icon, align = 'left', d
 
       {/* Image Side */}
       <motion.div
-        initial={{ opacity: 0, x: isLeft ? 50 : -50 }}
+        initial={{ opacity: 0, x: isLeft ? 20 : -20 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
         className={`w-full md:w-[45%] ${isLeft ? 'order-3 md:pl-12' : 'order-3 md:order-1 md:pr-12'}`}
       >
@@ -128,11 +128,11 @@ export default function Journey() {
         </motion.span>
         <div className="relative flex flex-col items-center justify-center mb-6 md:mb-10 px-6 overflow-hidden">
           <motion.h2
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 0.03, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
-            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
+            className="font-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em] w-full text-center"
           >
             MY JOURNEY
           </motion.h2>

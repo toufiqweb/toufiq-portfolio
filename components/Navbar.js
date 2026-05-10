@@ -200,10 +200,7 @@ export default function Navbar() {
                 >
                   Resume
                 </a>
-                <div className="flex gap-6 mt-4">
-                  <span className="material-symbols-outlined text-slate-400">code</span>
-                  <span className="material-symbols-outlined text-slate-400">alternate_email</span>
-                </div>
+
               </motion.div>
             </div>
           </motion.div>

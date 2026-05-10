@@ -214,10 +214,10 @@ export default function Hero() {
       <div className="lg:col-span-5 flex flex-col items-center justify-center relative mt-lg md:mt-0">
         <motion.div
           ref={imageRef}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="relative w-72 h-72 md:w-[450px] md:h-[450px]"
+          className="relative w-[clamp(280px,75vw,450px)] h-[clamp(280px,75vw,450px)]"
         >
           <div className="ring-rotate absolute inset-0 rounded-full border-2 border-dashed border-primary-container/20" />
           <div className="ring-rotate-reverse absolute inset-4 rounded-full border border-tertiary/30" />

@@ -1,10 +1,11 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export default function Magnetic({ children, strength = 0.5 }) {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
   
   // Use MotionValues to avoid React re-renders on mouse move
   const x = useMotionValue(0);
@@ -14,8 +15,17 @@ export default function Magnetic({ children, strength = 0.5 }) {
   const springX = useSpring(x, springConfig);
   const springY = useSpring(y, springConfig);
 
+  useEffect(() => {
+    const checkPointer = () => {
+      setIsMobile(!window.matchMedia('(pointer: fine)').matches);
+    };
+    checkPointer();
+    window.addEventListener('resize', checkPointer);
+    return () => window.removeEventListener('resize', checkPointer);
+  }, []);
+
   const handleMouseMove = (e) => {
-    if (!ref.current) return;
+    if (isMobile || !ref.current) return;
     
     const { clientX, clientY } = e;
     const { left, top, width, height } = ref.current.getBoundingClientRect();
@@ -37,7 +47,7 @@ export default function Magnetic({ children, strength = 0.5 }) {
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ x: springX, y: springY }}
+      style={{ x: isMobile ? 0 : springX, y: isMobile ? 0 : springY }}
       className="will-change-transform"
     >
       {children}
