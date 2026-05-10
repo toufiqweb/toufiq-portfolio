@@ -171,7 +171,7 @@ export default function Journey() {
         {/* Timeline Items */}
         <div className="space-y-24 md:space-y-32">
           {journeyItems.map((item, index) => (
-            <TimelineItem key={item.year} {...item} delay={index * 0.15} />
+            <TimelineItem key={index} {...item} delay={index * 0.15} />
           ))}
         </div>
 

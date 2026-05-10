@@ -234,3 +234,45 @@
 .animate-pulse-slow {
   animation: pulse-slow 4s infinite ease-in-out;
 }
+
+/* GPU Acceleration & Performance Utilities */
+.gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+@keyframes ring-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ring-rotate-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.animate-ring-rotate {
+  animation: ring-rotate 40s linear infinite;
+}
+
+.animate-ring-rotate-reverse {
+  animation: ring-rotate-reverse 50s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

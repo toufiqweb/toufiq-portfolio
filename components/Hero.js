@@ -148,7 +148,7 @@ export default function Hero() {
             className="text-body-md md:text-body-lg text-on-surface/70 max-w-2xl leading-relaxed"
           >
             I build fast, responsive, and immersive web experiences with a focus
-            on clean UI, performance, and scalability. Specializing in React,
+            on clean UI, performance, and scalability. Using in React,
             Next.js, Tailwind CSS, and modern design systems.
           </motion.p>
         </div>

@@ -19,23 +19,31 @@ export default function Navbar() {
   ];
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 150;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY + 150;
 
-      for (const link of navLinks) {
-        const sectionId = link.href.substring(1);
-        const element = document.getElementById(sectionId);
+          for (const link of navLinks) {
+            const sectionId = link.href.substring(1);
+            const element = document.getElementById(sectionId);
 
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(sectionId);
+            if (element) {
+              const { offsetTop, offsetHeight } = element;
+              if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                setActiveSection(sectionId);
+              }
+            }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

@@ -9,17 +9,20 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 const greatVibes = Great_Vibes({
   variable: "--font-great-vibes",
   subsets: ["latin"],
   weight: "400",
+  display: 'swap',
 });
 
 export const metadata = {

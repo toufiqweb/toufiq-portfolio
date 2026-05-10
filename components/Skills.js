@@ -98,7 +98,7 @@ export default function Skills() {
             whileInView={{ opacity: 0.04, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
-            className="absolute text-5xl md:text-7xl font-black uppercase tracking-[0.25em] text-on-surface whitespace-nowrap pointer-events-none"
+            className="absolute text-5xl md:text-7xl uppercase tracking-[0.25em] text-on-surface whitespace-nowrap pointer-events-none"
           >
             Skills
           </motion.h2>

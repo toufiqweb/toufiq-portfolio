@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import Background from '@/components/Background';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -6,9 +7,11 @@ import About from '@/components/About';
 import Skills from '@/components/Skills';
 import TechStack from '@/components/TechStack';
 import Projects from '@/components/Projects';
-import Journey from '@/components/Journey';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+
+// Dynamic imports for below-the-fold components
+const Journey = dynamic(() => import('@/components/Journey'), { ssr: true });
+const Contact = dynamic(() => import('@/components/Contact'), { ssr: true });
+const Footer = dynamic(() => import('@/components/Footer'), { ssr: true });
 
 export default function Home() {
   return (
