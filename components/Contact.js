@@ -129,12 +129,12 @@ export default function Contact() {
               variants={revealVariants}
               className="flex items-center gap-4 group"
             >
-              <div className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center bg-surface-container-high transition-transform group-hover:scale-110 group-hover:border-primary">
+              <div className="md:w-12 w-8 h-8 md:h-12 rounded-full border border-primary/30 flex items-center justify-center bg-surface-container-high transition-transform group-hover:scale-110 group-hover:border-primary">
                 <span className="material-symbols-outlined text-primary">mail</span>
               </div>
               <div>
-                <p className="font-label-sm text-neutral-500 uppercase">Email me at</p>
-                <p className="font-headline-md text-xl text-on-surface">toufiqalahe.dev@gmail.com</p>
+                <p className="font-label-sm text-sm md:text-base text-neutral-500 uppercase">Email me at</p>
+                <p className="font-headline-md text-lg md:text-xl text-on-surface">toufiqalahe.dev@gmail.com</p>
               </div>
 
             </motion.div>
@@ -146,12 +146,12 @@ export default function Contact() {
               variants={revealVariants}
               className="flex items-center gap-4 group"
             >
-              <div className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center bg-surface-container-high transition-transform group-hover:scale-110 group-hover:border-primary">
+              <div className="md:w-12 w-8 h-8 md:h-12 rounded-full border border-primary/30 flex items-center justify-center bg-surface-container-high transition-transform group-hover:scale-110 group-hover:border-primary">
                 <span className="material-symbols-outlined text-primary">call</span>
               </div>
               <div>
-                <p className="font-label-sm text-neutral-500 uppercase">Call me at</p>
-                <p className="font-headline-md text-xl text-on-surface">+8801798800096</p>
+                <p className="font-label-sm text-sm md:text-base text-neutral-500 uppercase">Call me at</p>
+                <p className="font-headline-md text-lg md:text-xl text-on-surface">+8801798800096</p>
               </div>
 
             </motion.div>
@@ -188,7 +188,7 @@ export default function Contact() {
               className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-surface-container border border-on-surface/5 orange-halo"
             >
               <span className="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
-              <span className="font-label-sm text-tertiary uppercase">Available for new projects</span>
+              <span className="font-label-sm text-sm md:text-base text-tertiary uppercase">Available for new projects</span>
             </motion.div>
 
 

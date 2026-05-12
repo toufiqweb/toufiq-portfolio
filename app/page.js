@@ -10,6 +10,7 @@ import Projects from '@/components/Projects';
 
 // Dynamic imports for below-the-fold components
 const Journey = dynamic(() => import('@/components/Journey'), { ssr: true });
+const GithubCalendar = dynamic(() => import('@/components/GithubCalendar'), { ssr: true });
 const Contact = dynamic(() => import('@/components/Contact'), { ssr: true });
 const Footer = dynamic(() => import('@/components/Footer'), { ssr: true });
 
@@ -27,6 +28,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <Journey />
+        <GithubCalendar />
         <Contact />
       </div>
 

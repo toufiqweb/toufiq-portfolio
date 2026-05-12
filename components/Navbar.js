@@ -15,6 +15,7 @@ export default function Navbar() {
     { name: 'Skills', href: '#skills', icon: 'code' },
     { name: 'Projects', href: '#projects', icon: 'work' },
     { name: 'Journey', href: '#journey', icon: 'auto_awesome' },
+    { name: 'GitHub', href: '#github', icon: 'data_thresholding' },
     { name: 'Contact', href: '#contact', icon: 'mail' },
   ];
 
