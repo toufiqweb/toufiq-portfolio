@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import { projects } from '@/lib/projectsData';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
+import { useState, useEffect } from 'react';
+import SkeletonLoader from '@/components/SkeletonLoader';
 
 const statColor = {
   primary: 'var(--color-primary-container)',
@@ -14,6 +16,12 @@ const statColor = {
 };
 
 export default function ProjectDetailClient({ id }) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const project = projects.find((p) => p.id === Number(id));
   if (!project) notFound();
   const nextProject = projects.find((p) => p.id === project.nextProject);
@@ -27,9 +35,9 @@ export default function ProjectDetailClient({ id }) {
         <Link href="/#projects" style={{
           display: 'flex', alignItems: 'center', gap: '0.5rem',
           padding: '0.5rem 1rem', borderRadius: '9999px',
-          background: 'rgba(23,31,51,0.85)', backdropFilter: 'blur(12px)',
-          border: '1px solid rgba(255,255,255,0.1)',
-          color: 'var(--color-on-surface-variant)', fontSize: '0.85rem',
+          background: 'var(--color-surface-container)', backdropFilter: 'blur(12px)',
+          border: '1px solid var(--color-outline)',
+          color: 'var(--color-on-surface)', fontSize: '0.85rem',
           fontFamily: 'var(--font-space-grotesk)', textDecoration: 'none',
           transition: 'color 0.2s',
         }}>
@@ -86,7 +94,9 @@ export default function ProjectDetailClient({ id }) {
 
               {/* title */}
               <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-extrabold leading-[0.9] tracking-[-0.03em] mb-6 text-[var(--color-on-surface)]">
-                {project.title.includes('–') ? (
+                {!isMounted ? (
+                  <SkeletonLoader width="80%" height={80} borderRadius={16} />
+                ) : project.title.includes('–') ? (
                   <>
                     {project.title.split('–')[0].trim()}
                     <br />
@@ -100,9 +110,15 @@ export default function ProjectDetailClient({ id }) {
               </h1>
 
               {/* description */}
-              <p className="text-[1.1rem] leading-[1.7] text-[var(--color-on-surface-variant)] max-w-2xl mb-10">
-                {project.description}
-              </p>
+              <div className="mb-10">
+                {!isMounted ? (
+                  <SkeletonLoader count={3} height={18} width="100%" borderRadius={4} />
+                ) : (
+                  <p className="text-[1.1rem] leading-[1.7] text-[var(--color-on-surface-variant)] max-w-2xl">
+                    {project.description}
+                  </p>
+                )}
+              </div>
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-4">
@@ -110,7 +126,7 @@ export default function ProjectDetailClient({ id }) {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--color-primary-container)] text-white font-semibold text-sm transition hover:brightness-110"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--color-primary)] text-[var(--color-on-primary)] font-semibold text-sm transition hover:brightness-110"
                 >
                   View Live
                   <span className="material-symbols-outlined text-base">arrow_outward</span>
@@ -120,7 +136,7 @@ export default function ProjectDetailClient({ id }) {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-white/10 bg-[var(--color-surface-container-high)] text-[var(--color-on-surface)] font-semibold text-sm transition hover:bg-white/10"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-on-surface/10 bg-surface-container-high text-[var(--color-on-surface)] font-semibold text-sm transition hover:bg-on-surface/5"
                 >
                   Source Code
                   <span className="material-symbols-outlined text-base">code</span>
@@ -135,9 +151,9 @@ export default function ProjectDetailClient({ id }) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="w-[280px] shrink-0"
             >
-              <div className="p-8 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-xl bg-[rgba(23,31,51,0.6)] animate-[float_6s_ease-in-out_infinite]">
+              <div className="p-8 rounded-2xl border border-on-surface/10 shadow-2xl backdrop-blur-xl bg-surface-container/60 animate-[float_6s_ease-in-out_infinite]">
 
-                <h3 className="text-xs uppercase tracking-[0.15em] font-semibold text-[var(--color-primary-container)] mb-6 pb-4 border-b border-white/10 font-[var(--font-space-grotesk)]">
+                <h3 className="text-xs uppercase tracking-[0.15em] font-semibold text-[var(--color-primary)] mb-6 pb-4 border-b border-on-surface/10 font-[var(--font-space-grotesk)]">
                   Quick Facts
                 </h3>
 
@@ -170,7 +186,7 @@ export default function ProjectDetailClient({ id }) {
                       {project.tech.map((t) => (
                         <span
                           key={t}
-                          className="px-2.5 py-1 rounded-md text-[0.72rem] border border-white/10 bg-[var(--color-surface-container-high)] text-[var(--color-on-surface)]"
+                          className="px-2.5 py-1 rounded-md text-[0.72rem] border border-on-surface/10 bg-surface-container-high text-[var(--color-on-surface)]"
                         >
                           {t}
                         </span>
@@ -208,7 +224,7 @@ export default function ProjectDetailClient({ id }) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative group rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+              className="relative group rounded-2xl overflow-hidden border border-on-surface/10 shadow-2xl"
             >
               <Image
                 src={project.image}
@@ -220,7 +236,7 @@ export default function ProjectDetailClient({ id }) {
               />
 
               {/* overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-background/80 via-transparent to-transparent" />
 
               {/* subtle glow */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-[radial-gradient(circle_at_center,rgba(255,87,51,0.15),transparent_60%)]" />
@@ -310,7 +326,7 @@ export default function ProjectDetailClient({ id }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-5 rounded-2xl border border-white/5 bg-[rgba(23,31,51,0.4)] backdrop-blur-md"
+                  className="p-5 rounded-2xl border border-on-surface/5 bg-surface-container/40 backdrop-blur-md"
                 >
                   <div
                     className="text-2xl font-extrabold mb-1"
@@ -333,10 +349,10 @@ export default function ProjectDetailClient({ id }) {
           <div className="flex-1 min-w-[300px]">
 
             {/* features card */}
-            <div className="rounded-2xl border border-white/10 bg-[rgba(23,31,51,0.7)] backdrop-blur-xl shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
+            <div className="rounded-2xl border border-on-surface/10 bg-surface-container/70 backdrop-blur-xl shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
 
               {/* header */}
-              <div className="flex items-center gap-2 px-5 py-3 border-b border-white/5">
+              <div className="flex items-center gap-2 px-5 py-3 border-b border-on-surface/5">
                 <div className="w-3 h-3 rounded-full bg-[var(--color-error)]" />
                 <div className="w-3 h-3 rounded-full bg-[var(--color-tertiary)]" />
                 <div className="w-3 h-3 rounded-full bg-[var(--color-primary-container)]" />
@@ -368,7 +384,7 @@ export default function ProjectDetailClient({ id }) {
             </div>
 
             {/* challenges */}
-            <div className="mt-8 p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md">
+            <div className="mt-8 p-6 rounded-xl border border-on-surface/10 bg-surface-container/5 backdrop-blur-md">
               <h3 className="font-semibold mb-4 text-[var(--color-primary-container)]">
                 Key Challenges Solved
               </h3>
@@ -383,7 +399,7 @@ export default function ProjectDetailClient({ id }) {
               </ul>
             </div>
             {/* futureUpdates */}
-            <div className="mt-8 p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md">
+            <div className="mt-8 p-6 rounded-xl border border-on-surface/10 bg-surface-container/5 backdrop-blur-md">
               <h3 className="font-semibold mb-4 text-[var(--color-primary-container)]">
                 Future Updates
               </h3>
@@ -398,7 +414,7 @@ export default function ProjectDetailClient({ id }) {
               </ul>
             </div>
             {/* packages (NEW) */}
-            <div className="mt-8 p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md">
+            <div className="mt-8 p-6 rounded-2xl border border-on-surface/10 bg-surface-container/5 backdrop-blur-md">
 
               <h3 className="text-lg font-semibold text-[var(--color-primary-container)] mb-4">
                 Packages Used
@@ -408,7 +424,7 @@ export default function ProjectDetailClient({ id }) {
                 {project.packages.map((pkg, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 text-xs rounded-full border border-white/10 bg-white/5 text-[var(--color-on-surface-variant)] hover:text-[var(--color-on-surface)] hover:bg-white/10 transition"
+                    className="px-3 py-1 text-xs rounded-full border border-on-surface/10 bg-surface-container/10 text-[var(--color-on-surface-variant)] hover:text-[var(--color-on-surface)] hover:bg-on-surface/5 transition"
                   >
                     {pkg}
                   </span>
@@ -442,7 +458,7 @@ export default function ProjectDetailClient({ id }) {
           {project.showcaseImages.map((src, i) => (
             <div
               key={i}
-              className="relative shrink-0 w-[min(80vw,500px)] h-[260px] md:h-[340px] rounded-3xl overflow-hidden border border-white/10 snap-start group"
+              className="relative shrink-0 w-[min(80vw,500px)] h-[260px] md:h-[340px] rounded-3xl overflow-hidden border border-on-surface/10 snap-start group"
             >
               {/* image */}
               <Image
@@ -455,7 +471,7 @@ export default function ProjectDetailClient({ id }) {
               />
 
               {/* overlay */}
-              <div className="absolute inset-0 flex flex-col justify-end p-6 bg-[linear-gradient(to_top,rgba(11,19,38,0.85)_0%,transparent_60%)]">
+              <div className="absolute inset-0 flex flex-col justify-end p-6 bg-linear-to-t from-background/85 via-transparent to-transparent">
 
                 <span className="text-[10px] uppercase tracking-[0.12em] text-[var(--color-primary-container)] font-[var(--font-space-grotesk)]">
                   Interface {String(i + 1).padStart(2, "0")}
@@ -486,7 +502,7 @@ export default function ProjectDetailClient({ id }) {
         )}
 
         {/* overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_top,var(--color-background)_0%,rgba(11,19,38,0.5)_60%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-linear-to-t from-background via-background/50 to-transparent" />
 
         {/* content */}
         <div className="relative z-10 text-center px-6">

@@ -9,6 +9,8 @@ import {
 
 } from "react-icons/si";
 import { VscVscode } from 'react-icons/vsc';
+import { useState, useEffect } from 'react';
+import TechCardSkeleton from './skeletons/TechCardSkeleton';
 
 const technologiesRow1 = [
   { name: 'HTML', icon: SiHtml5, color: '#E34F26' },
@@ -82,6 +84,12 @@ const TechCard = ({ tech, index }) => {
 };
 
 export default function TechStack() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <section id="tech-stack" className="relative w-full py-20 md:py-32 overflow-hidden">
 
@@ -130,16 +138,24 @@ export default function TechStack() {
         <div className="flex flex-col items-center gap-8 md:gap-10">
           {/* Top Row */}
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
-            {technologiesRow1.map((tech, index) => (
-              <TechCard key={tech.name} tech={tech} index={index} />
-            ))}
+            {!isMounted ? (
+              Array(8).fill(0).map((_, i) => <TechCardSkeleton key={i} />)
+            ) : (
+              technologiesRow1.map((tech, index) => (
+                <TechCard key={tech.name} tech={tech} index={index} />
+              ))
+            )}
           </div>
 
           {/* Bottom Row */}
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
-            {technologiesRow2.map((tech, index) => (
-              <TechCard key={tech.name} tech={tech} index={index + 8} />
-            ))}
+            {!isMounted ? (
+              Array(7).fill(0).map((_, i) => <TechCardSkeleton key={i} />)
+            ) : (
+              technologiesRow2.map((tech, index) => (
+                <TechCard key={tech.name} tech={tech} index={index + 8} />
+              ))
+            )}
           </div>
         </div>
       </div>

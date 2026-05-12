@@ -4,8 +4,16 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { projects } from '@/lib/projectsData';
 import ProjectCard from './ProjectCard';
+import { useState, useEffect } from 'react';
+import ProjectCardSkeleton from './skeletons/ProjectCardSkeleton';
 
 export default function Projects() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <section id="projects" className="relative w-full max-w-7xl mx-auto px-6 py-24 md:py-32 overflow-hidden">
 
@@ -59,11 +67,18 @@ export default function Projects() {
         </motion.p>
       </div>
 
-      {/* Projects Grid - Showing only first 3 */}
+      {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.slice(0, 5).map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
-        ))}
+        {!isMounted ? (
+          // Skeleton grid during initial mount
+          Array(3).fill(0).map((_, i) => (
+            <ProjectCardSkeleton key={i} />
+          ))
+        ) : (
+          projects.slice(0, 6).map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))
+        )}
       </div>
 
       {/* CTA Footer */}
