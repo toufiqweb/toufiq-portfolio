@@ -102,6 +102,7 @@ export default function About() {
                 src="https://i.ibb.co.com/gMVjdhp0/Whats-App-Image-2026-04-18-at-1-47-29-PM.jpg"
                 alt="Portrait"
                 fill
+                sizes="(max-width: 768px) 100vw, 380px"
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 unoptimized
               />

@@ -11,9 +11,12 @@ const ProjectCard = ({ project, index }) => {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group bg-surface-container/40 backdrop-blur-xl border border-on-surface/10 rounded-2xl p-6 glow-border hover:border-primary-container/30 transition-all duration-500 flex flex-col h-full"
+      transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -8 }}
+      className="group bg-surface-container/30 backdrop-blur-xl border border-on-surface/5 rounded-[2rem] p-6 hover:border-primary/20 transition-all duration-500 flex flex-col h-full relative overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-primary/5"
     >
+      {/* Light Sweep Effect */}
+      <div className="absolute inset-0 bg-linear-to-tr from-primary/5 via-transparent to-tertiary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
       {/* Project Image — clicking navigates to detail page */}
       <Link href={`/projects/${project.id}`} className="block">
         <div className="relative rounded-xl overflow-hidden mb-6 aspect-video cursor-pointer">

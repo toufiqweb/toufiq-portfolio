@@ -11,6 +11,7 @@ import {
 import { VscVscode } from 'react-icons/vsc';
 import { useState, useEffect } from 'react';
 import TechCardSkeleton from './skeletons/TechCardSkeleton';
+import Magnetic from './Magnetic';
 
 const technologiesRow1 = [
   { name: 'HTML', icon: SiHtml5, color: '#E34F26' },
@@ -142,7 +143,9 @@ export default function TechStack() {
               Array(8).fill(0).map((_, i) => <TechCardSkeleton key={i} />)
             ) : (
               technologiesRow1.map((tech, index) => (
-                <TechCard key={tech.name} tech={tech} index={index} />
+                <Magnetic key={tech.name} strength={0.3}>
+                  <TechCard tech={tech} index={index} />
+                </Magnetic>
               ))
             )}
           </div>
@@ -153,7 +156,9 @@ export default function TechStack() {
               Array(7).fill(0).map((_, i) => <TechCardSkeleton key={i} />)
             ) : (
               technologiesRow2.map((tech, index) => (
-                <TechCard key={tech.name} tech={tech} index={index + 8} />
+                <Magnetic key={tech.name} strength={0.3}>
+                  <TechCard tech={tech} index={index + 8} />
+                </Magnetic>
               ))
             )}
           </div>

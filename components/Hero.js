@@ -16,7 +16,17 @@ export default function Hero() {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
   useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({
+        x: (e.clientX / window.innerWidth - 0.5) * 20,
+        y: (e.clientY / window.innerHeight - 0.5) * 20,
+      });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+
     const ctx = gsap.context(() => {
       // Rotating rings
       gsap.to('.ring-rotate', {
@@ -33,17 +43,20 @@ export default function Hero() {
         ease: 'linear',
       });
 
-      // ✅ Float ONLY image container
+      // Float ONLY image container
       gsap.to(imageRef.current, {
-        y: 20,
+        y: 15,
         duration: 3,
         repeat: -1,
         yoyo: true,
-        ease: 'power1.inOut',
+        ease: 'sine.inOut',
       });
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      ctx.revert();
+    };
   }, []);
 
 
@@ -155,11 +168,24 @@ export default function Hero() {
 
         <div className="flex flex-wrap items-center justify-center lg:justify-start gap-md pt-4">
           <Magnetic strength={0.2}>
-            <motion.button
+            <motion.a
+              href="#contact"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 1.2 }}
-              className="flex items-center gap-xs bg-surface-container border border-primary/30 px-8 py-4 rounded-lg text-on-surface font-bold hover:shadow-[0_0_20px_var(--color-primary)] transition-all group active:scale-95"
+              className="flex items-center gap-xs bg-primary text-on-primary px-8 py-4 rounded-xl font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all active:scale-95 premium-border"
+            >
+              Contact Me
+              <span className="material-symbols-outlined text-sm">send</span>
+            </motion.a>
+          </Magnetic>
+
+          <Magnetic strength={0.2}>
+            <motion.button
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 1.3 }}
+              className="flex items-center gap-xs bg-surface-container border border-outline/20 px-8 py-4 rounded-xl text-on-surface font-bold hover:bg-on-surface/5 transition-all active:scale-95"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_var(--color-tertiary)]"></span>
               Resume
@@ -219,8 +245,14 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="relative w-[clamp(280px,75vw,450px)] h-[clamp(280px,75vw,450px)]"
         >
-          <div className="ring-rotate absolute inset-0 rounded-full border-2 border-dashed border-primary-container/20" />
-          <div className="ring-rotate-reverse absolute inset-4 rounded-full border border-tertiary/30" />
+          <div 
+            className="ring-rotate absolute inset-0 rounded-full border-2 border-dashed border-primary-container/20" 
+            style={{ transform: `translate(${mousePos.x * 0.5}px, ${mousePos.y * 0.5}px)` }}
+          />
+          <div 
+            className="ring-rotate-reverse absolute inset-4 rounded-full border border-tertiary/30" 
+            style={{ transform: `translate(${mousePos.x * -0.3}px, ${mousePos.y * -0.3}px)` }}
+          />
 
           <motion.div
             className="absolute inset-0 rounded-full border-2 border-primary-container/40"
@@ -258,6 +290,9 @@ export default function Hero() {
               src="https://i.ibb.co.com/gMVjdhp0/Whats-App-Image-2026-04-18-at-1-47-29-PM.jpg"
               alt="Profile"
               fill
+              priority
+              loading="eager"
+              sizes="(max-width: 768px) 100vw, 450px"
               className="object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
             />
           </motion.div>
@@ -278,6 +313,20 @@ export default function Hero() {
           </span>
         </motion.div>
       </div>
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] uppercase tracking-[0.3em] text-on-surface/30">Scroll</span>
+        <motion.div 
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-px h-12 bg-linear-to-b from-primary to-transparent"
+        />
+      </motion.div>
     </section>
   );
 }
