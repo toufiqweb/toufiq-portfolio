@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Toufiq Alahe | Frontend Developer Portfolio
 
-## Getting Started
+![Portfolio Preview](./public/portfolio-preview.png)
+*(Replace the image path with your actual preview image)*
 
-First, run the development server:
+## 👋 About Me
+Hi, I'm **Toufiq Alahe**, a passionate Frontend Developer focused on building fast, responsive, and immersive web experiences. I specialize in crafting clean UI, ensuring high performance, and architecting scalable applications using modern technologies like React, Next.js, and Tailwind CSS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Live Demo:** [toufiq-portfolio.vercel.app](https://your-live-link.vercel.app) *(Update with your actual deployment link)*
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Tech Stack & Tools
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### **Core Stack**
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router) & [React 19](https://react.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) & [DaisyUI](https://daisyui.com/)
+- **Language:** JavaScript (ES6+)
 
-## Learn More
+### **Animations & Effects**
+- **Smooth Scrolling:** [Lenis](https://lenis.studiofreight.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/) & [GSAP](https://gsap.com/)
 
-To learn more about Next.js, take a look at the following resources:
+### **Integrations & Utilities**
+- **Contact Form:** [EmailJS](https://www.emailjs.com/)
+- **UI Components:** `react-icons`, `react-loading-skeleton`
+- **GitHub Integration:** `react-github-calendar`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ Key Features
 
-## Deploy on Vercel
+- 🌓 **Dynamic Theme Toggling:** Seamless Light/Dark mode switching built on CSS variables and custom Tailwind variants.
+- 🌊 **Smooth Scrolling:** Integrated Lenis for a premium, buttery-smooth scrolling experience.
+- 🎨 **Modern Glassmorphism UI:** Advanced UI patterns including blurred backdrops, subtle glow effects, and micro-interactions.
+- 🎯 **Scroll-Spy Navigation:** Active navigation links that update precisely as the user scrolls through sections using `getBoundingClientRect`.
+- 📊 **GitHub Activity Graph:** Live fetching of GitHub contribution history directly on the portfolio.
+- 📱 **Fully Responsive:** Pixel-perfect adaptability across mobile, tablet, and desktop viewports without horizontal overflow issues.
+- 📬 **Functional Contact Form:** Direct messaging capabilities via EmailJS.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📂 Featured Projects
+
+Here are a few highlights from my work showcased in this portfolio:
+
+1. **[SkillSphere](https://github.com/toufiqweb/skill-sphere)** - A full-stack online learning platform built with Next.js and MongoDB.
+2. **[Dragon News](https://github.com/toufiqweb/dragon-news)** - A dynamic news application featuring category-based loading and secure authentication.
+3. **[KeenKeeper](https://github.com/toufiqweb/keen-keeper)** - A modern friendship management platform with interactive analytics (Recharts).
+4. **[AI Model Hub](https://github.com/toufiqweb/AI-Model-Hub)** - A unified marketplace interface for exploring multiple AI models.
+5. **[Digital Tools](https://github.com/toufiqweb/Digital-Tools)** - A responsive digital products marketplace with dynamic cart management.
+6. **[Book Vibe](https://github.com/toufiqweb/Books-Vibe)** - A modern book management app utilizing Context API and Local Storage.
+
+---
+
+## 🛠️ Installation & Setup
+
+To run this project locally on your machine:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/toufiqweb/toufiq-portfolio.git
+   cd toufiq-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables:**
+   Create a `.env.local` file in the root directory and add your EmailJS credentials (if applicable):
+   ```env
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
+
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+---
+
+## 🔮 Future Improvements
+- [ ] Add a dedicated blog/articles section fetched from a headless CMS (like Sanity or Contentful).
+- [ ] Implement i18n for multi-language support.
+- [ ] Add 3D elements using React Three Fiber to further elevate the visual experience.
+- [ ] Implement advanced page transition animations between Next.js routes.
+
+---
+
+## 📫 Let's Connect
+
+- **GitHub:** [@toufiqweb](https://github.com/toufiqweb)
+- **LinkedIn:** [Toufiq Alahe](https://www.linkedin.com/in/toufiq-alahe-dev)
+- **Email:** toufiqalahe.dev@gmail.com
+
+---
+*If you like this portfolio, please leave a ⭐ on the repository!*
