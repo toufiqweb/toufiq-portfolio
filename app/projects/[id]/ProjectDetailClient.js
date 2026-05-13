@@ -93,7 +93,7 @@ export default function ProjectDetailClient({ id }) {
               </div>
 
               {/* title */}
-              <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-extrabold leading-[0.9] tracking-[-0.03em] mb-6 text-[var(--color-on-surface)]">
+              <h1 className="text-[clamp(2.5rem,7vw,5.5rem)] font-extrabold leading-[1] tracking-[-0.03em] mb-6 text-[var(--color-on-surface)]">
                 {!isMounted ? (
                   <SkeletonLoader width="80%" height={80} borderRadius={16} />
                 ) : project.title.includes('–') ? (
@@ -517,6 +517,7 @@ export default function ProjectDetailClient({ id }) {
 
           <Link
             href={nextProject ? `/projects/${nextProject.id}` : "/#projects"}
+            scroll={true}
             className="inline-flex items-center justify-center w-22 h-22 md:w-24 md:h-24 rounded-full border border-[var(--color-primary-container)] text-[var(--color-primary-container)] transition-all duration-300 hover:bg-[var(--color-primary-container)] hover:text-white active:scale-95"
           >
             <span className="material-symbols-outlined text-3xl md:text-4xl">
