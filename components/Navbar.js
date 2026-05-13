@@ -25,15 +25,16 @@ export default function Navbar() {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const scrollPosition = window.scrollY + 150;
+          const scrollThreshold = 150; // offset for navbar height
 
           for (const link of navLinks) {
             const sectionId = link.href.substring(1);
             const element = document.getElementById(sectionId);
 
             if (element) {
-              const { offsetTop, offsetHeight } = element;
-              if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+              const rect = element.getBoundingClientRect();
+              // Check if the section spans across the threshold line
+              if (rect.top <= scrollThreshold && rect.bottom > scrollThreshold) {
                 setActiveSection(sectionId);
               }
             }
@@ -62,8 +63,9 @@ export default function Navbar() {
     const sectionId = href.substring(1);
     const element = document.getElementById(sectionId);
     if (element) {
+      const rect = element.getBoundingClientRect();
       window.scrollTo({
-        top: element.offsetTop - 80,
+        top: window.scrollY + rect.top - 80,
         behavior: 'smooth'
       });
     }
@@ -101,7 +103,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`relative flex items-center gap-2 px-5 py-2 rounded-full font-medium text-xs transition-all group ${isActive ? 'text-white dark:text-on-surface light:text-primary' : 'text-slate-400 hover:text-white dark:hover:text-on-surface light:hover:text-primary'
+                  className={`relative flex items-center gap-2 px-5 py-2 rounded-full font-medium text-xs transition-all group ${isActive ? 'text-white dark:text-on-surface light:text-primary' : 'text-slate-600 hover:text-white dark:hover:text-on-surface light:hover:text-primary'
                     }`}
                 >
                   {isActive && (
@@ -180,7 +182,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className={`text-4xl font-bold tracking-tight transition-all hover:text-primary ${activeSection === link.href.substring(1) ? 'text-primary' : 'text-slate-400'
+                    className={`text-4xl font-bold tracking-tight transition-all hover:text-primary ${activeSection === link.href.substring(1) ? 'text-primary' : 'text-slate-600'
                       }`}
                   >
                     {link.name}

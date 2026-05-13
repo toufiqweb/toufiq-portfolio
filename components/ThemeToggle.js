@@ -17,7 +17,7 @@ export default function ThemeToggle() {
     <Magnetic strength={0.3}>
       <button
         onClick={toggleTheme}
-        className="w-10 h-10 flex items-center justify-center rounded-full bg-on-surface/5 dark:bg-on-surface/5 light:bg-slate-100 border border-on-surface/10 dark:border-on-surface/10 light:border-slate-200 text-slate-400 hover:text-primary transition-colors duration-300"
+        className="w-10 h-10 flex items-center justify-center rounded-full bg-on-surface/5 dark:bg-on-surface/5 light:bg-slate-100 border border-on-surface/10 dark:border-on-surface/10 light:border-slate-200 themed-text hover:text-primary transition-colors duration-300"
         aria-label="Toggle Theme"
       >
         <motion.span

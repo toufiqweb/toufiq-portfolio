@@ -73,7 +73,7 @@ export default function About() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="font-body-md md:text-body-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
+          className="font-body-md md:text-body-lg themed-text max-w-2xl mx-auto leading-relaxed"
         >
           A self-taught developer driven by curiosity and consistency, constantly learning and improving.
         </motion.p>
@@ -148,7 +148,7 @@ export default function About() {
             <motion.p
               variants={revealVariants}
               custom={1}
-              className="font-body-md md:text-body-lg text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="font-body-md md:text-body-lg themed-text leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
               Self-taught Web Developer , quickly building strong skills in the MERN stack. A fast learner who turns challenges into growth and stays consistent through ongoing coding challenges on GitHub and LinkedIn. Focused on creating clean, responsive, and user-friendly web applications.
 
@@ -190,7 +190,7 @@ export default function About() {
           {/* Connect With Me Section */}
           <div className="flex flex-col sm:flex-row items-center lg:items-end gap-8 mt-4">
             <div className="flex flex-col gap-4 items-center lg:items-start">
-              <h4 className="font-label-sm text-[10px] md:text-xs text-slate-500 uppercase tracking-widest">
+              <h4 className="font-label-sm text-[10px] md:text-xs themed-text-muted uppercase tracking-widest">
                 Connect With Me
               </h4>
 
@@ -206,7 +206,7 @@ export default function About() {
                         rel="noopener noreferrer"
                         className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-surface-container flex items-center justify-center border border-on-surface/5 hover:border-primary/50 hover:bg-primary/5 transition-all group hover:scale-110"
                       >
-                        <Icon className="text-slate-400 group-hover:text-primary transition-colors text-xl sm:text-2xl" />
+                        <Icon className="themed-text group-hover:text-primary transition-colors text-xl sm:text-2xl" />
                       </a>
                     </Magnetic>
                   );
@@ -219,7 +219,7 @@ export default function About() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto px-8 py-4 sm:px-10 sm:py-5 rounded-xl bg-gradient-to-r from-primary-container to-primary text-slate-950 font-bold text-base sm:text-lg hover:shadow-[0_0_30px_var(--color-primary-container)] transition-all duration-300 flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto  px-8 py-4 sm:px-10 sm:py-5 rounded-xl bg-gradient-to-r from-primary-container to-primary text-on-primary font-bold text-base sm:text-lg hover:shadow-[0_0_30px_var(--color-primary-container)] transition-all duration-300 flex items-center justify-center gap-3"
                 >
                   View Resume
                   <span className="material-symbols-outlined text-xl sm:text-2xl">download</span>

@@ -76,7 +76,7 @@ const TechCard = ({ tech, index }) => {
       </div>
 
       {/* Label */}
-      <span className="text-[10px] sm:text-[11px] md:text-[13px] font-medium text-on-surface/70 group-hover:text-on-surface transition-colors duration-300 text-center">
+      <span className="text-[10px] sm:text-[11px] md:text-[13px] font-medium themed-surface-70 group-hover:text-on-surface transition-colors duration-300 text-center">
         {tech.name}
       </span>
 
@@ -129,7 +129,7 @@ export default function TechStack() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="font-body-md md:text-body-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
+            className="font-body-md md:text-body-lg themed-text max-w-2xl mx-auto leading-relaxed"
           >
             Technologies I use to build fast, scalable, and user-friendly web applications.
           </motion.p>

@@ -113,7 +113,7 @@ export default function Hero() {
           <span className="material-symbols-outlined text-primary text-sm">
             location_on
           </span>
-          <span className="text-label-sm font-label-sm text-on-surface/60 uppercase">
+          <span className="text-label-sm font-label-sm themed-surface-60 uppercase">
             Chuadanga, Bangladesh
           </span>
         </motion.div>
@@ -135,7 +135,7 @@ export default function Hero() {
             animate="visible"
             className="flex items-center justify-center lg:justify-start gap-sm"
           >
-            <h2 className="font-headline-md text-sm md:text-base lg:text-headline-md text-on-surface/50 uppercase tracking-[0.2em] flex items-center gap-2">
+            <h2 className="font-headline-md text-sm md:text-base lg:text-headline-md themed-surface-50 uppercase tracking-[0.2em] flex items-center gap-2">
 
               <AnimatePresence mode="wait">
                 <motion.span
@@ -158,7 +158,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             variants={revealVariants}
-            className="text-body-md md:text-body-lg text-on-surface/70 max-w-2xl leading-relaxed"
+            className="text-body-md md:text-body-lg themed-surface-70 max-w-2xl leading-relaxed"
           >
             I build fast, responsive, and immersive web experiences with a focus
             on clean UI, performance, and scalability. Using in React,
@@ -199,7 +199,7 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 1.4 }}
                 href="https://github.com/toufiqweb"
                 target="_blank"
-                className="w-12 h-12 flex items-center justify-center rounded-lg border border-outline/10 bg-surface-container text-on-surface/50 hover:text-primary hover:border-primary/30 transition-all"
+                className="w-12 h-12 flex items-center justify-center rounded-lg border border-outline/10 bg-surface-container themed-surface-50 hover:text-primary hover:border-primary/30 transition-all"
               >
                 <FaGithub size={20} />
               </motion.a>
@@ -213,7 +213,7 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 1.5 }}
                 href="https://www.linkedin.com/in/toufiq-alahe-dev"
                 target="_blank"
-                className="w-12 h-12 flex items-center justify-center rounded-lg border border-outline/10 bg-surface-container text-on-surface/50 hover:text-primary hover:border-primary/30 transition-all"
+                className="w-12 h-12 flex items-center justify-center rounded-lg border border-outline/10 bg-surface-container themed-surface-50 hover:text-primary hover:border-primary/30 transition-all"
               >
                 <FaLinkedin size={20} />
               </motion.a>
@@ -225,7 +225,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 1.6 }}
                 href="mailto:toufiqalahe.dev@gmail.com"
-                className="w-12 h-12 flex items-center justify-center rounded-lg border border-outline/10 bg-surface-container text-on-surface/50 hover:text-primary hover:border-primary/30 transition-all"
+                className="w-12 h-12 flex items-center justify-center rounded-lg border border-outline/10 bg-surface-container themed-surface-50 hover:text-primary hover:border-primary/30 transition-all"
               >
                 <FaEnvelope size={20} />
               </motion.a>
@@ -335,7 +335,7 @@ export default function Hero() {
             />
           </div>
 
-          <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-on-surface/40 select-none">
+          <span className="text-[10px] font-medium uppercase tracking-[0.4em] themed-surface-40 select-none">
             Scroll
           </span>
 

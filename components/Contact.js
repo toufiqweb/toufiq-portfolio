@@ -133,7 +133,7 @@ export default function Contact() {
                 <span className="material-symbols-outlined text-primary">mail</span>
               </div>
               <div>
-                <p className="font-label-sm text-sm md:text-base text-neutral-500 uppercase">Email me at</p>
+                <p className="font-label-sm text-sm md:text-base themed-text-muted uppercase">Email me at</p>
                 <p className="font-headline-md text-base md:text-xl text-on-surface break-all">toufiqalahe.dev@gmail.com</p>
               </div>
 
@@ -150,7 +150,7 @@ export default function Contact() {
                 <span className="material-symbols-outlined text-primary">call</span>
               </div>
               <div>
-                <p className="font-label-sm text-sm md:text-base text-neutral-500 uppercase">Call me at</p>
+                <p className="font-label-sm text-sm md:text-base themed-text-muted uppercase">Call me at</p>
                 <p className="font-headline-md text-lg md:text-xl text-on-surface">+8801798800096</p>
               </div>
 
@@ -170,7 +170,7 @@ export default function Contact() {
                         rel="noopener noreferrer"
                         className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-surface-container flex items-center justify-center border border-on-surface/5 hover:border-primary/50 hover:bg-primary/5 transition-all group hover:scale-110"
                       >
-                        <Icon className="text-slate-400 group-hover:text-primary transition-colors text-xl sm:text-2xl" />
+                        <Icon className="themed-text group-hover:text-primary transition-colors text-xl sm:text-2xl" />
                       </a>
                     </Magnetic>
                   );
@@ -209,7 +209,7 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
                 <div className="relative">
-                  <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Full Name</label>
+                  <label className="font-label-sm themed-text-neutral block mb-2 uppercase">Full Name</label>
                   <input
                     name="from_name"
                     className="w-full bg-transparent px-2 border-b border-on-surface/10 py-3 text-on-surface"
@@ -220,7 +220,7 @@ export default function Contact() {
                 </div>
 
                 <div className="relative">
-                  <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Email Address</label>
+                  <label className="font-label-sm themed-text-neutral block mb-2 uppercase">Email Address</label>
                   <input
                     name="from_email"
                     className="w-full bg-transparent px-2 border-b border-on-surface/10 py-3 text-on-surface"
@@ -233,7 +233,7 @@ export default function Contact() {
               </div>
 
               <div className="relative">
-                <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Subject</label>
+                <label className="font-label-sm themed-text-neutral block mb-2 uppercase">Subject</label>
                 <input
                   name="subject"
                   className="w-full bg-transparent px-2 border-b border-on-surface/10 py-3 text-on-surface"
@@ -244,7 +244,7 @@ export default function Contact() {
               </div>
 
               <div className="relative">
-                <label className="font-label-sm text-neutral-400 block mb-2 uppercase">Message</label>
+                <label className="font-label-sm themed-text-neutral block mb-2 uppercase">Message</label>
                 <textarea
                   name="message"
                   className="w-full bg-transparent px-2 border-b border-on-surface/10 py-3 text-on-surface resize-none"

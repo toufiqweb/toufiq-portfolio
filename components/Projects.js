@@ -61,7 +61,7 @@ export default function Projects() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="text-slate-400 font-body-lg text-base md:text-lg max-w-2xl mx-auto opacity-80 mt-6"
+          className="themed-text font-body-lg text-base md:text-lg max-w-2xl mx-auto opacity-80 mt-6"
         >
           A collection of projects where I apply my skills to build real-world applications. Each project reflects my learning, creativity, and focus on user-friendly design and performance.
         </motion.p>

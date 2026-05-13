@@ -20,7 +20,7 @@ const TimelineItem = ({ year, title, description, image, icon, align = 'left', d
           <span className="material-symbols-outlined text-primary-container" style={{ fontVariationSettings: "'FILL' 1" }}>{icon}</span>
         </div>
         <h3 className="font-headline-lg text-2xl md:text-headline-lg text-on-surface mb-3 tracking-tight">{title}</h3>
-        <p className="text-slate-400 font-body-md text-sm md:text-base leading-relaxed opacity-80">
+        <p className="themed-text font-body-md text-sm md:text-base leading-relaxed opacity-80">
           {description}
         </p>
       </motion.div>
@@ -156,7 +156,7 @@ export default function Journey() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="text-slate-400 font-body-lg text-base md:text-lg max-w-2xl mx-auto opacity-80 mt-6"
+          className="themed-text font-body-lg text-base md:text-lg max-w-2xl mx-auto opacity-80 mt-6"
         >
           My growth as a developer, from the beginning to now—highlighting the challenges I’ve overcome, the skills I’ve gained, and the consistency that keeps me moving forward.
         </motion.p>

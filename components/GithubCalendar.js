@@ -120,7 +120,7 @@ const GithubCalendar = ({ username = "toufiqweb" }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-sm sm:text-base text-on-surface/60 max-w-2xl px-2 leading-relaxed"
+            className="text-sm sm:text-base themed-surface-60 max-w-2xl px-2 leading-relaxed"
           >
             My daily coding activity on GitHub. Every commit tells a story of learning and growth.
           </motion.p>
@@ -159,7 +159,7 @@ const GithubCalendar = ({ username = "toufiqweb" }) => {
                   </div>
                 </div>
               ) : (
-                <div className="h-[120px] w-full flex items-center justify-center text-on-surface/40 animate-pulse text-sm">
+                <div className="h-[120px] w-full flex items-center justify-center themed-surface-40 animate-pulse text-sm">
                   Loading contribution data...
                 </div>
               )}
@@ -180,7 +180,7 @@ const GithubCalendar = ({ username = "toufiqweb" }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                  className="flex items-center gap-4 p-4 sm:p-5 rounded-2xl bg-on-surface/5 hover:bg-on-surface/10 transition-all duration-300 border border-on-surface/5 hover:border-primary/20 group/stat"
+                  className="flex items-center gap-4 overflow-hidden  p-4 sm:p-5 rounded-2xl bg-on-surface/5 hover:bg-on-surface/10 transition-all duration-300 border border-on-surface/5 hover:border-primary/20 group/stat"
                 >
                   <div className="text-2xl group-hover/stat:scale-110 transition-transform duration-300 flex-shrink-0">
                     {stat.icon}
@@ -193,7 +193,7 @@ const GithubCalendar = ({ username = "toufiqweb" }) => {
                         {stat.value}
                       </span>
                     )}
-                    <span className="text-[10px] sm:text-xs text-on-surface/40 uppercase tracking-widest font-medium">
+                    <span className="text-[10px] text-xs lg:text-sm xl:text-md  themed-surface-40 uppercase tracking-widest font-medium">
                       {stat.label}
                     </span>
                   </div>
@@ -213,7 +213,7 @@ const GithubCalendar = ({ username = "toufiqweb" }) => {
                 href={`https://github.com/${username}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-7 py-3 rounded-full bg-on-surface/5 border border-on-surface/10 text-on-surface/60 hover:text-primary hover:border-primary/30 transition-all text-xs sm:text-sm font-semibold tracking-wide"
+                className="flex items-center gap-2 px-7 py-3 rounded-full bg-on-surface/5 border border-on-surface/10 themed-surface-60 hover:text-primary hover:border-primary/30 transition-all text-xs sm:text-sm font-semibold tracking-wide"
               >
                 <span>View Full Profile</span>
                 <span className="material-symbols-outlined text-sm">open_in_new</span>

@@ -122,7 +122,7 @@ export default function Skills() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="font-body-md md:text-body-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
+          className="font-body-md md:text-body-lg themed-text max-w-2xl mx-auto leading-relaxed"
         >
           I enjoy building modern web applications with clean UI, responsive design,
           and scalable architecture while continuously learning new technologies.
@@ -181,7 +181,7 @@ export default function Skills() {
                   {item.title}
                 </h3>
 
-                <p className="text-sm line-clamp-3 group-hover:line-clamp-none text-on-surface/60 mb-6 leading-relaxed">
+                <p className="text-sm line-clamp-3 group-hover:line-clamp-none themed-surface-60 mb-6 leading-relaxed">
                   {item.description}
                 </p>
 
@@ -193,7 +193,7 @@ export default function Skills() {
                   {item.items.map((skill) => (
                     <li
                       key={skill}
-                      className="flex items-center justify-between text-sm text-on-surface/70 group/item"
+                      className="flex items-center justify-between text-sm themed-surface-70 group/item"
                     >
                       <div className="flex items-center gap-3">
                         <span

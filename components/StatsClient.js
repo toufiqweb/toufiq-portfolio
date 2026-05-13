@@ -48,7 +48,7 @@ const StatCard = ({ label, value, suffix = '', isText = false, index }) => {
       whileHover={{ y: -10 }}
       className="p-6 md:p-8 rounded-2xl bg-surface-container border border-outline/10 transition-all duration-300 flex flex-col items-center justify-center text-center h-full hover:border-primary-container hover:bg-surface-container-high hover:shadow-[0_10px_30px_-10px_var(--color-primary-container)] gpu"
     >
-      <span className="text-on-surface/50 font-label-sm uppercase text-[10px] md:text-xs tracking-widest mb-2">
+      <span className="themed-surface-50 font-label-sm uppercase text-[10px] md:text-xs tracking-widest mb-2">
         {label}
       </span>
 
@@ -63,7 +63,7 @@ const StatCard = ({ label, value, suffix = '', isText = false, index }) => {
         )}
 
         {suffix && (
-          <span className="text-lg md:text-2xl text-on-surface/80">
+          <span className="text-lg md:text-2xl themed-surface-80">
             {suffix}
           </span>
         )}

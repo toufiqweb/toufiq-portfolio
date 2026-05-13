@@ -63,7 +63,7 @@ export default function AllProjectsPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-slate-400 font-body-lg text-base md:text-lg max-w-2xl mx-auto opacity-80 mt-6"
+            className="themed-text font-body-lg text-base md:text-lg max-w-2xl mx-auto opacity-80 mt-6"
           >
             Explore my complete collection of projects, from full-stack applications to creative frontend experiments. Each piece represents a milestone in my development journey.
           </motion.p>

@@ -201,7 +201,8 @@
 }
 
 /* Lenis Scroll CSS */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
@@ -416,4 +417,31 @@ html.lenis, html.lenis body {
 
 .custom-scrollbar::-webkit-scrollbar-corner {
   background: transparent;
+}
+
+@layer utilities {
+  .themed-text {
+    @apply text-slate-400 light:text-slate-600;
+  }
+  .themed-text-muted {
+    @apply text-slate-500 light:text-slate-700;
+  }
+  .themed-text-neutral {
+    @apply text-neutral-400 light:text-neutral-600;
+  }
+  .themed-surface-80 {
+    @apply text-on-surface/80 light:text-on-surface;
+  }
+  .themed-surface-70 {
+    @apply text-on-surface/70 light:text-on-surface/90;
+  }
+  .themed-surface-60 {
+    @apply text-on-surface/60 light:text-on-surface/80;
+  }
+  .themed-surface-50 {
+    @apply text-on-surface/50 light:text-on-surface/70;
+  }
+  .themed-surface-40 {
+    @apply text-on-surface/40 light:text-on-surface/60;
+  }
 }

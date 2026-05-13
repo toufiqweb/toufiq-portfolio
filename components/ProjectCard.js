@@ -42,7 +42,7 @@ const ProjectCard = ({ project, index }) => {
             {project.title}
           </h3>
         </Link>
-        <div className="flex gap-4 text-slate-400">
+        <div className="flex gap-4 themed-text">
           <a
             href={project.github}
             target="_blank"
@@ -76,14 +76,14 @@ const ProjectCard = ({ project, index }) => {
         ))}
       </div>
 
-      <p className="text-slate-400 font-body-md text-sm md:text-base leading-relaxed opacity-80 line-clamp-3 mb-6">
+      <p className="themed-text font-body-md text-sm md:text-base leading-relaxed opacity-80 line-clamp-3 mb-6">
         {project.description}
       </p>
 
       <div className="mt-auto pt-4 border-t border-on-surface/5 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_var(--color-primary-container)]" />
-          <div className="text-[10px] text-slate-500 uppercase tracking-widest">Active Production</div>
+          <div className="text-[10px] themed-text-muted uppercase tracking-widest">Active Production</div>
         </div>
         <Link
           href={`/projects/${project.id}`}

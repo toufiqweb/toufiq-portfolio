@@ -46,7 +46,7 @@ export default function Footer() {
             Toufiq Alahe
           </h2>
 
-          <p className="text-on-surface/70 text-body-lg leading-relaxed mb-10">
+          <p className="themed-surface-70 text-body-lg leading-relaxed mb-10">
             Frontend Developer focused on building modern, responsive, and user-friendly web interfaces using React, Next.js, and Tailwind CSS. Passionate about writing clean code and continuously improving skills.
           </p>
 
@@ -66,7 +66,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-xs uppercase tracking-widest text-on-surface/50 mb-6">
+            <h3 className="text-xs uppercase tracking-widest themed-surface-50 mb-6">
               Quick_Links
             </h3>
 
@@ -80,7 +80,7 @@ export default function Footer() {
                 >
                   <a
                     href={item.href}
-                    className="text-on-surface/60 hover:text-on-surface transition flex items-center"
+                    className="themed-surface-60 hover:text-on-surface transition flex items-center"
                   >
                     <span className="text-primary mr-2">/</span>
                     {item.name}
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Social */}
           <div className="flex flex-col items-center">
-            <h3 className="text-xs uppercase tracking-widest text-on-surface/50 mb-6">
+            <h3 className="text-xs uppercase tracking-widest themed-surface-50 mb-6">
               Social_Linkage
             </h3>
 
@@ -108,7 +108,7 @@ export default function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container border border-outline/20 text-on-surface/60 hover:text-on-surface hover:bg-surface-container-high transition"
+                      className="w-12 h-12 flex items-center justify-center rounded-xl bg-surface-container border border-outline/20 themed-surface-60 hover:text-on-surface hover:bg-surface-container-high transition"
                       aria-label={item.name}
                     >
                       <span className="material-symbols-outlined">
@@ -124,7 +124,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div className="flex flex-col items-center md:items-end">
-            <h3 className="text-xs uppercase tracking-widest text-on-surface/50 mb-6">
+            <h3 className="text-xs uppercase tracking-widest themed-surface-50 mb-6">
               Legal
             </h3>
 
@@ -140,7 +140,7 @@ export default function Footer() {
                   initial={{ opacity: 0, x: 10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className="text-xs text-on-surface/40 hover:text-primary uppercase tracking-widest block transition"
+                  className="text-xs themed-surface-40 hover:text-primary uppercase tracking-widest block transition"
                 >
                   {item.label}
                 </motion.a>
@@ -159,7 +159,7 @@ export default function Footer() {
         >
 
           {/* Left Section */}
-          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-xs text-on-surface/40 tracking-widest uppercase">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-xs themed-surface-40 tracking-widest uppercase">
 
             <span className="text-center sm:text-left">
               © 2026 Toufiq Alahe. All rights reserved.
@@ -177,7 +177,7 @@ export default function Footer() {
           </div>
 
           {/* Right Section */}
-          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-2 sm:gap-6 text-xs text-on-surface/40">
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-2 sm:gap-6 text-xs themed-surface-40">
 
             <span className="text-center sm:text-left">
               Performance: Optimized
