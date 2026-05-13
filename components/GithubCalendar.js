@@ -73,7 +73,7 @@ const GithubCalendar = ({ username = "toufiqweb" }) => {
       <div className="absolute top-1/4 -right-20 max-w-80 max-h-80 bg-primary/10 rounded-full blur-[100px] -z-10 opacity-30" />
       <div className="absolute bottom-1/4 -left-20 max-w-96 max-h-96 bg-tertiary/10 rounded-full blur-[120px] -z-10 opacity-30" />
 
-      <div className="max-w-6xl w-full">
+      <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-12 sm:mb-20">
           <motion.div
@@ -109,7 +109,7 @@ const GithubCalendar = ({ username = "toufiqweb" }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="glass-card relative p-5 sm:p-10 md:p-12 rounded-[2rem] sm:rounded-[3.5rem] border border-on-surface/5 overflow-hidden group shadow-2xl w-full"
+          className="glass-card  relative p-5 sm:p-10 md:p-12 rounded-[2rem] sm:rounded-[3.5rem] border border-on-surface/5 overflow-hidden group shadow-2xl w-full"
         >
           {/* Subtle animated light sweep */}
           <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-tertiary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
@@ -117,7 +117,7 @@ const GithubCalendar = ({ username = "toufiqweb" }) => {
           <div className="relative z-10 flex flex-col items-center w-full">
             <div className="w-full pb-6 flex justify-center">
               {mounted ? (
-                <div className="w-full max-w-[400px] sm:max-w-[540px] md:max-w-[720px] lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1320px] mx-auto">
+                <div className="w-full max-w-[320px] sm:max-w-[375px] md:max-w-[720px] lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1320px] mx-auto">
                   <div className="w-full overflow-x-auto custom-scrollbar flex justify-center">
                     <GitHubCalendar
                       username={username}
