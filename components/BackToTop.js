@@ -37,7 +37,7 @@ export default function BackToTop() {
           <Magnetic strength={0.2}>
             <button
               onClick={scrollToTop}
-              className="group flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-surface-container/60 backdrop-blur-md border border-outline/20 themed-surface-80 hover:text-primary shadow-lg hover:shadow-[0_0_20px_rgba(255,87,51,0.2)] hover:border-primary/40 transition-all duration-300"
+              className="group flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full  light:text-primary light:hover:text-primary bg-surface-container/60 backdrop-blur-md border border-outline/20 themed-surface-80 hover:text-primary shadow-lg hover:shadow-[0_0_20px_rgba(255,87,51,0.2)] hover:border-primary/40 transition-all duration-300"
               aria-label="Back to top"
             >
               <span className="material-symbols-outlined text-xl md:text-2xl transition-transform duration-300 group-hover:-translate-y-1">

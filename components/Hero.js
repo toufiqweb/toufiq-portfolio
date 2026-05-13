@@ -103,7 +103,7 @@ export default function Hero() {
       className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-gutter items-center w-full  py-12 md:py-20 relative min-h-screen"
     >
       {/* Left Side */}
-      <div className="lg:col-span-7 flex flex-col items-center lg:items-start space-y-8 text-center lg:text-left">
+      <div className="lg:col-span-6 flex flex-col items-center lg:items-start space-y-8 text-center lg:text-left">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -235,7 +235,7 @@ export default function Hero() {
       </div>
 
       {/* Right Side */}
-      <div className="lg:col-span-5 flex flex-col items-center justify-center relative mt-lg md:mt-0 pb-20 md:pb-0">
+      <div className="lg:col-span-6 flex flex-col items-center justify-center relative mt-lg md:mt-0 pb-20 md:pb-0">
         <motion.div
           ref={imageRef}
           initial={{ opacity: 0, scale: 0.9 }}
@@ -316,7 +316,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute -bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2"
+        className="absolute -bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
       >
         <div className="flex flex-col items-center gap-3">
           {/* Mouse Icon */}
