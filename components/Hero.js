@@ -166,29 +166,31 @@ export default function Hero() {
           </motion.p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-md pt-4">
-          <Magnetic strength={0.2}>
-            <motion.a
-              href="#contact"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 1.2 }}
-              className="flex items-center gap-xs bg-primary text-on-primary px-5 sm:px-6 md:px-8  py-3 sm:py-3 md:py-4 rounded-xl font-bold  shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all active:scale-95 premium-border text-sm sm:text-base" >
-              Contact Me
-              <span className="material-symbols-outlined text-sm">send</span>
-            </motion.a>
-          </Magnetic>
+        <div className="flex flex-col items-center  justify-center lg:items-start gap-md pt-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <Magnetic strength={0.2}>
+              <motion.a
+                href="#contact"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+                className="flex items-center gap-xs bg-primary text-on-primary px-5 sm:px-6 md:px-8  py-3 sm:py-3 md:py-4 rounded-xl font-bold  shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all active:scale-95 premium-border text-sm sm:text-base" >
+                Contact Me
+                <span className="material-symbols-outlined text-sm">send</span>
+              </motion.a>
+            </Magnetic>
 
-          <Magnetic strength={0.2}>
-            <motion.button
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 1.3 }}
-              className="flex items-center gap-xs bg-surface-container border border-outline/20 px-5 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 rounded-xl text-on-surface font-bold hover:bg-on-surface/5 transition-all active:scale-95 text-sm sm:text-base" >
-              <span className="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_var(--color-tertiary)]"></span>
-              Resume
-            </motion.button>
-          </Magnetic>
+            <Magnetic strength={0.2}>
+              <motion.button
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.3 }}
+                className="flex items-center gap-xs bg-surface-container border border-outline/20 px-5 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 rounded-xl text-on-surface font-bold hover:bg-on-surface/5 transition-all active:scale-95 text-sm sm:text-base" >
+                <span className="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_var(--color-tertiary)]"></span>
+                Resume
+              </motion.button>
+            </Magnetic>
+          </div>
 
           <div className="flex items-center gap-sm">
             {/* GitHub */}

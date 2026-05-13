@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useEffect, useRef, useMemo } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useGithubStats } from '@/hooks/useGithubStats';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -72,21 +73,39 @@ const StatCard = ({ label, value, suffix = '', isText = false, index }) => {
   );
 };
 
-export default function StatsClient({ githubData }) {
-  const stats = useMemo(() => [
-    { label: 'Journey Started', value: 'Dec 2025', isText: true },
-    { label: 'Projects Built', value: 12, suffix: '+' },
+export default function StatsClient() {
+  const username = "toufiqweb";
+
+  const {
+    streak,
+    totalContributions,
+    publicRepos,
+    loading,
+  } = useGithubStats(username);
+
+  // Only stats logic changed — UI untouched
+  const stats = [
     {
-      label: 'GitHub Repos',
-      value: githubData?.public_repos ?? 0,
+      label: 'Journey Started',
+      value: '2025',
+      isText: true,
+    },
+    {
+      label: 'Projects Built',
+      value: 12,
       suffix: '+',
     },
     {
-      label: 'GitHub Contributions',
-      value: 900,
+      label: 'Total Contributions',
+      value: loading ? 0 : totalContributions,
       suffix: '+',
     },
-  ], [githubData]);
+    {
+      label: 'Public Repos',
+      value: loading ? 0 : publicRepos,
+      suffix: '',
+    },
+  ];
 
   return (
     <section className="w-full max-w-6xl mx-auto mb-xl px-6">
