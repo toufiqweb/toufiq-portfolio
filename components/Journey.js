@@ -115,9 +115,8 @@ export default function Journey() {
     <section id="journey" className="relative w-full max-w-7xl mx-auto px-6 py-24 md:py-32 overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 z-0 dotted-grid opacity-20 pointer-events-none" />
-
       {/* Header Section */}
-      <div className="relative z-10 text-center mb-24 md:mb-32">
+      <div className="relative z-10 text-center  mb-12 md:mb-24">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -128,13 +127,13 @@ export default function Journey() {
         </motion.span>
         <div className="relative flex flex-col items-center justify-center mb-6 md:mb-10 px-6 overflow-hidden">
           <motion.h2
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 0.03, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
-            className="font-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em] w-full text-center"
+            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
           >
-            MY JOURNEY
+            JOURNEY
           </motion.h2>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -142,7 +141,7 @@ export default function Journey() {
             viewport={{ once: true }}
             className="font-headline-lg text-3xl md:text-headline-lg text-on-surface relative z-10 tracking-tight"
           >
-            MY <span className="text-primary">JOURNEY</span>
+            MY<span className="text-primary"> JOURNEY</span>
           </motion.h1>
           <motion.div
             initial={{ width: 0 }}
@@ -162,6 +161,7 @@ export default function Journey() {
           My growth as a developer, from the beginning to now—highlighting the challenges I’ve overcome, the skills I’ve gained, and the consistency that keeps me moving forward.
         </motion.p>
       </div>
+
 
       {/* Timeline Section */}
       <div className="relative">

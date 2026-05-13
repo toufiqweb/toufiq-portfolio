@@ -89,45 +89,40 @@ export default function Skills() {
       id="skills"
       className="w-full max-w-7xl mx-auto px-6 py-20 md:py-32"
     >
-      {/* Header */}
-      <div className="text-center mb-16 space-y-6">
-        <div className="relative flex flex-col items-center justify-center overflow-hidden">
-
+      {/* Header Section */}
+      <div className="relative z-10 text-center  mb-12 md:mb-24">
+        <div className="relative flex flex-col items-center justify-center mb-6 md:mb-10 px-6 overflow-hidden">
           <motion.h2
             initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 0.04, scale: 1 }}
+            whileInView={{ opacity: 0.03, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2 }}
-            className="absolute text-5xl md:text-7xl uppercase tracking-[0.25em] text-on-surface whitespace-nowrap pointer-events-none"
+            transition={{ duration: 1.5, ease: 'easeOut' }}
+            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
           >
             Skills
           </motion.h2>
-
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative z-10 text-3xl md:text-5xl font-bold text-on-surface"
+            className="font-headline-lg text-3xl md:text-headline-lg text-on-surface relative z-10 tracking-tight"
           >
-            My <span className="text-primary">Skills</span>
+            My<span className="text-primary"> Skills</span>
           </motion.h1>
-
           <motion.div
             initial={{ width: 0 }}
-            whileInView={{ width: '80px' }}
+            whileInView={{ width: '3rem' }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-1 rounded-full bg-primary mt-5 shadow-[0_0_20px_var(--color-primary)]"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="h-1 bg-primary mt-4 rounded-full relative z-10"
           />
         </div>
-
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="max-w-2xl mx-auto text-on-surface/70 leading-relaxed text-sm md:text-base"
+          className="font-body-md md:text-body-lg text-slate-400 max-w-2xl mx-auto leading-relaxed"
         >
           I enjoy building modern web applications with clean UI, responsive design,
           and scalable architecture while continuously learning new technologies.

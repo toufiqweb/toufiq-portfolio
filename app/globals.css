@@ -10,26 +10,26 @@
   --color-surface-container-highest: #2d3449;
   --color-surface-container-low: #131b2e;
   --color-surface-container-lowest: #060e20;
-  
+
   --color-primary: #FF5733;
   --color-primary-container: #FF5733;
   --color-on-primary: #ffffff;
   --color-on-primary-container: #ffffff;
-  
+
   --color-secondary: #BCC7DE;
   --color-secondary-container: #1E293B;
   --color-on-secondary: #000000;
-  
+
   --color-tertiary: #F39600;
   --color-tertiary-container: #F39600;
   --color-on-tertiary: #ffffff;
-  
+
   --color-on-surface: #DAE2FD;
   --color-on-background: #DAE2FD;
-  
+
   --color-outline: #ab8982;
   --color-outline-variant: #5b403a;
-  
+
   --color-error: #ffb4ab;
   --color-on-error: #690005;
 
@@ -74,23 +74,23 @@
   --color-surface-container-highest: #94a3b8;
   --color-surface-container-low: #ffffff;
   --color-surface-container-lowest: #fdfdfd;
-  
+
   --color-primary: #FF5733;
   --color-primary-container: #FF5733;
   --color-on-primary: #ffffff;
   --color-on-primary-container: #ffffff;
-  
+
   --color-secondary: #475569;
   --color-secondary-container: #e2e8f0;
   --color-on-secondary: #ffffff;
-  
+
   --color-tertiary: #F39600;
   --color-tertiary-container: #F39600;
   --color-on-tertiary: #ffffff;
-  
+
   --color-on-surface: #0f172a;
   --color-on-background: #0f172a;
-  
+
   --color-outline: #cbd5e1;
   --color-outline-variant: #94a3b8;
 }
@@ -103,26 +103,26 @@
   --color-surface-container-highest: var(--color-surface-container-highest);
   --color-surface-container-low: var(--color-surface-container-low);
   --color-surface-container-lowest: var(--color-surface-container-lowest);
-  
+
   --color-primary: var(--color-primary);
   --color-primary-container: var(--color-primary-container);
   --color-on-primary: var(--color-on-primary);
   --color-on-primary-container: var(--color-on-primary-container);
-  
+
   --color-secondary: var(--color-secondary);
   --color-secondary-container: var(--color-secondary-container);
   --color-on-secondary: var(--color-on-secondary);
-  
+
   --color-tertiary: var(--color-tertiary);
   --color-tertiary-container: var(--color-tertiary-container);
   --color-on-tertiary: var(--color-on-tertiary);
-  
+
   --color-on-surface: var(--color-on-surface);
   --color-on-background: var(--color-on-background);
-  
+
   --color-outline: var(--color-outline);
   --color-outline-variant: var(--color-outline-variant);
-  
+
   --color-error: var(--color-error);
   --color-on-error: var(--color-on-error);
 
@@ -163,7 +163,7 @@
   * {
     @apply border-outline/10;
   }
-  
+
   html {
     @apply scroll-smooth;
   }
@@ -172,18 +172,22 @@
     @apply bg-background text-on-surface antialiased transition-colors duration-300 overflow-x-hidden selection:bg-primary/20 selection:text-primary;
     width: 100%;
     position: relative;
+
     /* Custom Scrollbar */
     &::-webkit-scrollbar {
       width: 8px;
     }
+
     &::-webkit-scrollbar-track {
       background: var(--color-background);
     }
+
     &::-webkit-scrollbar-thumb {
       background: var(--color-surface-container-highest);
       border-radius: 10px;
       border: 2px solid var(--color-background);
     }
+
     &::-webkit-scrollbar-thumb:hover {
       background: var(--color-primary);
     }
@@ -204,8 +208,15 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .cursor-blink {
@@ -265,8 +276,17 @@
 }
 
 @keyframes pulse-slow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.1; transform: scale(1.05); }
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.1;
+    transform: scale(1.05);
+  }
 }
 
 .animate-pulse-slow {
@@ -289,13 +309,23 @@
 }
 
 @keyframes ring-rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes ring-rotate-reverse {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 .animate-ring-rotate {
@@ -307,10 +337,61 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(20px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
 }
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+
+/* GitHub Calendar Custom Scrollbar */
+.custom-scrollbar {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-surface-container);
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+
+/* Chrome, Edge, Safari */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-surface-container-low);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg,
+      var(--color-primary),
+      var(--color-tertiary));
+
+  border-radius: 999px;
+  border: 2px solid var(--color-surface-container-low);
+  transition: all 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg,
+      var(--color-tertiary),
+      var(--color-primary));
+
+  box-shadow: 0 0 12px rgba(255, 87, 51, 0.4);
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
 }

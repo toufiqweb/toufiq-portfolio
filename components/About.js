@@ -40,16 +40,15 @@ export default function About() {
       {/* Background Ambient Glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] -z-10 rounded-full"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tertiary/10 blur-[120px] -z-10 rounded-full"></div>
-
-      {/* Section Title Shell */}
-      <div className='text-center mb-16 space-y-6'>
+      {/* Header Section */}
+      <div className="relative z-10 text-center mb-12 md:mb-24">
         <div className="relative flex flex-col items-center justify-center mb-6 md:mb-10 px-6 overflow-hidden">
           <motion.h2
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 0.03, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: 'easeOut' }}
-            className="font-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em] w-full text-center"
+            className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
           >
             ABOUT ME
           </motion.h2>
@@ -59,7 +58,7 @@ export default function About() {
             viewport={{ once: true }}
             className="font-headline-lg text-3xl md:text-headline-lg text-on-surface relative z-10 tracking-tight"
           >
-            About <span className="text-primary">Me</span>
+            About<span className="text-primary"> Me</span>
           </motion.h1>
           <motion.div
             initial={{ width: 0 }}
@@ -68,7 +67,6 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="h-1 bg-primary mt-4 rounded-full relative z-10"
           />
-
         </div>
         <motion.p
           initial={{ opacity: 0 }}
@@ -143,7 +141,7 @@ export default function About() {
             <motion.h3
               variants={revealVariants}
               custom={0}
-              className="font-headline-lg"
+              className="font-headline-lg text-2xl md:text-headline-lg"
             >
               Hey! I'm <span className="text-primary font-extrabold uppercase tracking-tight glow-text">TOUFIQ</span>
             </motion.h3>

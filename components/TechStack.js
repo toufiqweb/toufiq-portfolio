@@ -96,16 +96,15 @@ export default function TechStack() {
 
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 md:px-6">
-        {/* Section Title Shell */}
-        <div className="text-center mb-16 space-y-6">
-          {/* Section Title Shell */}
+        {/* Header Section */}
+        <div className="relative z-10 text-center  mb-12 md:mb-24">
           <div className="relative flex flex-col items-center justify-center mb-6 md:mb-10 px-6 overflow-hidden">
             <motion.h2
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 0.03, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: 'easeOut' }}
-              className="font-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em] w-full text-center"
+              className="font-headline-xl text-4xl sm:text-6xl md:text-headline-xl text-on-surface uppercase select-none pointer-events-none absolute whitespace-nowrap tracking-[0.2em]"
             >
               TECHNOLOGIES
             </motion.h2>
@@ -113,16 +112,16 @@ export default function TechStack() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-headline-lg text-on-surface relative z-10 tracking-tight"
+              className="font-headline-lg text-3xl md:text-headline-lg text-on-surface relative z-10 tracking-tight"
             >
-              TECHNO<span className="text-primary-container">LOGIES</span>
+              TECHNO<span className="text-primary">LOGIES</span>
             </motion.h1>
             <motion.div
               initial={{ width: 0 }}
-              whileInView={{ width: '4rem' }}
+              whileInView={{ width: '3rem' }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="h-1 bg-primary-container mt-4 rounded-full relative z-10 shadow-[0_0_10px_var(--color-primary-container)]"
+              className="h-1 bg-primary mt-4 rounded-full relative z-10"
             />
           </div>
           <motion.p

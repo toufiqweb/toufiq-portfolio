@@ -100,7 +100,7 @@ export default function Hero() {
     <section
       id="home"
       ref={sectionRef}
-      className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-gutter items-center w-full py-12 md:py-24 relative min-h-[80vh]"
+      className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-gutter items-center w-full  py-12 md:py-20 relative min-h-screen"
     >
       {/* Left Side */}
       <div className="lg:col-span-7 flex flex-col items-center lg:items-start space-y-8 text-center lg:text-left">
@@ -173,8 +173,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 1.2 }}
-              className="flex items-center gap-xs bg-primary text-on-primary px-8 py-4 rounded-xl font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all active:scale-95 premium-border"
-            >
+              className="flex items-center gap-xs bg-primary text-on-primary px-5 sm:px-6 md:px-8  py-3 sm:py-3 md:py-4 rounded-xl font-bold  shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all active:scale-95 premium-border text-sm sm:text-base" >
               Contact Me
               <span className="material-symbols-outlined text-sm">send</span>
             </motion.a>
@@ -185,8 +184,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 1.3 }}
-              className="flex items-center gap-xs bg-surface-container border border-outline/20 px-8 py-4 rounded-xl text-on-surface font-bold hover:bg-on-surface/5 transition-all active:scale-95"
-            >
+              className="flex items-center gap-xs bg-surface-container border border-outline/20 px-5 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 rounded-xl text-on-surface font-bold hover:bg-on-surface/5 transition-all active:scale-95 text-sm sm:text-base" >
               <span className="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_var(--color-tertiary)]"></span>
               Resume
             </motion.button>
@@ -237,7 +235,7 @@ export default function Hero() {
       </div>
 
       {/* Right Side */}
-      <div className="lg:col-span-5 flex flex-col items-center justify-center relative mt-lg md:mt-0">
+      <div className="lg:col-span-5 flex flex-col items-center justify-center relative mt-lg md:mt-0 pb-20 md:pb-0">
         <motion.div
           ref={imageRef}
           initial={{ opacity: 0, scale: 0.9 }}
@@ -245,12 +243,12 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="relative w-[clamp(280px,75vw,450px)] h-[clamp(280px,75vw,450px)]"
         >
-          <div 
-            className="ring-rotate absolute inset-0 rounded-full border-2 border-dashed border-primary-container/20" 
+          <div
+            className="ring-rotate absolute inset-0 rounded-full border-2 border-dashed border-primary-container/20"
             style={{ transform: `translate(${mousePos.x * 0.5}px, ${mousePos.y * 0.5}px)` }}
           />
-          <div 
-            className="ring-rotate-reverse absolute inset-4 rounded-full border border-tertiary/30" 
+          <div
+            className="ring-rotate-reverse absolute inset-4 rounded-full border border-tertiary/30"
             style={{ transform: `translate(${mousePos.x * -0.3}px, ${mousePos.y * -0.3}px)` }}
           />
 
@@ -318,14 +316,32 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute -bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] uppercase tracking-[0.3em] text-on-surface/30">Scroll</span>
-        <motion.div 
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-px h-12 bg-linear-to-b from-primary to-transparent"
-        />
+        <div className="flex flex-col items-center gap-3">
+          {/* Mouse Icon */}
+          <div className="relative w-6 h-10 rounded-full border-2 border-primary/30 flex justify-center p-1.5">
+            <motion.div
+              animate={{
+                y: [0, 12, 0],
+                opacity: [1, 0, 1]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="w-1 h-2 rounded-full bg-primary"
+            />
+          </div>
+
+          <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-on-surface/40 select-none">
+            Scroll
+          </span>
+
+          {/* Animated Line */}
+          <div className="h-12 w-px bg-gradient-to-b from-primary/50 to-transparent" />
+        </div>
       </motion.div>
     </section>
   );
