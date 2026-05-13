@@ -36,7 +36,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative min-h-screen pt-32 pb-20 overflow-hidden">
+    <section id="about" className="relative w-full min-h-screen pt-32 pb-20 overflow-hidden">
       {/* Background Ambient Glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] -z-10 rounded-full"></div>
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tertiary/10 blur-[120px] -z-10 rounded-full"></div>
@@ -80,7 +80,7 @@ export default function About() {
       </div>
 
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="w-full max-w-7xl mx-auto px-0 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
         {/* Left Column: Profile */}
         <div className="lg:col-span-5 relative flex justify-center order-2 lg:order-1">
           <motion.div

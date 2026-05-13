@@ -162,10 +162,12 @@
 @layer base {
   * {
     @apply border-outline/10;
+    max-width: 100%;
   }
 
   html {
     @apply scroll-smooth;
+    overflow-x: hidden;
   }
 
   body {

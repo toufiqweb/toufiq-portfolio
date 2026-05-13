@@ -124,7 +124,7 @@ export default function Navbar() {
             <ThemeToggle />
 
 
-            <div className="hidden md:block">
+            <div className="hidden md:block lg:hidden xl:block">
               <Magnetic strength={0.2}>
                 <a
                   href="/resume.pdf"

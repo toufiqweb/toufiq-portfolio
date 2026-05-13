@@ -87,7 +87,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="w-full max-w-7xl mx-auto px-6 py-20 md:py-32"
+      className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-32"
     >
       {/* Header Section */}
       <div className="relative z-10 text-center  mb-12 md:mb-24">

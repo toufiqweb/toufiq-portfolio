@@ -26,7 +26,7 @@ const SectionReveal = ({ children, delay = 0, y = 30, x = 0, scale = 1, duration
         delay: delay, 
         ease: [0.16, 1, 0.3, 1] 
       }}
-      className={className}
+      className={`w-full ${className}`}
     >
       {children}
     </motion.div>

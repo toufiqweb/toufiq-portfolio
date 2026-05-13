@@ -112,7 +112,7 @@ export default function Journey() {
   ];
 
   return (
-    <section id="journey" className="relative w-full max-w-7xl mx-auto px-6 py-24 md:py-32 overflow-hidden">
+    <section id="journey" className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-24 md:py-32 overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 z-0 dotted-grid opacity-20 pointer-events-none" />
       {/* Header Section */}
@@ -169,7 +169,7 @@ export default function Journey() {
         <div className="absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-px bg-gradient-to-b from-transparent via-primary-container to-transparent shadow-[0_0_10px_var(--color-primary-container)] hidden md:block" />
 
         {/* Timeline Items */}
-        <div className="space-y-24 md:space-y-32">
+        <div className="space-y-16 sm:space-y-24 md:space-y-32">
           {journeyItems.map((item, index) => (
             <TimelineItem key={index} {...item} delay={index * 0.15} />
           ))}

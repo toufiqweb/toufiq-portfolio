@@ -58,10 +58,10 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="w-full py-32  relative overflow-hidden">
+    <section id="contact" className="w-full py-20 sm:py-32 relative overflow-hidden">
 
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
         {/* Header Section */}
         <div className="relative z-10 text-center mb-24 md:mb-32">
@@ -102,7 +102,7 @@ export default function Contact() {
         </div>
 
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
           {/* Left Column: Info */}
           <div className="space-y-12">
             <motion.div
@@ -134,7 +134,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-label-sm text-sm md:text-base text-neutral-500 uppercase">Email me at</p>
-                <p className="font-headline-md text-lg md:text-xl text-on-surface">toufiqalahe.dev@gmail.com</p>
+                <p className="font-headline-md text-base md:text-xl text-on-surface break-all">toufiqalahe.dev@gmail.com</p>
               </div>
 
             </motion.div>
@@ -200,7 +200,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="glass-card p-10 rounded-2xl relative"
+            className="glass-card p-6 sm:p-8 md:p-10 rounded-2xl relative"
           >
 
 
