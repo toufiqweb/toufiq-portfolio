@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${greatVibes.variable} font-sans text-on-surface selection:bg-primary-container selection:text-on-primary-container relative overflow-x-hidden bg-background`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${greatVibes.variable} font-sans text-on-surface selection:bg-primary-container selection:text-on-primary-container relative bg-background`}
       >
         <ThemeProvider>
           <SmoothScroll>

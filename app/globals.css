@@ -167,11 +167,10 @@
 
   html {
     @apply scroll-smooth;
-    overflow-x: hidden;
   }
 
   body {
-    @apply bg-background text-on-surface antialiased transition-colors duration-300 overflow-x-hidden selection:bg-primary/20 selection:text-primary;
+    @apply bg-background text-on-surface antialiased transition-colors duration-300 selection:bg-primary/20 selection:text-primary;
     width: 100%;
     position: relative;
 
@@ -199,6 +198,27 @@
 .stars-overlay {
   background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
   background-size: 40px 40px;
+}
+
+/* Lenis Scroll CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 .glow-text {

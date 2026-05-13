@@ -87,7 +87,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-32"
+      className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-32 overflow-hidden"
     >
       {/* Header Section */}
       <div className="relative z-10 text-center  mb-12 md:mb-24">
