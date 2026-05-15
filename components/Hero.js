@@ -287,13 +287,13 @@ export default function Hero() {
             className="absolute inset-12 rounded-full overflow-hidden border border-on-surface/10 bg-surface-container-low shadow-2xl z-10"
           >
             <Image
-              src="https://i.ibb.co.com/gMVjdhp0/Whats-App-Image-2026-04-18-at-1-47-29-PM.jpg"
+              src="https://i.ibb.co.com/HD5t6j2z/Picsart-26-05-15-13-36-00-685-jpg.jpg"
               alt="Profile"
               fill
               priority
               loading="eager"
               sizes="(max-width: 768px) 100vw, 450px"
-              className="object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+              className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700"
             />
           </motion.div>
         </motion.div>

@@ -105,7 +105,7 @@ export default function Journey() {
 
       title: 'Growth, Consistency & Professional Mindset',
       icon: 'auto_graph',
-      image: 'https://i.ibb.co.com/q3QGdXFy/file-00000000493071fab2db641e60297dae.png',
+      image: 'https://i.ibb.co.com/cXSTG7rX/file-00000000e3e071f890d8d82717f49ae9.png',
       description: "Now I’m not just “learning code” — I’m growing as a developer. I continue my 100 Days Coding Challenge on LinkedIn. My focus has shifted beyond just skills — towards clean code, user experience, and long-term consistency.",
       align: 'right'
     },
