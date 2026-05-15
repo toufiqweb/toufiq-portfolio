@@ -97,7 +97,7 @@ export default function About() {
             {/* Profile Image Wrapper */}
             <div className="absolute inset-6 sm:inset-8 rounded-full overflow-hidden border-4 border-surface shadow-2xl bg-surface-container-low">
               <Image
-                src="https://i.ibb.co.com/gMVjdhp0/Whats-App-Image-2026-04-18-at-1-47-29-PM.jpg"
+                src="https://i.ibb.co.com/HD5t6j2z/Picsart-26-05-15-13-36-00-685-jpg.jpg"
                 alt="Portrait"
                 fill
                 sizes="(max-width: 768px) 100vw, 380px"
