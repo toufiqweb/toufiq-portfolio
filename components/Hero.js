@@ -287,7 +287,7 @@ export default function Hero() {
             className="absolute inset-12 rounded-full overflow-hidden border border-on-surface/10 bg-surface-container-low shadow-2xl z-10"
           >
             <Image
-              src="https://i.ibb.co.com/HD5t6j2z/Picsart-26-05-15-13-36-00-685-jpg.jpg"
+              src="https://i.ibb.co.com/W4mhMCKp/tt-jpg.jpg"
               alt="Profile"
               fill
               priority
