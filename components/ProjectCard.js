@@ -24,8 +24,8 @@ const ProjectCard = ({ project, index }) => {
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale-20 group-hover:grayscale-0 opacity-80 group-hover:opacity-100"
             unoptimized
+            className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale-20 group-hover:grayscale-0 opacity-80 group-hover:opacity-100"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
             <span className="text-on-surface font-headline-md text-xs tracking-widest uppercase glow-text">

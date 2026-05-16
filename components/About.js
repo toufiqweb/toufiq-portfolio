@@ -97,12 +97,11 @@ export default function About() {
             {/* Profile Image Wrapper */}
             <div className="absolute inset-6 sm:inset-8 rounded-full overflow-hidden border-4 border-surface shadow-2xl bg-surface-container-low">
               <Image
-                src="https://i.ibb.co.com/HD5t6j2z/Picsart-26-05-15-13-36-00-685-jpg.jpg"
+                src="https://i.ibb.co.com/dsFdfcJG/file-000000004e507208947e386ddb652090.png"
                 alt="Portrait"
                 fill
-                sizes="(max-width: 768px) 100vw, 380px"
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 unoptimized
+                className="object-cover grayscale-70 hover:grayscale-0 transition-all duration-700"
               />
             </div>
 

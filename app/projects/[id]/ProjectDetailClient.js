@@ -59,9 +59,9 @@ export default function ProjectDetailClient({ id }) {
             src={project.image}
             alt=""
             fill
-            sizes="100vw"
-            className="object-cover opacity-25 blur-[4px] scale-110"
+            priority
             unoptimized
+            className="object-cover opacity-25 blur-[4px] scale-110"
           />
         </div>
 
@@ -231,8 +231,8 @@ export default function ProjectDetailClient({ id }) {
                 alt={project.title}
                 width={800}
                 height={500}
-                className="w-full h-[320px] md:h-[440px] object-cover group-hover:scale-105 transition-transform duration-500"
                 unoptimized
+                className="w-full h-[320px] md:h-[440px] object-cover group-hover:scale-105 transition-transform duration-500"
               />
 
               {/* overlay */}
@@ -465,9 +465,8 @@ export default function ProjectDetailClient({ id }) {
                 src={src}
                 alt={`${project.title} screenshot ${i + 1}`}
                 fill
-                sizes="(max-width:768px) 80vw, 500px"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
                 unoptimized
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
               {/* overlay */}
@@ -495,9 +494,8 @@ export default function ProjectDetailClient({ id }) {
             src={nextProject.image}
             alt=""
             fill
-            sizes="100vw"
-            className="object-cover opacity-15 grayscale"
             unoptimized
+            className="object-cover opacity-15 grayscale"
           />
         )}
 
