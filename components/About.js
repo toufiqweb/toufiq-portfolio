@@ -215,14 +215,17 @@ export default function About() {
 
             <div className="sm:ml-auto w-full sm:w-auto">
               <Magnetic strength={0.2}>
-                <motion.button
+                <motion.a
+                  href="/toufiq-alahe-cv.pdf"
+                  download="Toufiq_Alahe_CV.pdf"
+                  aria-label="Download Resume"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full sm:w-auto  px-8 py-4 sm:px-10 sm:py-5 rounded-xl bg-gradient-to-r from-primary-container to-primary text-on-primary font-bold text-base sm:text-lg hover:shadow-[0_0_30px_var(--color-primary-container)] transition-all duration-300 flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto  px-8 py-4 sm:px-10 sm:py-5 rounded-xl bg-gradient-to-r from-primary-container to-primary text-on-primary font-bold text-base sm:text-lg hover:shadow-[0_0_30px_var(--color-primary-container)] transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer"
                 >
                   View Resume
                   <span className="material-symbols-outlined text-xl sm:text-2xl">download</span>
-                </motion.button>
+                </motion.a>
               </Magnetic>
             </div>
           </div>

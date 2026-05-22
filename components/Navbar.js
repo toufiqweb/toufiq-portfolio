@@ -129,8 +129,9 @@ export default function Navbar() {
             <div className="hidden md:block lg:hidden xl:block">
               <Magnetic strength={0.2}>
                 <a
-                  href="/resume.pdf"
-                  download
+                  href="/toufiq-alahe-cv.pdf"
+                  download="Toufiq_Alahe_CV.pdf"
+                  aria-label="Download Resume"
                   className="bg-on-surface/5 dark:bg-on-surface/5 light:bg-slate-200 border border-on-surface/10 dark:border-on-surface/10 light:border-slate-300 px-4 py-2 rounded-lg text-white dark:text-on-surface light:text-slate-900 text-sm hover:border-primary-container/50 hover:bg-on-surface/10 transition-all active:scale-95 flex items-center gap-2 shadow-lg"
                 >
                   <span className="material-symbols-outlined text-sm">download</span>
@@ -197,8 +198,9 @@ export default function Navbar() {
                 className="mt-8 flex flex-col gap-4 items-center"
               >
                 <a
-                  href="/resume.pdf"
-                  download
+                  href="/toufiq-alahe-cv.pdf"
+                  download="Toufiq_Alahe_CV.pdf"
+                  aria-label="Download Resume"
                   className="bg-primary text-on-primary px-12 py-4 rounded-full font-bold text-lg shadow-xl shadow-primary/20"
                 >
                   Resume

@@ -50,9 +50,14 @@ export default function Footer() {
             Frontend Developer focused on building modern, responsive, and user-friendly web interfaces using React, Next.js, and Tailwind CSS. Passionate about writing clean code and continuously improving skills.
           </p>
 
-          <button className="bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold halo-ring active:scale-95 transition">
+          <a
+            href="/toufiq-alahe-cv.pdf"
+            download="Toufiq_Alahe_CV.pdf"
+            aria-label="Download Resume"
+            className="inline-block bg-primary text-on-primary px-10 py-4 rounded-xl font-semibold halo-ring active:scale-95 transition cursor-pointer"
+          >
             Download Resume
-          </button>
+          </a>
         </motion.div>
 
         {/* Grid Section */}

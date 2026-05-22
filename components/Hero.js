@@ -181,14 +181,17 @@ export default function Hero() {
             </Magnetic>
 
             <Magnetic strength={0.2}>
-              <motion.button
+              <motion.a
+                href="/toufiq-alahe-cv.pdf"
+                download="Toufiq_Alahe_CV.pdf"
+                aria-label="Download Resume"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.3 }}
-                className="flex items-center gap-xs bg-surface-container border border-outline/20 px-5 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 rounded-xl text-on-surface font-bold hover:bg-on-surface/5 transition-all active:scale-95 text-sm sm:text-base" >
+                className="flex items-center gap-xs bg-surface-container border border-outline/20 px-5 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 rounded-xl text-on-surface font-bold hover:bg-on-surface/5 transition-all active:scale-95 text-sm sm:text-base cursor-pointer" >
                 <span className="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_var(--color-tertiary)]"></span>
                 Resume
-              </motion.button>
+              </motion.a>
             </Magnetic>
           </div>
 
