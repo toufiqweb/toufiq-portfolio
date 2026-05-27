@@ -86,7 +86,7 @@ export default function About() {
             {/* Profile Image Wrapper */}
             <div className="absolute inset-6 sm:inset-8 rounded-full overflow-hidden border-4 border-surface shadow-2xl bg-surface-container-low">
               <Image
-                src="https://i.ibb.co.com/dsFdfcJG/file-000000004e507208947e386ddb652090.png"
+                src="/images/about/portrait.png"
                 alt="Portrait"
                 fill
                 placeholder="blur"

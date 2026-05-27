@@ -291,7 +291,7 @@ export default function Hero() {
             className="absolute inset-12 rounded-full overflow-hidden border border-on-surface/10 bg-surface-container-low shadow-2xl z-10"
           >
             <Image
-              src="https://i.ibb.co.com/mrWNYwXy/port.png"
+              src="/images/hero/port.png"
               alt="Profile"
               fill
               priority
