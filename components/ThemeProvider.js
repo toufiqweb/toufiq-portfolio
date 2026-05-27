@@ -12,7 +12,8 @@ export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState('dark');
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+useEffect(() => {
     setMounted(true);
     const savedTheme = localStorage.getItem('theme');
     

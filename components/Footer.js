@@ -1,28 +1,10 @@
 'use client';
-import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
 import { motion } from 'framer-motion';
 import Magnetic from './Magnetic';
+import { socialLinks } from '@/data/socialLinks';
+import { navLinks } from '@/data/navLinks';
 
 export default function Footer() {
-
-
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Journey', href: '#journey' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
-
-  const socialLinks = [
-    { name: 'GitHub', icon: FaGithub, href: 'https://github.com/toufiqweb' },
-    { name: 'LinkedIn', icon: FaLinkedin, href: 'https://www.linkedin.com/in/toufiq-alahe-dev' },
-    { name: 'Discord', icon: FaDiscord, href: 'https://discord.com/users/toufiq7367' },
-    { name: 'Email', icon: MdEmail, href: 'mailto:toufiqalahe.dev@gmail.com' },
-  ];
 
 
 

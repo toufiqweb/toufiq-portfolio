@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { projects } from '@/lib/projectsData';
+import { projects } from '@/data/projects';
 import ProjectCard from './ProjectCard';
 import { useState, useEffect } from 'react';
 import ProjectCardSkeleton from './skeletons/ProjectCardSkeleton';

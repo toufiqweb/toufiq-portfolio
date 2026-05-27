@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { BLUR_DATA_URL } from '@/lib/blurData';
 import { projects } from '@/lib/projectsData';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
@@ -60,7 +61,8 @@ export default function ProjectDetailClient({ id }) {
             alt=""
             fill
             priority
-            unoptimized
+            placeholder="blur"
+            blurDataURL={BLUR_DATA_URL}
             className="object-cover opacity-25 blur-[4px] scale-110"
           />
         </div>
@@ -231,7 +233,8 @@ export default function ProjectDetailClient({ id }) {
                 alt={project.title}
                 width={800}
                 height={500}
-                unoptimized
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
                 className="w-full h-[320px] md:h-[440px] object-cover group-hover:scale-105 transition-transform duration-500"
               />
 
@@ -465,7 +468,8 @@ export default function ProjectDetailClient({ id }) {
                 src={src}
                 alt={`${project.title} screenshot ${i + 1}`}
                 fill
-                unoptimized
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
@@ -494,7 +498,8 @@ export default function ProjectDetailClient({ id }) {
             src={nextProject.image}
             alt=""
             fill
-            unoptimized
+            placeholder="blur"
+            blurDataURL={BLUR_DATA_URL}
             className="object-cover opacity-15 grayscale"
           />
         )}

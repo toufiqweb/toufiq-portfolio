@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BLUR_DATA_URL } from '@/lib/blurData';
 import gsap from 'gsap';
 import Magnetic from './Magnetic';
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
@@ -294,7 +295,8 @@ export default function Hero() {
               alt="Profile"
               fill
               priority
-              unoptimized
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL}
               className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700"
             />
           </motion.div>

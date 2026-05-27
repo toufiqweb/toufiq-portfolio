@@ -2,9 +2,12 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { BLUR_DATA_URL } from '@/lib/blurData';
 import Magnetic from './Magnetic';
-import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { socialLinks } from '@/data/socialLinks';
+import { whatIDo } from '@/data/aboutData';
 
 export default function About() {
   const revealVariants = {
@@ -20,20 +23,6 @@ export default function About() {
     }),
   };
 
-  const skills = [
-    { name: 'Web Development', icon: 'code' },            // clean dev icon
-    { name: 'React & Next.js Apps', icon: 'hub' },             // component system
-    { name: 'Responsive UI Design', icon: 'devices' },         // multi-device view
-    { name: 'Problem Solving', icon: 'psychology' },           // thinking/logic
-    { name: 'Clean Code ', icon: 'task_alt' },        // correctness/quality
-  ];
-
-  const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com/toufiqweb' },
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/toufiq-alahe-dev' },
-    { icon: FaDiscord, href: 'https://discord.com/users/toufiq7367' },
-    { icon: MdEmail, href: 'toufiqalahe.dev@gmail.com' },
-  ];
 
   return (
     <section id="about" className="relative w-full min-h-screen pt-32 pb-20 overflow-hidden">
@@ -100,7 +89,8 @@ export default function About() {
                 src="https://i.ibb.co.com/dsFdfcJG/file-000000004e507208947e386ddb652090.png"
                 alt="Portrait"
                 fill
-                unoptimized
+                placeholder="blur"
+                blurDataURL={BLUR_DATA_URL}
                 className="object-cover grayscale-70 hover:grayscale-0 transition-all duration-700"
               />
             </div>
@@ -174,7 +164,7 @@ export default function About() {
               custom={3}
               className="flex flex-wrap justify-center lg:justify-start gap-3"
             >
-              {skills.map((skill) => (
+              {whatIDo.map((skill) => (
                 <div
                   key={skill.name}
                   className="bg-surface-container border border-on-surface/5 px-4 py-2 sm:px-5 sm:py-3 rounded-full flex items-center gap-3 hover:border-primary/50 transition-colors group cursor-default"
