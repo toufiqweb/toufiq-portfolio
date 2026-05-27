@@ -53,6 +53,7 @@ const TimelineItem = ({ year, title, description, image, icon, align = 'left', d
             fill
             placeholder="blur"
             blurDataURL={BLUR_DATA_URL}
+            sizes="(max-width: 768px) 100vw, 45vw"
             className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent pointer-events-none" />

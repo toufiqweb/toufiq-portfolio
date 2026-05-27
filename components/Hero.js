@@ -297,6 +297,7 @@ export default function Hero() {
               priority
               placeholder="blur"
               blurDataURL={BLUR_DATA_URL}
+              sizes="(max-width: 768px) 100vw, 450px"
               className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700"
             />
           </motion.div>

@@ -91,6 +91,7 @@ export default function About() {
                 fill
                 placeholder="blur"
                 blurDataURL={BLUR_DATA_URL}
+                sizes="(max-width: 768px) 100vw, 380px"
                 className="object-cover grayscale-70 hover:grayscale-0 transition-all duration-700"
               />
             </div>

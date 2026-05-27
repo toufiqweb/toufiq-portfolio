@@ -63,6 +63,7 @@ export default function ProjectDetailClient({ id }) {
             priority
             placeholder="blur"
             blurDataURL={BLUR_DATA_URL}
+            sizes="100vw"
             className="object-cover opacity-25 blur-[4px] scale-110"
           />
         </div>
@@ -235,6 +236,7 @@ export default function ProjectDetailClient({ id }) {
                 height={500}
                 placeholder="blur"
                 blurDataURL={BLUR_DATA_URL}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-[320px] md:h-[440px] object-cover group-hover:scale-105 transition-transform duration-500"
               />
 
@@ -470,6 +472,7 @@ export default function ProjectDetailClient({ id }) {
                 fill
                 placeholder="blur"
                 blurDataURL={BLUR_DATA_URL}
+                sizes="(max-width: 768px) 80vw, 500px"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
 
@@ -500,6 +503,7 @@ export default function ProjectDetailClient({ id }) {
             fill
             placeholder="blur"
             blurDataURL={BLUR_DATA_URL}
+            sizes="100vw"
             className="object-cover opacity-15 grayscale"
           />
         )}
