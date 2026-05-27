@@ -5,6 +5,7 @@ import CustomCursor from "@/components/CustomCursor";
 import AmbientGlow from "@/components/AmbientGlow";
 import BackToTop from "@/components/BackToTop";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Preloader from "@/components/Preloader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -59,6 +60,7 @@ export default function RootLayout({ children }) {
         className={`${inter.variable} ${spaceGrotesk.variable} ${greatVibes.variable} font-sans text-on-surface selection:bg-primary-container selection:text-on-primary-container relative bg-background`}
       >
         <ThemeProvider>
+          <Preloader />
           <SmoothScroll>
             <AmbientGlow />
             <CustomCursor />
