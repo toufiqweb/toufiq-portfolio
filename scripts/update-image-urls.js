@@ -3,10 +3,12 @@ const path = require('path');
 
 const URL_MAP = {
   // Project 1
-  'https://i.ibb.co.com/V0PjcqrB/skill-sphere-mockup.png': '/images/projects/project-1/mockup.png',
-  'https://i.ibb.co.com/JjWsV40V/skill-sphere-ecru-ten-vercel-app-3.png': '/images/projects/project-1/showcase-1.png',
-  'https://i.ibb.co.com/2Yhtg7vJ/skill-sphere-ecru-ten-vercel-app-1.png': '/images/projects/project-1/showcase-2.png',
-  'https://i.ibb.co.com/JRPDSLFw/skill-sphere-ecru-ten-vercel-app-4.png': '/images/projects/project-1/showcase-3.png',
+  'https://i.ibb.co.com/pBCGPtdR/skill-Sphere-Mockupe.png': '/images/projects/project-1/mockup.png',
+  'https://i.ibb.co.com/5hQvn7wD/showcase-1.png': '/images/projects/project-1/showcase-1.png',
+  'https://i.ibb.co.com/BHQL1FWw/showcase-2.png': '/images/projects/project-1/showcase-2.png',
+  'https://i.ibb.co.com/Q3h3S0Hz/showcase-3.png': '/images/projects/project-1/showcase-3.png',
+  'https://i.ibb.co.com/DfT5DQVd/showcase-4.png': '/images/projects/project-1/showcase-4.png',
+  'https://i.ibb.co.com/8S8JvMG/showcase-5.png': '/images/projects/project-1/showcase-5.png',
 
   // Project 2
   'https://i.ibb.co.com/rRxbFd6k/dragon-news-mockup.png': '/images/projects/project-2/mockup.png',
