@@ -38,7 +38,15 @@ const URL_MAP = {
   'https://i.ibb.co.com/RkhCRSB2/Chat-GPT-Image-May-8-2026-01-18-08-PM.png': '/images/projects/project-6/mockup.png',
   'https://i.ibb.co.com/JFFCczwm/books-vibe-khaki-vercel-app.png': '/images/projects/project-6/showcase-1.png',
   'https://i.ibb.co.com/Q7zb6LbF/books-vibe-khaki-vercel-app-2.png': '/images/projects/project-6/showcase-2.png',
-  'https://i.ibb.co.com/1GVfW6vy/books-vibe-khaki-vercel-app-1.png': '/images/projects/project-6/showcase-3.png'
+  'https://i.ibb.co.com/1GVfW6vy/books-vibe-khaki-vercel-app-1.png': '/images/projects/project-6/showcase-3.png',
+
+  // Project 7
+  'https://i.ibb.co.com/XrYBVVXT/pawlycc.png': '/images/projects/project-7/mockup.png',
+  'https://i.ibb.co.com/gZd8Xqrg/Screenshot-2026-05-29-222825.png': '/images/projects/project-7/showcase-1.png',
+  'https://i.ibb.co.com/qYM0qHdS/Screenshot-2026-05-29-222626.png': '/images/projects/project-7/showcase-2.png',
+  'https://i.ibb.co.com/dJcGWBs2/pawly-client-vercel-app.png': '/images/projects/project-7/showcase-3.png'
+
+
 };
 
 const FILES = [
