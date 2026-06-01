@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { BLUR_DATA_URL } from '@/lib/blurData';
-import gsap from 'gsap';
-import Magnetic from './Magnetic';
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { BLUR_DATA_URL } from "@/lib/blurData";
+import gsap from "gsap";
+import Magnetic from "./Magnetic";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const roles = ["WEB DEVELOPER", "FRONTEND DEVELOPER", "MERN-STACK DEVELOPER"];
@@ -26,22 +26,22 @@ export default function Hero() {
         y: (e.clientY / window.innerHeight - 0.5) * 20,
       });
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     const ctx = gsap.context(() => {
       // Rotating rings
-      gsap.to('.ring-rotate', {
+      gsap.to(".ring-rotate", {
         rotate: 360,
         duration: 40,
         repeat: -1,
-        ease: 'linear',
+        ease: "linear",
       });
 
-      gsap.to('.ring-rotate-reverse', {
+      gsap.to(".ring-rotate-reverse", {
         rotate: -360,
         duration: 50,
         repeat: -1,
-        ease: 'linear',
+        ease: "linear",
       });
 
       // Float ONLY image container
@@ -50,17 +50,15 @@ export default function Hero() {
         duration: 3,
         repeat: -1,
         yoyo: true,
-        ease: 'sine.inOut',
+        ease: "sine.inOut",
       });
     }, sectionRef);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
       ctx.revert();
     };
   }, []);
-
-
 
   useEffect(() => {
     const current = roles[index];
@@ -137,10 +135,8 @@ export default function Hero() {
             className="flex items-center justify-center lg:justify-start gap-sm"
           >
             <h2 className="font-headline-md text-sm md:text-base lg:text-headline-md themed-surface-50 uppercase tracking-[0.2em] flex items-center gap-2">
-
               <AnimatePresence mode="wait">
                 <motion.span
-
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
@@ -161,9 +157,7 @@ export default function Hero() {
             variants={revealVariants}
             className="text-body-md md:text-body-lg themed-surface-70 max-w-2xl leading-relaxed"
           >
-            I build fast, responsive, and immersive web experiences with a focus
-            on clean UI, performance, and scalability. Using in React,
-            Next.js, Tailwind CSS, and modern design systems.
+            MERN Stack Developer building fast, scalable, and user-friendly web experiences. Leveraging MongoDB, Express.js, React.js, Next.js, and Node.js to deliver robust full-stack solutions with clean, modern interfaces.
           </motion.p>
         </div>
 
@@ -175,7 +169,8 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.2 }}
-                className="flex items-center gap-xs bg-primary text-on-primary px-5 sm:px-6 md:px-8  py-3 sm:py-3 md:py-4 rounded-xl font-bold  shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all active:scale-95 premium-border text-sm sm:text-base" >
+                className="flex items-center gap-xs bg-primary text-on-primary px-5 sm:px-6 md:px-8  py-3 sm:py-3 md:py-4 rounded-xl font-bold  shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all active:scale-95 premium-border text-sm sm:text-base"
+              >
                 Contact Me
                 <span className="material-symbols-outlined text-sm">send</span>
               </motion.a>
@@ -189,7 +184,8 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.3 }}
-                className="flex items-center gap-xs bg-surface-container border border-outline/20 px-5 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 rounded-xl text-on-surface font-bold hover:bg-on-surface/5 transition-all active:scale-95 text-sm sm:text-base cursor-pointer" >
+                className="flex items-center gap-xs bg-surface-container border border-outline/20 px-5 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 rounded-xl text-on-surface font-bold hover:bg-on-surface/5 transition-all active:scale-95 text-sm sm:text-base cursor-pointer"
+              >
                 <span className="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_var(--color-tertiary)]"></span>
                 Resume
               </motion.a>
@@ -251,11 +247,15 @@ export default function Hero() {
         >
           <div
             className="ring-rotate absolute inset-0 rounded-full border-2 border-dashed border-primary-container/20"
-            style={{ transform: `translate(${mousePos.x * 0.5}px, ${mousePos.y * 0.5}px)` }}
+            style={{
+              transform: `translate(${mousePos.x * 0.5}px, ${mousePos.y * 0.5}px)`,
+            }}
           />
           <div
             className="ring-rotate-reverse absolute inset-4 rounded-full border border-tertiary/30"
-            style={{ transform: `translate(${mousePos.x * -0.3}px, ${mousePos.y * -0.3}px)` }}
+            style={{
+              transform: `translate(${mousePos.x * -0.3}px, ${mousePos.y * -0.3}px)`,
+            }}
           />
 
           <motion.div
@@ -267,7 +267,7 @@ export default function Hero() {
             transition={{
               duration: 3,
               repeat: Infinity,
-              ease: 'easeInOut',
+              ease: "easeInOut",
             }}
           />
 
@@ -283,8 +283,6 @@ export default function Hero() {
               delay: 0.5,
             }}
           />
-
-
 
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -331,12 +329,12 @@ export default function Hero() {
             <motion.div
               animate={{
                 y: [0, 12, 0],
-                opacity: [1, 0, 1]
+                opacity: [1, 0, 1],
               }}
               transition={{
                 duration: 2,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
               className="w-1 h-2 rounded-full bg-primary"
             />

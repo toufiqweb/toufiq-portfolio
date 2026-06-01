@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { BLUR_DATA_URL } from '@/lib/blurData';
 import Magnetic from './Magnetic';
-import { FaGithub, FaLinkedin, FaDiscord } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
 import { socialLinks } from '@/data/socialLinks';
 import { whatIDo } from '@/data/aboutData';
 
@@ -64,7 +62,7 @@ export default function About() {
           transition={{ delay: 0.3 }}
           className="font-body-md md:text-body-lg themed-text max-w-2xl mx-auto leading-relaxed"
         >
-          A self-taught developer driven by curiosity and consistency, constantly learning and improving.
+          A curious and consistent developer, dedicated to continuous learning and technical growth.
         </motion.p>
       </div>
 
@@ -114,7 +112,7 @@ export default function About() {
             >
               <span className="font-label-sm text-[10px] sm:text-xs text-on-surface flex items-center gap-2">
                 <span className="material-symbols-outlined text-tertiary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>auto_graph</span>
-                Self-Taught Developer
+                MERN Stack Developer
               </span>
             </motion.div>
           </motion.div>
@@ -140,7 +138,7 @@ export default function About() {
               custom={1}
               className="font-body-md md:text-body-lg themed-text leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
-              Self-taught Web Developer , quickly building strong skills in the MERN stack. A fast learner who turns challenges into growth and stays consistent through ongoing coding challenges on GitHub and LinkedIn. Focused on creating clean, responsive, and user-friendly web applications.
+              As a Web Developer building a strong foundation in the MERN stack, I focus on bringing ideas to life through robust, full-stack ecosystems. Whether I am designing responsive landing pages or tackling complex JavaScript logic, I am a fast learner dedicated to writing clean, efficient code. My consistency is fueled by public coding challenges and continuous community engagement, always looking for the next project to expand my skill set and deliver high-quality web solutions.
 
             </motion.p>
           </motion.div>

@@ -130,7 +130,7 @@ export const projects = [
       { label: 'UI System', value: 'Responsive', color: 'primary' },
     ],
     packages: ['next.js', 'tailwindcss', 'daisyui', 'mongodb', 'lucide-react', 'date-fns'],
-    image: '/images/projects/project-2/mockup.png',
+    image: '/images/projects/project-1/mockup.png',
     showcaseImages: [
       '/images/projects/project-2/showcase-1.png',
       '/images/projects/project-2/showcase-2.png',

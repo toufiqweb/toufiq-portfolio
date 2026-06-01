@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { projects } from '@/data/projects';
 import ProjectCard from './ProjectCard';
 import { useState, useEffect } from 'react';
 import ProjectCardSkeleton from './skeletons/ProjectCardSkeleton';
+import { projects } from '@/lib/projectsData';
 
 export default function Projects() {
   const [isMounted, setIsMounted] = useState(false);
