@@ -1,21 +1,16 @@
-'use client';
-import { motion } from 'framer-motion';
-import Magnetic from './Magnetic';
-import { socialLinks } from '@/data/socialLinks';
-import { navLinks } from '@/data/navLinks';
+"use client";
+import { motion } from "framer-motion";
+import Magnetic from "./Magnetic";
+import { socialLinks } from "@/data/socialLinks";
+import { navLinks } from "@/data/navLinks";
 
 export default function Footer() {
-
-
-
   return (
     <footer className="relative w-full py-16 mt-24 border-t border-white/5 bg-background overflow-hidden">
-
       {/* Glow (uses theme primary) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center overflow-hidden">
-
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -29,7 +24,10 @@ export default function Footer() {
           </h2>
 
           <p className="themed-surface-70 text-body-lg leading-relaxed mb-10">
-            Frontend Developer focused on building modern, responsive, and user-friendly web interfaces using React, Next.js, and Tailwind CSS. Passionate about writing clean code and continuously improving skills.
+            MERN Stack Developer building fast, responsive, and user-centric web
+            applications using React, Next.js, and Tailwind CSS. Driven by clean
+            code standards and continuous learning to deliver high-quality
+            full-stack experiences.
           </p>
 
           <a
@@ -50,7 +48,6 @@ export default function Footer() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full mt-16 pt-12 border-t border-outline/20"
         >
-
           {/* Navigation */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-xs uppercase tracking-widest themed-surface-50 mb-6">
@@ -108,7 +105,6 @@ export default function Footer() {
             </div>
           </div>
 
-
           {/* Legal */}
           <div className="flex flex-col items-center md:items-end">
             <h3 className="text-xs uppercase tracking-widest themed-surface-50 mb-6">
@@ -117,9 +113,9 @@ export default function Footer() {
 
             <div className="space-y-2 text-right">
               {[
-                { label: 'Privacy Policy', href: '#' },
-                { label: 'Terms of Service', href: '#' },
-                { label: 'Project Notes', href: '#' },
+                { label: "Privacy Policy", href: "#" },
+                { label: "Terms of Service", href: "#" },
+                { label: "Project Notes", href: "#" },
               ].map((item, i) => (
                 <motion.a
                   key={item.label}
@@ -144,10 +140,8 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
           className="w-full mt-16 pt-6 border-t border-outline/20 flex flex-col lg:flex-row justify-between items-center gap-6 text-center lg:text-left"
         >
-
           {/* Left Section */}
           <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-xs themed-surface-40 tracking-widest uppercase">
-
             <span className="text-center sm:text-left">
               © 2026 Toufiq Alahe. All rights reserved.
             </span>
@@ -160,12 +154,10 @@ export default function Footer() {
             <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary">
               Open for Opportunities
             </span>
-
           </div>
 
           {/* Right Section */}
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-2 sm:gap-6 text-xs themed-surface-40">
-
             <span className="text-center sm:text-left">
               Performance: Optimized
             </span>
@@ -173,9 +165,7 @@ export default function Footer() {
             <span className="text-center sm:text-left">
               Built with Next.js + Passion
             </span>
-
           </div>
-
         </motion.div>
       </div>
     </footer>
