@@ -1,4 +1,4 @@
-# Toufiq Alahe | Frontend Developer Portfolio
+# Toufiq Alahe | Web Developer Portfolio
 
 ![Portfolio Preview](./public/portfolio-preview.png)
 *(Replace the image path with your actual preview image)*
